@@ -256,46 +256,159 @@
 
     
 
-    .hero-eyebrow {
-      display: inline-flex;
+    .about-section {
+      width: 100%;
+      display: grid;
+      gap: 0;
+    }
+
+    .about-header {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #f3f3f0;
-      color: #111;
-      font-weight: 700;
-      font-size: 0.82rem;
-      margin-bottom: 18px;
+      justify-content: flex-start;
+      margin-bottom: 12px;
     }
 
-    .hero-title {
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 1.05;
+    .about-title {
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      line-height: 1.1;
       font-weight: 800;
-      letter-spacing: -0.05em;
-      max-width: 700px;
-      margin-bottom: 16px;
+      letter-spacing: -0.04em;
+      margin: 0;
     }
 
-    .gradient-text {
-      color: #111;
-      -webkit-text-fill-color: initial;
-      background: none;
+    .about-divider {
+      height: 1px;
+      background: rgba(0, 0, 0, 0.14);
+      margin: 12px 0 18px;
     }
 
-    .hero-description {
-      max-width: 760px;
+    .about-preview {
+      width: 100%;
       font-size: 1rem;
       color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 26px;
+      line-height: 1.85;
+      margin: 0;
+      text-wrap: pretty;
     }
 
-    .hero-actions {
+    .about-preview-mobile {
+      display: none;
+    }
+
+    .about-more-wrap {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .about-more-btn {
+      background: #111;
+      color: #fff;
+      border: 1px solid #111;
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-weight: 700;
+      transition: .25s ease;
+      box-shadow: none;
+    }
+
+    .about-more-btn:hover {
+      transform: translateY(-3px);
+      background: #222;
+    }
+
+    .about-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 10, 16, 0.65);
+      backdrop-filter: blur(6px);
+      z-index: 1500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 15%;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .about-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .about-modal-panel {
+      width: 100%;
+      height: calc(100vh - 40px);
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.16);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .about-modal-header {
+      padding: 24px 24px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .about-modal-title {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.2vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .about-modal-close {
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 12px;
+      background: #f2f2ef;
+      color: #111;
+      transition: .25s ease;
+    }
+
+    .about-modal-close:hover {
+      background: #111;
+      color: #fff;
+      transform: rotate(90deg);
+    }
+
+    .about-modal-body {
+      padding: 18px 24px 24px;
+      overflow: auto;
+      color: #2a2a2a;
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .about-modal-body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .about-modal-body::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.18);
+      border-radius: 999px;
+    }
+
+    .about-company-link {
+      color: #0d6efd;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .about-company-link:hover {
+      text-decoration: underline;
     }
 
     .btn-premium,
@@ -351,6 +464,325 @@
       color: var(--muted);
     }
 
+
+
+    .skills-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .skills-summary {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .skills-summary h4,
+    .skills-groups h4,
+    .skills-extra h4 {
+      margin: 0 0 12px;
+      font-size: 1.02rem;
+      font-weight: 800;
+    }
+
+    .skills-summary p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .skills-chart-wrap {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .skills-chart {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #111 0 37%,
+        #3a3a3a 37% 66%,
+        #707070 66% 86%,
+        #b4b4b4 86% 100%
+      );
+      display: grid;
+      place-items: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .skills-chart::before {
+      content: '';
+      width: 82px;
+      height: 82px;
+      background: #fff;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .skills-chart-label {
+      position: absolute;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #222;
+      line-height: 1.35;
+    }
+
+    .skills-chart-legend {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+      min-width: 190px;
+    }
+
+    .skills-chart-legend li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #2c2c2c;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .skills-chart-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .skills-groups {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 18px;
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skills-tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #f7f7f4;
+      font-weight: 600;
+      font-size: 0.84rem;
+      color: #1f1f1f;
+    }
+
+    .skills-bars {
+      display: grid;
+      gap: 12px;
+    }
+
+    .skill-bar-item {
+      display: grid;
+      gap: 6px;
+    }
+
+    .skill-bar-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.87rem;
+      font-weight: 700;
+      color: #232323;
+    }
+
+    .skill-bar-track {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: #ecece8;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: #111;
+    }
+
+    .skills-extra {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .skills-extra-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .skills-extra-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+
+    .about-project-links {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .about-project-link {
+      text-decoration: none;
+      border: 1px solid rgba(0,0,0,0.1);
+      background: #fff;
+      color: #111;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 700;
+      font-size: 0.83rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: .25s ease;
+    }
+
+    .about-project-link:hover {
+      background: #111;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .formacoes-controls {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .form-control-clean,
+    .form-select-clean {
+      width: 100%;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 12px;
+      padding: 11px 12px;
+      font-size: 0.92rem;
+      background: #fff;
+      color: #111;
+      outline: none;
+    }
+
+    .form-control-clean:focus,
+    .form-select-clean:focus {
+      border-color: #111;
+      box-shadow: 0 0 0 3px rgba(17,17,17,0.08);
+    }
+
+    .formacoes-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .formacao-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .formacao-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .formacao-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .formacao-meta {
+      margin: 2px 0 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .formacao-badge {
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.11);
+      background: #f7f7f4;
+      padding: 6px 10px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .formacao-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .formacao-tags span {
+      font-size: 0.76rem;
+      background: #f2f2ef;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-weight: 600;
+      color: #2a2a2a;
+    }
+
+    .formacao-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .formacoes-empty {
+      margin-top: 12px;
+      display: none;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px dashed rgba(0,0,0,0.2);
+      color: var(--muted);
+      font-weight: 600;
+      text-align: center;
+      background: #fbfbf9;
+    }
     .section-card {
       margin-top: 24px;
       background: rgba(255,255,255,0.94);
@@ -813,6 +1245,12 @@
         border-radius: 24px;
         padding: 22px;
       }
+      .skills-showcase,
+      .skills-extra,
+      .formacoes-controls,
+      .formacoes-grid {
+        grid-template-columns: 1fr;
+      }
       .sidebar {
         padding: 22px 18px;
         border-radius: 24px;
@@ -830,6 +1268,23 @@
       }
       .wa-body {
         max-height: 430px;
+      }
+      .about-modal {
+        padding: 10px 14px;
+      }
+      .about-modal-panel {
+        height: calc(100vh - 20px);
+      }
+      .about-modal-header,
+      .about-modal-body {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .about-preview-desktop {
+        display: none;
+      }
+      .about-preview-mobile {
+        display: block;
       }
     }
   </style>
@@ -874,47 +1329,221 @@
 
     <main class="content-area">
       <section class="hero-card" id="sobre">
-        <div>
-          <div class="hero-eyebrow">
-            <i class="bi bi-circle-fill"></i>
-            Portfólio minimalista em desenvolvimento
+        <div class="about-section">
+          <div class="about-header">
+            <h2 class="about-title">Sobre Mim</h2>
           </div>
-          <h2 class="hero-title">
-            Criando experiências <span class="gradient-text">minimalistas, elegantes e objetivas</span> para web.
-          </h2>
-          <p class="hero-description">
-            Este layout entrega uma base clean e profissional para o seu portfólio, com sidebar fixa, visual light com detalhes pretos, navegação simples, atalhos flutuantes e um atendimento direto via WhatsApp.
+          <div class="about-divider"></div>
+          <p class="about-preview about-preview-desktop">
+            Me chamo Arthur Ferreira, tenho 19 anos e iniciei minha jornada em tecnologia aos 15, com foco em desenvolvimento de sistemas e soluções capazes de gerar impacto real no mercado. Aos 17 anos comecei meu primeiro estágio, atuando com desenvolvimento de sistemas e páginas, suporte técnico e participação em reuniões de onboarding para entender dores, objetivos e necessidades de cada cliente. Aos 18, fui convidado para atuar como Desenvolvedor Low-Code na mesma empresa, contribuindo em projetos para Natura e RedeMG Farma, além de apoiar a criação de um CRM para ONG de ajuda animal usando ExpoCRM. No fim de 2025, assumi novos desafios em uma equipe voltada para contabilidade, desenvolvendo sistemas internos, automações e produtos digitais escaláveis.
           </p>
-          <div class="hero-actions">
-            <a href="#projetos" class="btn-premium"><i class="bi bi-grid-1x2-fill"></i> Ver Estrutura</a>
-            <a href="#contato" class="btn-outline-premium"><i class="bi bi-chat-dots"></i> Falar Comigo</a>
+          <p class="about-preview about-preview-mobile">
+            Me chamo Arthur Ferreira, tenho 19 anos e estou na tecnologia desde os 15. Comecei meu estágio aos 17 com desenvolvimento, suporte e onboarding de clientes. Aos 18, atuei como Desenvolvedor Low-Code em projetos para Natura, RedeMG Farma e CRM para ONG. No fim de 2025, entrei em uma nova equipe para criar sistemas internos, automações e soluções escaláveis em uma empresa de contabilidade, sempre com foco em impacto, inovação e boa experiência.
+          </p>
+          <div class="about-project-links">
+            <a class="about-project-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">
+              thynkBarber <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+            <a class="about-project-link" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">
+              thynkWorking <i class="bi bi-box-arrow-up-right"></i>
+            </a>
           </div>
-
-          <div class="grid-highlight">
-            <div class="highlight-card">
-              <div class="number">01</div>
-              <p>Sidebar fixa com identidade forte, elegante e pronta para navegação do currículo.</p>
-            </div>
-            <div class="highlight-card">
-              <div class="number">02</div>
-              <p>Atendimento via WhatsApp com fluxo conversacional, animação de escrita e respostas inteligentes.</p>
-            </div>
-            <div class="highlight-card">
-              <div class="number">03</div>
-              <p>Botão de currículo com microinteração hover e download direto do PDF.</p>
-            </div>
+          <div class="about-more-wrap">
+            <button class="about-more-btn" id="openAboutModal" type="button">Saber Mais Sobre</button>
           </div>
         </div>
       </section>
+            <section class="section-card" id="skills">
+        <h3 class="section-title"><i class="bi bi-stars"></i> Skills | Arthur Ferreira</h3>
+        <p class="section-description">Resumo das minhas competências técnicas e comportamentais, com foco em desenvolvimento back-end, integrações, organização de produtos e entrega contínua de soluções.</p>
 
-      <section class="section-card" id="skills">
-        <h3 class="section-title"><i class="bi bi-stars"></i> Preview da área de Skills</h3>
-        <p class="section-description">Aqui você pode adicionar cards com stack, progresso, ícones, tecnologias favoritas, frameworks e diferenciais profissionais. A estrutura visual já está preparada para receber seus conteúdos e manter um padrão refinado.</p>
+        <div class="skills-showcase">
+          <div class="skills-summary">
+            <h4>Gráfico Inteligente de Competências</h4>
+            <p>Distribuição proporcional baseada no meu nível por competência para visualização rápida dos pontos mais fortes e áreas em evolução dentro do ecossistema back-end.</p>
+
+            <div class="skills-chart-wrap">
+              <div class="skills-chart" aria-label="Distribuição das competências de Arthur Ferreira" style="background: conic-gradient(#111 0 26%, #3a3a3a 26% 44%, #707070 44% 78%, #b4b4b4 78% 100%);">
+                <span class="skills-chart-label">Skill<br>Map</span>
+              </div>
+
+              <ul class="skills-chart-legend">
+                <li><span><i class="dot" style="background:#111"></i> Back-End</span> <strong>61%</strong></li>
+                <li><span><i class="dot" style="background:#3a3a3a"></i> Banco de Dados</span> <strong>42%</strong></li>
+                <li><span><i class="dot" style="background:#707070"></i> Observabilidade</span> <strong>78%</strong></li>
+                <li><span><i class="dot" style="background:#b4b4b4"></i> APIs & Integrações</span> <strong>51%</strong></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="skills-groups">
+            <div>
+              <h4>Hard Skills</h4>
+              <div class="skills-tags">
+                <span class="skills-tag">NodeJS</span>
+                <span class="skills-tag">MongoDB</span>
+                <span class="skills-tag">AWS</span>
+                <span class="skills-tag">JavaScript</span>
+                <span class="skills-tag">ReactJS</span>
+                <span class="skills-tag">Java</span>
+                <span class="skills-tag">APIs & Integrações</span>
+              </div>
+            </div>
+
+            <div>
+              <h4>Soft Skills</h4>
+              <div class="skills-tags">
+                <span class="skills-tag">Paciência</span>
+                <span class="skills-tag">Trabalho sob Pressão</span>
+                <span class="skills-tag">Comunicativo</span>
+                <span class="skills-tag">Analítico</span>
+                <span class="skills-tag">Trabalho em Equipe</span>
+                <span class="skills-tag">Gestão de Prioridades</span>
+                <span class="skills-tag">Organização</span>
+              </div>
+            </div>
+
+            <div>
+              <h4>Nível por Competência</h4>
+              <div class="skills-bars">
+                <div class="skill-bar-item">
+                  <div class="skill-bar-head"><span>Back-End</span><span>61%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:61%"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-head"><span>Banco de Dados</span><span>42%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:42%"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-head"><span>Observabilidade</span><span>78%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:78%"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-head"><span>APIs & Integrações</span><span>51%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:51%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-extra">
+          <article class="skills-extra-card">
+            <h4>Boas práticas</h4>
+            <p>Versionamento limpo, documentação objetiva, padrões de projeto e revisão contínua para manter qualidade e escalabilidade.</p>
+          </article>
+          <article class="skills-extra-card">
+            <h4>Ferramentas</h4>
+            <p>GitHub, MongoDB, Swagger/OpenAPI e monitoramento com foco em estabilidade e entrega segura.</p>
+          </article>
+          <article class="skills-extra-card">
+            <h4>Diferencial</h4>
+            <p>Visão de produto aliada ao código: decisões técnicas orientadas ao impacto no negócio e experiência final do usuário.</p>
+          </article>
+        </div>
       </section>
 
-      <section class="section-card" id="formacoes">
-        <h3 class="section-title"><i class="bi bi-mortarboard"></i> Preview da área de Formações</h3>
-        <p class="section-description">Esse espaço pode receber sua formação acadêmica, certificações, cronologia educacional e destaques estratégicos da sua carreira.</p>
+            <section class="section-card" id="formacoes">
+        <h3 class="section-title"><i class="bi bi-mortarboard"></i> Formações & Capacitações</h3>
+        <p class="section-description">Seção completa para apresentar trajetória de formação, cursos e experiências de aprendizado contínuo com filtros para facilitar a consulta por recrutadores e clientes.</p>
+
+        <div class="formacoes-controls">
+          <input class="form-control-clean" id="formacaoSearch" type="text" placeholder="Pesquisar por formação, tema ou tecnologia...">
+          <select class="form-select-clean" id="formacaoTipo">
+            <option value="all">Todos os tipos</option>
+            <option value="academica">Acadêmica</option>
+            <option value="curso">Curso</option>
+            <option value="experiencia">Experiência</option>
+          </select>
+          <select class="form-select-clean" id="formacaoStatus">
+            <option value="all">Todos os status</option>
+            <option value="concluido">Concluído</option>
+            <option value="andamento">Em andamento</option>
+          </select>
+          <select class="form-select-clean" id="formacaoAno">
+            <option value="all">Todos os anos</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+          </select>
+        </div>
+
+        <div class="formacoes-grid" id="formacoesGrid">
+          <article class="formacao-card" data-tipo="experiencia" data-status="concluido" data-ano="2025" data-keywords="estágio desenvolvimento sistemas páginas suporte onboarding clientes">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Estágio em Desenvolvimento de Sistemas</h4>
+                <p class="formacao-meta">Primeira experiência profissional em tecnologia</p>
+              </div>
+              <span class="formacao-badge">Concluído</span>
+            </div>
+            <div class="formacao-tags"><span>Onboarding</span><span>Suporte Técnico</span><span>Desenvolvimento Web</span></div>
+            <p class="formacao-desc">Atuação prática com desenvolvimento de sistemas e páginas, suporte técnico ao cliente e entendimento de processos de negócio.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="experiencia" data-status="concluido" data-ano="2025" data-keywords="low-code natura redemg farma crm ong expocrm">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Desenvolvedor Low-Code</h4>
+                <p class="formacao-meta">Projetos reais para grandes marcas e terceiro setor</p>
+              </div>
+              <span class="formacao-badge">Concluído</span>
+            </div>
+            <div class="formacao-tags"><span>Low-Code</span><span>Natura</span><span>RedeMG Farma</span><span>ExpoCRM</span></div>
+            <p class="formacao-desc">Participação no desenvolvimento de soluções web e CRM para ONG, com foco em entrega de valor e organização de processos.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="experiencia" data-status="andamento" data-ano="2026" data-keywords="contabilidade chamados agenda educação interna chat automação emails">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Sistemas Internos para Empresa de Contabilidade</h4>
+                <p class="formacao-meta">Projetos internos e automações de alto impacto</p>
+              </div>
+              <span class="formacao-badge">Em andamento</span>
+            </div>
+            <div class="formacao-tags"><span>Chamados</span><span>Agenda</span><span>Chat Interno</span><span>Automação de E-mails</span></div>
+            <p class="formacao-desc">Criação de produtos internos, plataforma de educação corporativa e automações para envios em massa para mais de 100 empresas.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="curso" data-status="andamento" data-ano="2026" data-keywords="nodejs reactjs java aws mongodb apis integrações observabilidade">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Trilha Contínua de Back-end & Cloud</h4>
+                <p class="formacao-meta">Aprimoramento técnico com foco em mercado</p>
+              </div>
+              <span class="formacao-badge">Em andamento</span>
+            </div>
+            <div class="formacao-tags"><span>NodeJS</span><span>AWS</span><span>MongoDB</span><span>APIs</span></div>
+            <p class="formacao-desc">Evolução contínua por meio de cursos, projetos práticos e laboratório pessoal para aprofundar arquitetura e integrações.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="curso" data-status="concluido" data-ano="2024" data-keywords="javascript react desenvolvimento web interfaces ux">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Formação em Desenvolvimento Web Moderno</h4>
+                <p class="formacao-meta">Base sólida para front-end e integração com back-end</p>
+              </div>
+              <span class="formacao-badge">Concluído</span>
+            </div>
+            <div class="formacao-tags"><span>JavaScript</span><span>ReactJS</span><span>UI</span><span>Integrações</span></div>
+            <p class="formacao-desc">Estruturação de interfaces, consumo de APIs e práticas para construir aplicações performáticas e responsivas.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="academica" data-status="andamento" data-ano="2026" data-keywords="tecnologia sistemas análise desenvolvimento software">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Formação Acadêmica em Tecnologia (em evolução)</h4>
+                <p class="formacao-meta">Construção contínua de fundamentos e visão sistêmica</p>
+              </div>
+              <span class="formacao-badge">Em andamento</span>
+            </div>
+            <div class="formacao-tags"><span>Engenharia de Software</span><span>Análise</span><span>Projeto</span></div>
+            <p class="formacao-desc">Aprofundamento em fundamentos de tecnologia, modelagem de soluções e tomada de decisão técnica com foco em escala.</p>
+          </article>
+        </div>
+
+        <div class="formacoes-empty" id="formacoesEmpty">Nenhuma formação encontrada para os filtros aplicados.</div>
       </section>
 
       <section class="section-card" id="cursos">
@@ -937,6 +1566,28 @@
         <p class="section-description">Aqui podem entrar formulário, CTA para WhatsApp, links sociais, email, disponibilidade e localização.</p>
       </section>
     </main>
+  </div>
+
+
+  <div class="about-modal" id="aboutModal" aria-hidden="true">
+    <div class="about-modal-panel" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
+      <div class="about-modal-header">
+        <h3 class="about-modal-title" id="aboutModalTitle">Sobre Mim</h3>
+        <button class="about-modal-close" id="closeAboutModal" aria-label="Fechar modal sobre mim">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="about-divider"></div>
+      <div class="about-modal-body">
+        <p>Olá, tudo bem? Me chamo Arthur Ferreira, tenho 19 anos e estou na área de tecnologia desde os 15, sempre com foco em aprender, evoluir e construir soluções digitais que realmente impactem negócios e pessoas. Iniciei minha trajetória profissional aos 17 anos, no meu primeiro estágio, onde atuei com desenvolvimento de sistemas e páginas, suporte técnico ao cliente e participação em reuniões para onboarding de projetos, entendendo processos, dores e oportunidades de melhoria.</p>
+        <p>Aos 18 anos fui convidado para atuar como Desenvolvedor Low-Code na mesma empresa, ampliando minha participação em projetos estratégicos como sites para Natura e RedeMG Farma. Nesse período, também colaborei na criação de um CRM para uma ONG de ajuda animal utilizando ExpoCRM, experiência que fortaleceu minha visão de produto, organização de fluxos e entrega orientada a valor.</p>
+        <p>No final de 2025, entrei em uma nova equipe com foco em desafios internos de uma empresa de contabilidade, contribuindo em diversos setores com suporte técnico e desenvolvimento de novos sistemas. Entre as entregas, participei da criação de agenda interna, sistema de chamados, plataforma de educação corporativa, chat interno estilo Teams e automações de e-mail em massa para mais de 100 empresas por vez.</p>
+        <p>Além das atividades profissionais, sigo desenvolvendo projetos autorais e estudando continuamente para evoluir como profissional e pessoa. Entre os projetos em andamento, destaco:
+          <a class="about-company-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">thynkBarber <i class="bi bi-box-arrow-up-right"></i></a>, uma barbearia inteligente com agendamentos, assinaturas e estatísticas internas/externas; e
+          <a class="about-company-link" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">thynkWorking <i class="bi bi-box-arrow-up-right"></i></a>, uma plataforma de vagas tech com IA para conectar profissionais e RHs por meio de vagas e base de currículos qualificados.
+        </p>
+      </div>
+    </div>
   </div>
 
   <div class="floating-actions">
@@ -1243,6 +1894,70 @@
         sendCustomMessage();
       }
     });
+
+    const aboutModal = document.getElementById('aboutModal');
+    const openAboutModalBtn = document.getElementById('openAboutModal');
+    const closeAboutModalBtn = document.getElementById('closeAboutModal');
+
+    function toggleAboutModal(show) {
+      aboutModal.classList.toggle('show', show);
+      aboutModal.setAttribute('aria-hidden', String(!show));
+      document.body.style.overflow = show ? 'hidden' : '';
+    }
+
+    openAboutModalBtn.addEventListener('click', () => toggleAboutModal(true));
+    closeAboutModalBtn.addEventListener('click', () => toggleAboutModal(false));
+
+    aboutModal.addEventListener('click', (event) => {
+      if (event.target === aboutModal) {
+        toggleAboutModal(false);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && aboutModal.classList.contains('show')) {
+        toggleAboutModal(false);
+      }
+    });
+
+
+
+    const formacaoSearch = document.getElementById('formacaoSearch');
+    const formacaoTipo = document.getElementById('formacaoTipo');
+    const formacaoStatus = document.getElementById('formacaoStatus');
+    const formacaoAno = document.getElementById('formacaoAno');
+    const formacaoCards = document.querySelectorAll('#formacoesGrid .formacao-card');
+    const formacoesEmpty = document.getElementById('formacoesEmpty');
+
+    function applyFormacoesFilters() {
+      const term = (formacaoSearch?.value || '').toLowerCase().trim();
+      const tipo = formacaoTipo?.value || 'all';
+      const status = formacaoStatus?.value || 'all';
+      const ano = formacaoAno?.value || 'all';
+
+      let visibleCount = 0;
+
+      formacaoCards.forEach((card) => {
+        const matchesTerm = !term || card.dataset.keywords.includes(term) || card.textContent.toLowerCase().includes(term);
+        const matchesTipo = tipo === 'all' || card.dataset.tipo === tipo;
+        const matchesStatus = status === 'all' || card.dataset.status === status;
+        const matchesAno = ano === 'all' || card.dataset.ano === ano;
+
+        const show = matchesTerm && matchesTipo && matchesStatus && matchesAno;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount += 1;
+      });
+
+      formacoesEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    [formacaoSearch, formacaoTipo, formacaoStatus, formacaoAno].forEach((el) => {
+      if (!el) return;
+      el.addEventListener('input', applyFormacoesFilters);
+      el.addEventListener('change', applyFormacoesFilters);
+    });
+
+    applyFormacoesFilters();
 
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.menu-item a[href^="#"]');
