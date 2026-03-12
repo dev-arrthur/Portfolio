@@ -678,7 +678,8 @@
       transform: translateY(-2px);
     }
 
-    .formacoes-controls {
+    .formacoes-controls,
+    .cursos-controls {
       margin-top: 14px;
       display: grid;
       grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
@@ -703,14 +704,16 @@
       box-shadow: 0 0 0 3px rgba(17,17,17,0.08);
     }
 
-    .formacoes-grid {
+    .formacoes-grid,
+    .cursos-grid {
       margin-top: 14px;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
 
-    .formacao-card {
+    .formacao-card,
+    .curso-card {
       background: #fff;
       border: 1px solid rgba(0,0,0,0.08);
       border-radius: 16px;
@@ -719,27 +722,31 @@
       gap: 10px;
     }
 
-    .formacao-head {
+    .formacao-head,
+    .curso-head {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 10px;
     }
 
-    .formacao-title {
+    .formacao-title,
+    .curso-title {
       margin: 0;
       font-size: 1rem;
       font-weight: 800;
       line-height: 1.4;
     }
 
-    .formacao-meta {
+    .formacao-meta,
+    .curso-meta {
       margin: 2px 0 0;
       font-size: 0.84rem;
       color: var(--muted);
     }
 
-    .formacao-badge {
+    .formacao-badge,
+    .curso-badge {
       border-radius: 999px;
       border: 1px solid rgba(0,0,0,0.11);
       background: #f7f7f4;
@@ -749,13 +756,15 @@
       white-space: nowrap;
     }
 
-    .formacao-tags {
+    .formacao-tags,
+    .curso-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
     }
 
-    .formacao-tags span {
+    .formacao-tags span,
+    .curso-tags span {
       font-size: 0.76rem;
       background: #f2f2ef;
       border: 1px solid rgba(0,0,0,0.07);
@@ -765,14 +774,39 @@
       color: #2a2a2a;
     }
 
-    .formacao-desc {
+    .formacao-desc,
+    .curso-desc {
       margin: 0;
       color: var(--muted);
       font-size: 0.9rem;
       line-height: 1.6;
     }
 
-    .formacoes-empty {
+    .card-top-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .view-detail-btn {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 10px;
+      background: #f6f6f3;
+      color: #111;
+      display: grid;
+      place-items: center;
+      transition: .2s ease;
+    }
+
+    .view-detail-btn:hover {
+      background: #111;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .formacoes-empty,
+    .cursos-empty {
       margin-top: 12px;
       display: none;
       padding: 16px;
@@ -783,6 +817,107 @@
       text-align: center;
       background: #fbfbf9;
     }
+
+    .details-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8,10,16,0.68);
+      backdrop-filter: blur(6px);
+      z-index: 1600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 12%;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .details-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .details-panel {
+      width: 100%;
+      height: calc(100vh - 32px);
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .details-head {
+      padding: 20px 20px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .details-title {
+      margin: 0;
+      font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+      font-weight: 800;
+    }
+
+    .details-close {
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 10px;
+      background: #f3f3f0;
+      color: #111;
+    }
+
+    .details-content {
+      padding: 14px 20px 20px;
+      overflow: auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .details-content p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .details-skills,
+    .details-projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .details-skills span,
+    .details-projects a,
+    .details-projects span {
+      font-size: 0.8rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #f7f7f4;
+      color: #222;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .details-notes-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
     .section-card {
       margin-top: 24px;
       background: rgba(255,255,255,0.94);
@@ -1248,7 +1383,9 @@
       .skills-showcase,
       .skills-extra,
       .formacoes-controls,
-      .formacoes-grid {
+      .formacoes-grid,
+      .cursos-controls,
+      .cursos-grid {
         grid-template-columns: 1fr;
       }
       .sidebar {
@@ -1285,6 +1422,17 @@
       }
       .about-preview-mobile {
         display: block;
+      }
+      .details-modal {
+        padding: 10px 12px;
+      }
+      .details-panel {
+        height: calc(100vh - 20px);
+      }
+      .details-head,
+      .details-content {
+        padding-left: 14px;
+        padding-right: 14px;
       }
     }
   </style>
@@ -1443,112 +1591,108 @@
         </div>
       </section>
 
-            <section class="section-card" id="formacoes">
-        <h3 class="section-title"><i class="bi bi-mortarboard"></i> Formações & Capacitações</h3>
-        <p class="section-description">Seção completa para apresentar trajetória de formação, cursos e experiências de aprendizado contínuo com filtros para facilitar a consulta por recrutadores e clientes.</p>
+                  <section class="section-card" id="formacoes">
+        <h3 class="section-title"><i class="bi bi-mortarboard"></i> Formações</h3>
+        <p class="section-description">Minha formação acadêmica principal com consulta facilitada por pesquisa e filtros.</p>
 
         <div class="formacoes-controls">
-          <input class="form-control-clean" id="formacaoSearch" type="text" placeholder="Pesquisar por formação, tema ou tecnologia...">
-          <select class="form-select-clean" id="formacaoTipo">
-            <option value="all">Todos os tipos</option>
-            <option value="academica">Acadêmica</option>
-            <option value="curso">Curso</option>
-            <option value="experiencia">Experiência</option>
+          <input class="form-control-clean" id="formacaoSearch" type="text" placeholder="Pesquisar formação...">
+          <select class="form-select-clean" id="formacaoInstituicao">
+            <option value="all">Todas instituições</option>
+            <option value="estacio">Estácio de Sá</option>
           </select>
           <select class="form-select-clean" id="formacaoStatus">
             <option value="all">Todos os status</option>
-            <option value="concluido">Concluído</option>
             <option value="andamento">Em andamento</option>
           </select>
           <select class="form-select-clean" id="formacaoAno">
             <option value="all">Todos os anos</option>
-            <option value="2026">2026</option>
             <option value="2025">2025</option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
+            <option value="2029">2029</option>
           </select>
         </div>
 
         <div class="formacoes-grid" id="formacoesGrid">
-          <article class="formacao-card" data-tipo="experiencia" data-status="concluido" data-ano="2025" data-keywords="estágio desenvolvimento sistemas páginas suporte onboarding clientes">
-            <div class="formacao-head">
-              <div>
-                <h4 class="formacao-title">Estágio em Desenvolvimento de Sistemas</h4>
-                <p class="formacao-meta">Primeira experiência profissional em tecnologia</p>
-              </div>
-              <span class="formacao-badge">Concluído</span>
+          <article class="formacao-card" data-instituicao="estacio" data-status="andamento" data-ano="2025" data-keywords="engenharia de software estácio de sá 2025 2029">
+            <div class="card-top-actions">
+              <button class="view-detail-btn" type="button" aria-label="Ver detalhes da formação" data-detail-id="formacao-engenharia-software">
+                <i class="bi bi-eye"></i>
+              </button>
             </div>
-            <div class="formacao-tags"><span>Onboarding</span><span>Suporte Técnico</span><span>Desenvolvimento Web</span></div>
-            <p class="formacao-desc">Atuação prática com desenvolvimento de sistemas e páginas, suporte técnico ao cliente e entendimento de processos de negócio.</p>
-          </article>
-
-          <article class="formacao-card" data-tipo="experiencia" data-status="concluido" data-ano="2025" data-keywords="low-code natura redemg farma crm ong expocrm">
             <div class="formacao-head">
               <div>
-                <h4 class="formacao-title">Desenvolvedor Low-Code</h4>
-                <p class="formacao-meta">Projetos reais para grandes marcas e terceiro setor</p>
-              </div>
-              <span class="formacao-badge">Concluído</span>
-            </div>
-            <div class="formacao-tags"><span>Low-Code</span><span>Natura</span><span>RedeMG Farma</span><span>ExpoCRM</span></div>
-            <p class="formacao-desc">Participação no desenvolvimento de soluções web e CRM para ONG, com foco em entrega de valor e organização de processos.</p>
-          </article>
-
-          <article class="formacao-card" data-tipo="experiencia" data-status="andamento" data-ano="2026" data-keywords="contabilidade chamados agenda educação interna chat automação emails">
-            <div class="formacao-head">
-              <div>
-                <h4 class="formacao-title">Sistemas Internos para Empresa de Contabilidade</h4>
-                <p class="formacao-meta">Projetos internos e automações de alto impacto</p>
+                <h4 class="formacao-title">Engenharia de Software</h4>
+                <p class="formacao-meta">Estácio de Sá • 01/2025 até 12/2029</p>
               </div>
               <span class="formacao-badge">Em andamento</span>
             </div>
-            <div class="formacao-tags"><span>Chamados</span><span>Agenda</span><span>Chat Interno</span><span>Automação de E-mails</span></div>
-            <p class="formacao-desc">Criação de produtos internos, plataforma de educação corporativa e automações para envios em massa para mais de 100 empresas.</p>
-          </article>
-
-          <article class="formacao-card" data-tipo="curso" data-status="andamento" data-ano="2026" data-keywords="nodejs reactjs java aws mongodb apis integrações observabilidade">
-            <div class="formacao-head">
-              <div>
-                <h4 class="formacao-title">Trilha Contínua de Back-end & Cloud</h4>
-                <p class="formacao-meta">Aprimoramento técnico com foco em mercado</p>
-              </div>
-              <span class="formacao-badge">Em andamento</span>
-            </div>
-            <div class="formacao-tags"><span>NodeJS</span><span>AWS</span><span>MongoDB</span><span>APIs</span></div>
-            <p class="formacao-desc">Evolução contínua por meio de cursos, projetos práticos e laboratório pessoal para aprofundar arquitetura e integrações.</p>
-          </article>
-
-          <article class="formacao-card" data-tipo="curso" data-status="concluido" data-ano="2024" data-keywords="javascript react desenvolvimento web interfaces ux">
-            <div class="formacao-head">
-              <div>
-                <h4 class="formacao-title">Formação em Desenvolvimento Web Moderno</h4>
-                <p class="formacao-meta">Base sólida para front-end e integração com back-end</p>
-              </div>
-              <span class="formacao-badge">Concluído</span>
-            </div>
-            <div class="formacao-tags"><span>JavaScript</span><span>ReactJS</span><span>UI</span><span>Integrações</span></div>
-            <p class="formacao-desc">Estruturação de interfaces, consumo de APIs e práticas para construir aplicações performáticas e responsivas.</p>
-          </article>
-
-          <article class="formacao-card" data-tipo="academica" data-status="andamento" data-ano="2026" data-keywords="tecnologia sistemas análise desenvolvimento software">
-            <div class="formacao-head">
-              <div>
-                <h4 class="formacao-title">Formação Acadêmica em Tecnologia (em evolução)</h4>
-                <p class="formacao-meta">Construção contínua de fundamentos e visão sistêmica</p>
-              </div>
-              <span class="formacao-badge">Em andamento</span>
-            </div>
-            <div class="formacao-tags"><span>Engenharia de Software</span><span>Análise</span><span>Projeto</span></div>
-            <p class="formacao-desc">Aprofundamento em fundamentos de tecnologia, modelagem de soluções e tomada de decisão técnica com foco em escala.</p>
+            <div class="formacao-tags"><span>Engenharia de Software</span><span>Arquitetura</span><span>Projetos</span></div>
+            <p class="formacao-desc">Formação acadêmica com foco em fundamentos de engenharia, arquitetura de sistemas, qualidade de software e desenvolvimento orientado a produto.</p>
           </article>
         </div>
 
         <div class="formacoes-empty" id="formacoesEmpty">Nenhuma formação encontrada para os filtros aplicados.</div>
       </section>
 
-      <section class="section-card" id="cursos">
-        <h3 class="section-title"><i class="bi bi-journal-bookmark"></i> Preview da área de Cursos</h3>
-        <p class="section-description">Excelente para exibir cursos relevantes, trilhas de aprendizado, bootcamps e capacitações com visual em cards e badges.</p>
+            <section class="section-card" id="cursos">
+        <h3 class="section-title"><i class="bi bi-journal-bookmark"></i> Cursos</h3>
+        <p class="section-description">Cursos de especialização para evolução contínua em desenvolvimento e inovação.</p>
+
+        <div class="cursos-controls">
+          <input class="form-control-clean" id="cursoSearch" type="text" placeholder="Pesquisar curso...">
+          <select class="form-select-clean" id="cursoInstituicao">
+            <option value="all">Todas instituições</option>
+            <option value="ebac">EBAC</option>
+          </select>
+          <select class="form-select-clean" id="cursoStatus">
+            <option value="all">Todos os status</option>
+            <option value="andamento">Em andamento</option>
+            <option value="concluido">Concluído</option>
+          </select>
+          <select class="form-select-clean" id="cursoArea">
+            <option value="all">Todas as áreas</option>
+            <option value="fullstack">Full Stack</option>
+            <option value="ia">Inteligência Artificial</option>
+          </select>
+        </div>
+
+        <div class="cursos-grid" id="cursosGrid">
+          <article class="curso-card" data-instituicao="ebac" data-status="andamento" data-area="fullstack" data-keywords="desenvolvimento full stack java ebac backend frontend">
+            <div class="card-top-actions">
+              <button class="view-detail-btn" type="button" aria-label="Ver detalhes do curso" data-detail-id="curso-fullstack-java">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <div class="curso-head">
+              <div>
+                <h4 class="curso-title">Desenvolvimento Full Stack Java</h4>
+                <p class="curso-meta">EBAC</p>
+              </div>
+              <span class="curso-badge">Em andamento</span>
+            </div>
+            <div class="curso-tags"><span>Java</span><span>APIs</span><span>Banco de Dados</span><span>Full Stack</span></div>
+            <p class="curso-desc">Curso com foco em desenvolvimento de aplicações completas, da lógica de negócio ao consumo em interfaces modernas.</p>
+          </article>
+
+          <article class="curso-card" data-instituicao="ebac" data-status="andamento" data-area="ia" data-keywords="inteligência artificial ebac machine learning dados automações">
+            <div class="card-top-actions">
+              <button class="view-detail-btn" type="button" aria-label="Ver detalhes do curso" data-detail-id="curso-inteligencia-artificial">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <div class="curso-head">
+              <div>
+                <h4 class="curso-title">Inteligência Artificial</h4>
+                <p class="curso-meta">EBAC</p>
+              </div>
+              <span class="curso-badge">Em andamento</span>
+            </div>
+            <div class="curso-tags"><span>IA</span><span>Modelos</span><span>Automação</span><span>Dados</span></div>
+            <p class="curso-desc">Capacitação para aplicar IA em produtos e fluxos reais, com foco em produtividade, análise e criação de soluções inteligentes.</p>
+          </article>
+        </div>
+
+        <div class="cursos-empty" id="cursosEmpty">Nenhum curso encontrado para os filtros aplicados.</div>
       </section>
 
       <section class="section-card" id="projetos">
@@ -1586,6 +1730,37 @@
           <a class="about-company-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">thynkBarber <i class="bi bi-box-arrow-up-right"></i></a>, uma barbearia inteligente com agendamentos, assinaturas e estatísticas internas/externas; e
           <a class="about-company-link" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">thynkWorking <i class="bi bi-box-arrow-up-right"></i></a>, uma plataforma de vagas tech com IA para conectar profissionais e RHs por meio de vagas e base de currículos qualificados.
         </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="details-modal" id="detailsModal" aria-hidden="true">
+    <div class="details-panel" role="dialog" aria-modal="true" aria-labelledby="detailsModalTitle">
+      <div class="details-head">
+        <h3 class="details-title" id="detailsModalTitle">Detalhes</h3>
+        <button class="details-close" id="closeDetailsModal" aria-label="Fechar detalhes">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="about-divider"></div>
+      <div class="details-content">
+        <p id="detailsDescription"></p>
+        <div class="about-divider"></div>
+        <div>
+          <strong>Aprendizados</strong>
+          <div class="details-skills" id="detailsSkills"></div>
+        </div>
+        <div class="about-divider"></div>
+        <div>
+          <strong>Projetos</strong>
+          <div class="details-projects" id="detailsProjects"></div>
+        </div>
+        <div class="about-divider"></div>
+        <div>
+          <a class="details-notes-link" id="detailsNotesLink" href="#" target="_blank" rel="noopener noreferrer">
+            Notas <i class="bi bi-file-earmark-pdf"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -1918,12 +2093,86 @@
       if (event.key === 'Escape' && aboutModal.classList.contains('show')) {
         toggleAboutModal(false);
       }
+      if (event.key === 'Escape' && detailsModal.classList.contains('show')) {
+        toggleDetailsModal(false);
+      }
     });
 
+    const detailData = {
+      'formacao-engenharia-software': {
+        title: 'Engenharia de Software',
+        description: 'Formação na Estácio de Sá iniciada em 01/2025 e prevista para 12/2029, com base sólida em engenharia de software, arquitetura de sistemas, desenvolvimento orientado a requisitos e qualidade em todo o ciclo de vida do produto.',
+        skills: ['Engenharia de Requisitos', 'Arquitetura de Software', 'Qualidade de Código', 'Modelagem de Sistemas'],
+        projects: ['Projetos acadêmicos de arquitetura e modelagem', 'Protótipos e sistemas práticos em disciplinas técnicas'],
+        notes: 'download/Historico-EstacioDeSa-EngenhariaDeSoftware.pdf'
+      },
+      'curso-fullstack-java': {
+        title: 'Desenvolvimento Full Stack Java',
+        description: 'Curso pela EBAC com foco em construção de aplicações completas, cobrindo fundamentos de back-end com Java, APIs, persistência e integração com interfaces para entrega de soluções de ponta a ponta.',
+        skills: ['Java', 'APIs REST', 'Banco de Dados', 'Integração Front + Back'],
+        projects: ['Aplicações full stack com Java', 'Projetos práticos orientados a cenário real'],
+        notes: 'download/Historico-EBAC-DesenvolvimentoFullStackJava.pdf'
+      },
+      'curso-inteligencia-artificial': {
+        title: 'Inteligência Artificial',
+        description: 'Curso pela EBAC voltado para fundamentos e aplicações práticas de IA em produtos digitais, com foco em automação, análise de dados e uso de modelos para ganho de eficiência.',
+        skills: ['Fundamentos de IA', 'Análise de Dados', 'Automações Inteligentes', 'Aplicações Práticas'],
+        projects: ['Experimentos de IA aplicados a produtos', 'Fluxos automatizados com apoio de modelos'],
+        notes: 'download/Historico-EBAC-InteligenciaArtificial.pdf'
+      }
+    };
 
+    const detailsModal = document.getElementById('detailsModal');
+    const closeDetailsModal = document.getElementById('closeDetailsModal');
+    const detailsModalTitle = document.getElementById('detailsModalTitle');
+    const detailsDescription = document.getElementById('detailsDescription');
+    const detailsSkills = document.getElementById('detailsSkills');
+    const detailsProjects = document.getElementById('detailsProjects');
+    const detailsNotesLink = document.getElementById('detailsNotesLink');
+    const viewDetailButtons = document.querySelectorAll('.view-detail-btn');
+
+    function toggleDetailsModal(show) {
+      detailsModal.classList.toggle('show', show);
+      detailsModal.setAttribute('aria-hidden', String(!show));
+      document.body.style.overflow = show ? 'hidden' : '';
+    }
+
+    function openDetailsById(id) {
+      const detail = detailData[id];
+      if (!detail) return;
+
+      detailsModalTitle.textContent = detail.title;
+      detailsDescription.textContent = detail.description;
+      detailsSkills.innerHTML = '';
+      detailsProjects.innerHTML = '';
+
+      detail.skills.forEach((item) => {
+        const chip = document.createElement('span');
+        chip.textContent = item;
+        detailsSkills.appendChild(chip);
+      });
+
+      detail.projects.forEach((item) => {
+        const chip = document.createElement('span');
+        chip.textContent = item;
+        detailsProjects.appendChild(chip);
+      });
+
+      detailsNotesLink.href = detail.notes;
+      toggleDetailsModal(true);
+    }
+
+    viewDetailButtons.forEach((btn) => {
+      btn.addEventListener('click', () => openDetailsById(btn.dataset.detailId));
+    });
+
+    closeDetailsModal.addEventListener('click', () => toggleDetailsModal(false));
+    detailsModal.addEventListener('click', (event) => {
+      if (event.target === detailsModal) toggleDetailsModal(false);
+    });
 
     const formacaoSearch = document.getElementById('formacaoSearch');
-    const formacaoTipo = document.getElementById('formacaoTipo');
+    const formacaoInstituicao = document.getElementById('formacaoInstituicao');
     const formacaoStatus = document.getElementById('formacaoStatus');
     const formacaoAno = document.getElementById('formacaoAno');
     const formacaoCards = document.querySelectorAll('#formacoesGrid .formacao-card');
@@ -1931,19 +2180,17 @@
 
     function applyFormacoesFilters() {
       const term = (formacaoSearch?.value || '').toLowerCase().trim();
-      const tipo = formacaoTipo?.value || 'all';
+      const instituicao = formacaoInstituicao?.value || 'all';
       const status = formacaoStatus?.value || 'all';
       const ano = formacaoAno?.value || 'all';
-
       let visibleCount = 0;
 
       formacaoCards.forEach((card) => {
         const matchesTerm = !term || card.dataset.keywords.includes(term) || card.textContent.toLowerCase().includes(term);
-        const matchesTipo = tipo === 'all' || card.dataset.tipo === tipo;
+        const matchesInstituicao = instituicao === 'all' || card.dataset.instituicao === instituicao;
         const matchesStatus = status === 'all' || card.dataset.status === status;
         const matchesAno = ano === 'all' || card.dataset.ano === ano;
-
-        const show = matchesTerm && matchesTipo && matchesStatus && matchesAno;
+        const show = matchesTerm && matchesInstituicao && matchesStatus && matchesAno;
         card.style.display = show ? '' : 'none';
         if (show) visibleCount += 1;
       });
@@ -1951,13 +2198,48 @@
       formacoesEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
     }
 
-    [formacaoSearch, formacaoTipo, formacaoStatus, formacaoAno].forEach((el) => {
+    [formacaoSearch, formacaoInstituicao, formacaoStatus, formacaoAno].forEach((el) => {
       if (!el) return;
       el.addEventListener('input', applyFormacoesFilters);
       el.addEventListener('change', applyFormacoesFilters);
     });
 
+    const cursoSearch = document.getElementById('cursoSearch');
+    const cursoInstituicao = document.getElementById('cursoInstituicao');
+    const cursoStatus = document.getElementById('cursoStatus');
+    const cursoArea = document.getElementById('cursoArea');
+    const cursoCards = document.querySelectorAll('#cursosGrid .curso-card');
+    const cursosEmpty = document.getElementById('cursosEmpty');
+
+    function applyCursosFilters() {
+      const term = (cursoSearch?.value || '').toLowerCase().trim();
+      const instituicao = cursoInstituicao?.value || 'all';
+      const status = cursoStatus?.value || 'all';
+      const area = cursoArea?.value || 'all';
+      let visibleCount = 0;
+
+      cursoCards.forEach((card) => {
+        const matchesTerm = !term || card.dataset.keywords.includes(term) || card.textContent.toLowerCase().includes(term);
+        const matchesInstituicao = instituicao === 'all' || card.dataset.instituicao === instituicao;
+        const matchesStatus = status === 'all' || card.dataset.status === status;
+        const matchesArea = area === 'all' || card.dataset.area === area;
+        const show = matchesTerm && matchesInstituicao && matchesStatus && matchesArea;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount += 1;
+      });
+
+      cursosEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    [cursoSearch, cursoInstituicao, cursoStatus, cursoArea].forEach((el) => {
+      if (!el) return;
+      el.addEventListener('input', applyCursosFilters);
+      el.addEventListener('change', applyCursosFilters);
+    });
+
     applyFormacoesFilters();
+    applyCursosFilters();
+
 
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.menu-item a[href^="#"]');
