@@ -256,46 +256,152 @@
 
     
 
-    .hero-eyebrow {
-      display: inline-flex;
+    .about-section {
+      width: 100%;
+    }
+
+    .about-header {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #f3f3f0;
-      color: #111;
-      font-weight: 700;
-      font-size: 0.82rem;
-      margin-bottom: 18px;
+      justify-content: flex-start;
+      margin-bottom: 12px;
     }
 
-    .hero-title {
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 1.05;
+    .about-title {
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      line-height: 1.1;
       font-weight: 800;
-      letter-spacing: -0.05em;
-      max-width: 700px;
-      margin-bottom: 16px;
+      letter-spacing: -0.04em;
+      margin: 0;
     }
 
-    .gradient-text {
-      color: #111;
-      -webkit-text-fill-color: initial;
-      background: none;
+    .about-divider {
+      height: 1px;
+      background: rgba(0, 0, 0, 0.14);
+      margin: 12px 0 18px;
     }
 
-    .hero-description {
-      max-width: 760px;
+    .about-preview {
+      max-width: 980px;
       font-size: 1rem;
       color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 26px;
+      line-height: 1.85;
+      margin: 0;
     }
 
-    .hero-actions {
+    .about-more-wrap {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .about-more-btn {
+      background: #111;
+      color: #fff;
+      border: 1px solid #111;
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-weight: 700;
+      transition: .25s ease;
+      box-shadow: none;
+    }
+
+    .about-more-btn:hover {
+      transform: translateY(-3px);
+      background: #222;
+    }
+
+    .about-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 10, 16, 0.65);
+      backdrop-filter: blur(6px);
+      z-index: 1500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 15%;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .about-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .about-modal-panel {
+      width: 100%;
+      height: calc(100vh - 40px);
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.16);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .about-modal-header {
+      padding: 24px 24px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .about-modal-title {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.2vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .about-modal-close {
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 12px;
+      background: #f2f2ef;
+      color: #111;
+      transition: .25s ease;
+    }
+
+    .about-modal-close:hover {
+      background: #111;
+      color: #fff;
+      transform: rotate(90deg);
+    }
+
+    .about-modal-body {
+      padding: 18px 24px 24px;
+      overflow: auto;
+      color: #2a2a2a;
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .about-modal-body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .about-modal-body::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.18);
+      border-radius: 999px;
+    }
+
+    .about-company-link {
+      color: #0d6efd;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .about-company-link:hover {
+      text-decoration: underline;
     }
 
     .btn-premium,
@@ -831,6 +937,17 @@
       .wa-body {
         max-height: 430px;
       }
+      .about-modal {
+        padding: 10px 14px;
+      }
+      .about-modal-panel {
+        height: calc(100vh - 20px);
+      }
+      .about-modal-header,
+      .about-modal-body {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
     }
   </style>
 </head>
@@ -874,35 +991,16 @@
 
     <main class="content-area">
       <section class="hero-card" id="sobre">
-        <div>
-          <div class="hero-eyebrow">
-            <i class="bi bi-circle-fill"></i>
-            Portfólio minimalista em desenvolvimento
+        <div class="about-section">
+          <div class="about-header">
+            <h2 class="about-title">Sobre Mim</h2>
           </div>
-          <h2 class="hero-title">
-            Criando experiências <span class="gradient-text">minimalistas, elegantes e objetivas</span> para web.
-          </h2>
-          <p class="hero-description">
-            Este layout entrega uma base clean e profissional para o seu portfólio, com sidebar fixa, visual light com detalhes pretos, navegação simples, atalhos flutuantes e um atendimento direto via WhatsApp.
+          <div class="about-divider"></div>
+          <p class="about-preview">
+            Sou Arthur Ferreira, desenvolvedor full stack apaixonado por criar produtos digitais que unem estratégia, performance e uma experiência realmente agradável para quem usa. Atuo no desenvolvimento de interfaces modernas, integração com APIs, organização de fluxos e evolução contínua de sistemas, sempre com atenção à clareza do código, aos detalhes visuais e aos objetivos do projeto. Cada entrega é pensada para gerar valor, confiança e resultado real.
           </p>
-          <div class="hero-actions">
-            <a href="#projetos" class="btn-premium"><i class="bi bi-grid-1x2-fill"></i> Ver Estrutura</a>
-            <a href="#contato" class="btn-outline-premium"><i class="bi bi-chat-dots"></i> Falar Comigo</a>
-          </div>
-
-          <div class="grid-highlight">
-            <div class="highlight-card">
-              <div class="number">01</div>
-              <p>Sidebar fixa com identidade forte, elegante e pronta para navegação do currículo.</p>
-            </div>
-            <div class="highlight-card">
-              <div class="number">02</div>
-              <p>Atendimento via WhatsApp com fluxo conversacional, animação de escrita e respostas inteligentes.</p>
-            </div>
-            <div class="highlight-card">
-              <div class="number">03</div>
-              <p>Botão de currículo com microinteração hover e download direto do PDF.</p>
-            </div>
+          <div class="about-more-wrap">
+            <button class="about-more-btn" id="openAboutModal" type="button">Saber Mais Sobre</button>
           </div>
         </div>
       </section>
@@ -937,6 +1035,31 @@
         <p class="section-description">Aqui podem entrar formulário, CTA para WhatsApp, links sociais, email, disponibilidade e localização.</p>
       </section>
     </main>
+  </div>
+
+
+  <div class="about-modal" id="aboutModal" aria-hidden="true">
+    <div class="about-modal-panel" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
+      <div class="about-modal-header">
+        <h3 class="about-modal-title" id="aboutModalTitle">Sobre Mim</h3>
+        <button class="about-modal-close" id="closeAboutModal" aria-label="Fechar modal sobre mim">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="about-divider"></div>
+      <div class="about-modal-body">
+        <p>
+          Olá, tudo bem? Me chamo Arthur e trabalho na
+          <a class="about-company-link" href="https://www.suaempresa.com.br" target="_blank" rel="noopener noreferrer">
+            NomeDaEmpresa <i class="bi bi-box-arrow-up-right"></i>
+          </a>.
+          Nesse exemplo, atuo na criação de soluções digitais voltadas para performance, experiência do usuário e evolução contínua dos produtos. Participo desde o levantamento de requisitos até a entrega final, cuidando da arquitetura, da implementação e dos ajustes necessários para manter o sistema eficiente.
+        </p>
+        <p>
+          Também colaboro com times de design e negócios para transformar ideias em funcionalidades objetivas, com foco em resultado. Gosto de construir interfaces claras, acessíveis e responsivas, além de integrar serviços externos para automatizar processos e melhorar a produtividade. Sempre busco escrever código limpo, documentado e preparado para crescimento, pensando no longo prazo e na facilidade de manutenção.
+        </p>
+      </div>
+    </div>
   </div>
 
   <div class="floating-actions">
@@ -1241,6 +1364,31 @@
       if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
         sendCustomMessage();
+      }
+    });
+
+    const aboutModal = document.getElementById('aboutModal');
+    const openAboutModalBtn = document.getElementById('openAboutModal');
+    const closeAboutModalBtn = document.getElementById('closeAboutModal');
+
+    function toggleAboutModal(show) {
+      aboutModal.classList.toggle('show', show);
+      aboutModal.setAttribute('aria-hidden', String(!show));
+      document.body.style.overflow = show ? 'hidden' : '';
+    }
+
+    openAboutModalBtn.addEventListener('click', () => toggleAboutModal(true));
+    closeAboutModalBtn.addEventListener('click', () => toggleAboutModal(false));
+
+    aboutModal.addEventListener('click', (event) => {
+      if (event.target === aboutModal) {
+        toggleAboutModal(false);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && aboutModal.classList.contains('show')) {
+        toggleAboutModal(false);
       }
     });
 
