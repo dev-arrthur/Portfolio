@@ -411,18 +411,16 @@
       text-decoration: underline;
     }
 
-    .btn-premium,
-    .btn-outline-premium {
-      background: #fff;
-      color: var(--text);
-      border: 1px solid var(--line);
-      box-shadow: none;
+    .updates-list {
+      display: grid;
+      gap: 10px;
     }
 
-    .btn-premium {
-      background: #111;
-      color: #fff;
-      box-shadow: none;
+    .update-item h5 {
+      margin: 0 0 6px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #1b8f4e;
     }
 
     .btn-outline-premium {
@@ -1306,6 +1304,199 @@
     .commit-1 { background: #d8d8d8; }
     .commit-2 { background: #888888; }
     .commit-3 { background: #111111; }
+
+
+    .exp-timeline {
+      margin-top: 14px;
+      display: grid;
+      gap: 16px;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: rgba(0,0,0,0.12);
+    }
+
+    .exp-item {
+      position: relative;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -18px;
+      top: 18px;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 2px solid #111;
+    }
+
+    .exp-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .exp-role {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .exp-meta-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .exp-date {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #444;
+      white-space: nowrap;
+    }
+
+    .exp-company-line,
+    .exp-description {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .exp-project-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .exp-project-badges span {
+      font-size: 0.76rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #f6f6f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-weight: 600;
+      color: #2b2b2b;
+    }
+
+    .exp-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1750;
+      background: rgba(8,10,16,0.72);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 10%;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .exp-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .exp-modal-panel {
+      width: 100%;
+      height: calc(100vh - 32px);
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .exp-modal-head {
+      padding: 16px 18px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .exp-modal-title {
+      margin: 0;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      font-weight: 800;
+    }
+
+    .exp-modal-close {
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 10px;
+      background: #f2f2ef;
+      color: #111;
+    }
+
+    .exp-modal-content {
+      padding: 12px 18px 20px;
+      overflow: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .exp-modal-content p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .exp-project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .exp-project-card {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .exp-project-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #efefeb;
+    }
+
+    .exp-project-card h5 {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .exp-project-card p {
+      margin: 0;
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
     .section-card {
       margin-top: 24px;
       background: rgba(255,255,255,0.94);
@@ -1840,6 +2031,20 @@
       .project-carousel-main {
         height: 220px;
       }
+      .exp-modal {
+        padding: 10px 12px;
+      }
+      .exp-modal-panel {
+        height: calc(100vh - 20px);
+      }
+      .exp-modal-head,
+      .exp-modal-content {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+      .exp-project-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -2189,9 +2394,10 @@
         <div class="formacoes-empty" id="projectsEmpty">Nenhum projeto encontrado para os filtros aplicados.</div>
       </section>
 
-      <section class="section-card" id="experiencia">
-        <h3 class="section-title"><i class="bi bi-briefcase"></i> Preview da área de Experiência</h3>
-        <p class="section-description">Você pode usar uma timeline com cargos, responsabilidades, tecnologias usadas e resultados entregues.</p>
+            <section class="section-card" id="experiencia">
+        <h3 class="section-title"><i class="bi bi-briefcase"></i> Experiências</h3>
+        <p class="section-description">Linha do tempo profissional com visão rápida de cargo, empresa e principais resultados.</p>
+        <div class="exp-timeline" id="expTimeline"></div>
       </section>
 
       <section class="section-card" id="contato">
@@ -2311,6 +2517,27 @@
         <div class="about-divider"></div>
         <div>
           <a class="details-notes-link" id="projectVisitLink" href="#" target="_blank" rel="noopener noreferrer">Visualizar Página <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="exp-modal" id="expModal" aria-hidden="true">
+    <div class="exp-modal-panel" role="dialog" aria-modal="true" aria-labelledby="expModalTitle">
+      <div class="exp-modal-head">
+        <h3 class="exp-modal-title" id="expModalTitle">Experiência</h3>
+        <button class="exp-modal-close" id="closeExpModal" aria-label="Fechar detalhes da experiência">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="about-divider"></div>
+      <div class="exp-modal-content">
+        <p id="expModalDescription"></p>
+        <div class="about-divider"></div>
+        <div>
+          <h4>Projetos</h4>
+          <div class="exp-project-grid" id="expModalProjects"></div>
         </div>
       </div>
     </div>
@@ -2661,6 +2888,9 @@
       if (event.key === 'Escape' && projectDetailModal.classList.contains('show')) {
         toggleProjectDetailModal(false);
       }
+      if (event.key === 'Escape' && expModal.classList.contains('show')) {
+        toggleExpModal(false);
+      }
     });
 
     const detailData = {
@@ -2808,6 +3038,130 @@
 
 
 
+
+
+    const experiencesData = [
+      {
+        id: 'exp-estagio-dev',
+        role: 'Estagiário em Desenvolvimento de Sistemas',
+        date: '2023 - 2024',
+        company: 'Empresa de Soluções Digitais',
+        locationWork: 'Belo Horizonte • Híbrido',
+        shortDescription: 'Atuação com desenvolvimento de sistemas e páginas, suporte técnico e participação em reuniões de onboarding para mapear dores de clientes.',
+        fullDescription: 'Durante essa experiência, atuei no desenvolvimento e manutenção de sistemas web, criação de páginas e suporte técnico para clientes. Também participei ativamente de reuniões de onboarding, entendendo necessidades, mapeando processos e propondo melhorias com foco em usabilidade e eficiência operacional.',
+        projects: ['expocrm-social']
+      },
+      {
+        id: 'exp-lowcode',
+        role: 'Desenvolvedor Low-Code',
+        date: '2024 - 2025',
+        company: 'Empresa de Soluções Digitais',
+        locationWork: 'Belo Horizonte • Presencial',
+        shortDescription: 'Participação em projetos de grande visibilidade para Natura e RedeMG Farma, além da criação de CRM para ONG de ajuda animal.',
+        fullDescription: 'Como Desenvolvedor Low-Code, participei de projetos relevantes para grandes marcas, com foco em entrega rápida e qualidade visual. Trabalhei na construção de soluções com alto impacto de negócio e também no desenvolvimento de um CRM social com ExpoCRM para apoiar uma ONG no controle de atendimentos e processos internos.',
+        projects: ['thynkbarber', 'expocrm-social']
+      },
+      {
+        id: 'exp-contabilidade',
+        role: 'Desenvolvedor de Sistemas Internos',
+        date: '2025 - Atual',
+        company: 'Empresa de Contabilidade',
+        locationWork: 'Remoto • Full-time',
+        shortDescription: 'Desenvolvimento de agenda, chamados, educação interna, chat corporativo e automações de e-mail para mais de 100 empresas.',
+        fullDescription: 'Na atuação atual, contribuo no ajuste e criação de sistemas internos para diferentes setores da empresa. Desenvolvi soluções de agenda e chamados, uma plataforma de educação interna, chat corporativo e automações de e-mail em massa para mais de 100 empresas por envio, sempre focando em produtividade, padronização e escalabilidade.',
+        projects: ['thynkworking', 'thynkbarber']
+      }
+    ];
+
+    const expTimeline = document.getElementById('expTimeline');
+    const expModal = document.getElementById('expModal');
+    const closeExpModal = document.getElementById('closeExpModal');
+    const expModalTitle = document.getElementById('expModalTitle');
+    const expModalDescription = document.getElementById('expModalDescription');
+    const expModalProjects = document.getElementById('expModalProjects');
+
+    function toggleExpModal(show) {
+      expModal.classList.toggle('show', show);
+      expModal.setAttribute('aria-hidden', String(!show));
+      document.body.style.overflow = show ? 'hidden' : '';
+    }
+
+    function getProjectCardFromId(projectId) {
+      const p = projectData[projectId];
+      if (!p) return null;
+      return {
+        id: projectId,
+        name: p.name,
+        image: p.images?.[0] || 'https://via.placeholder.com/900x500.png?text=Projeto',
+        about: p.about,
+        link: p.link
+      };
+    }
+
+    function openExperienceModal(expId) {
+      const exp = experiencesData.find((item) => item.id === expId);
+      if (!exp) return;
+
+      expModalTitle.textContent = `${exp.role} - ${exp.company}`;
+      expModalDescription.textContent = exp.fullDescription;
+      expModalProjects.innerHTML = '';
+
+      exp.projects
+        .map(getProjectCardFromId)
+        .filter(Boolean)
+        .forEach((project) => {
+          const card = document.createElement('article');
+          card.className = 'exp-project-card';
+          card.innerHTML = `
+            <img src="${project.image}" alt="${project.name}">
+            <h5>${project.name}</h5>
+            <p>${project.about}</p>
+            <a class="project-btn" href="${project.link}" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+          `;
+          expModalProjects.appendChild(card);
+        });
+
+      toggleExpModal(true);
+    }
+
+    function renderExperiencesTimeline() {
+      expTimeline.innerHTML = '';
+
+      experiencesData.forEach((exp) => {
+        const projectNames = exp.projects
+          .map((projectId) => projectData[projectId]?.name)
+          .filter(Boolean)
+          .slice(0, 3);
+
+        const article = document.createElement('article');
+        article.className = 'exp-item';
+        article.innerHTML = `
+          <div class="exp-head">
+            <h4 class="exp-role">${exp.role}</h4>
+            <div class="exp-meta-wrap">
+              <span class="exp-date">${exp.date}</span>
+              <button class="view-detail-btn" type="button" data-exp-id="${exp.id}" aria-label="Ver detalhes da experiência">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+          </div>
+          <p class="exp-company-line">${exp.company} | ${exp.locationWork}</p>
+          <p class="exp-description">${exp.shortDescription}</p>
+          <div class="exp-project-badges">${projectNames.map((name) => `<span>${name}</span>`).join('')}</div>
+        `;
+        expTimeline.appendChild(article);
+      });
+
+      expTimeline.querySelectorAll('[data-exp-id]').forEach((btn) => {
+        btn.addEventListener('click', () => openExperienceModal(btn.dataset.expId));
+      });
+    }
+
+    closeExpModal.addEventListener('click', () => toggleExpModal(false));
+    expModal.addEventListener('click', (event) => {
+      if (event.target === expModal) toggleExpModal(false);
+    });
+
     const projectData = {
       thynkbarber: {
         name: 'thynkBarber',
@@ -2900,6 +3254,8 @@
         link: '#'
       }
     };
+
+    renderExperiencesTimeline();
 
     const projectDetailModal = document.getElementById('projectDetailModal');
     const closeProjectDetailModal = document.getElementById('closeProjectDetailModal');
