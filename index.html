@@ -648,6 +648,141 @@
       font-size: 0.9rem;
       line-height: 1.65;
     }
+
+
+    .about-project-links {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .about-project-link {
+      text-decoration: none;
+      border: 1px solid rgba(0,0,0,0.1);
+      background: #fff;
+      color: #111;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 700;
+      font-size: 0.83rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: .25s ease;
+    }
+
+    .about-project-link:hover {
+      background: #111;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .formacoes-controls {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .form-control-clean,
+    .form-select-clean {
+      width: 100%;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 12px;
+      padding: 11px 12px;
+      font-size: 0.92rem;
+      background: #fff;
+      color: #111;
+      outline: none;
+    }
+
+    .form-control-clean:focus,
+    .form-select-clean:focus {
+      border-color: #111;
+      box-shadow: 0 0 0 3px rgba(17,17,17,0.08);
+    }
+
+    .formacoes-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .formacao-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .formacao-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .formacao-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .formacao-meta {
+      margin: 2px 0 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .formacao-badge {
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.11);
+      background: #f7f7f4;
+      padding: 6px 10px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .formacao-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .formacao-tags span {
+      font-size: 0.76rem;
+      background: #f2f2ef;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-weight: 600;
+      color: #2a2a2a;
+    }
+
+    .formacao-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .formacoes-empty {
+      margin-top: 12px;
+      display: none;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px dashed rgba(0,0,0,0.2);
+      color: var(--muted);
+      font-weight: 600;
+      text-align: center;
+      background: #fbfbf9;
+    }
     .section-card {
       margin-top: 24px;
       background: rgba(255,255,255,0.94);
@@ -1111,7 +1246,9 @@
         padding: 22px;
       }
       .skills-showcase,
-      .skills-extra {
+      .skills-extra,
+      .formacoes-controls,
+      .formacoes-grid {
         grid-template-columns: 1fr;
       }
       .sidebar {
@@ -1198,35 +1335,43 @@
           </div>
           <div class="about-divider"></div>
           <p class="about-preview about-preview-desktop">
-            Sou Arthur Ferreira, desenvolvedor full stack com foco em back-end e na construção de soluções digitais robustas, seguras e escaláveis para diferentes contextos de negócio. Ao longo da minha atuação, participo desde o entendimento do problema até a entrega em produção, estruturando APIs, modelando bancos de dados, organizando regras de negócio e garantindo integração eficiente entre serviços. Também contribuo com observabilidade, melhoria contínua e boas práticas de código, sempre priorizando performance, manutenibilidade e clareza técnica. Minha forma de trabalho combina visão estratégica com execução prática, o que permite transformar necessidades reais em produtos digitais confiáveis, com foco em resultado, experiência do usuário e evolução constante das aplicações e equipes em escala.
+            Me chamo Arthur Ferreira, tenho 19 anos e iniciei minha jornada em tecnologia aos 15, com foco em desenvolvimento de sistemas e soluções capazes de gerar impacto real no mercado. Aos 17 anos comecei meu primeiro estágio, atuando com desenvolvimento de sistemas e páginas, suporte técnico e participação em reuniões de onboarding para entender dores, objetivos e necessidades de cada cliente. Aos 18, fui convidado para atuar como Desenvolvedor Low-Code na mesma empresa, contribuindo em projetos para Natura e RedeMG Farma, além de apoiar a criação de um CRM para ONG de ajuda animal usando ExpoCRM. No fim de 2025, assumi novos desafios em uma equipe voltada para contabilidade, desenvolvendo sistemas internos, automações e produtos digitais escaláveis.
           </p>
           <p class="about-preview about-preview-mobile">
-            Sou Arthur Ferreira, desenvolvedor full stack com foco em criar soluções digitais robustas, performáticas e alinhadas ao objetivo do negócio. Atuo no desenvolvimento de APIs, integrações, modelagem de dados e evolução contínua de sistemas, sempre priorizando organização, clareza técnica e experiência para o usuário final. Trabalho da ideia ao deploy com responsabilidade, visão de produto e foco em resultado consistente, escalável e com qualidade.
+            Me chamo Arthur Ferreira, tenho 19 anos e estou na tecnologia desde os 15. Comecei meu estágio aos 17 com desenvolvimento, suporte e onboarding de clientes. Aos 18, atuei como Desenvolvedor Low-Code em projetos para Natura, RedeMG Farma e CRM para ONG. No fim de 2025, entrei em uma nova equipe para criar sistemas internos, automações e soluções escaláveis em uma empresa de contabilidade, sempre com foco em impacto, inovação e boa experiência.
           </p>
+          <div class="about-project-links">
+            <a class="about-project-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">
+              thynkBarber <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+            <a class="about-project-link" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">
+              thynkWorking <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          </div>
           <div class="about-more-wrap">
             <button class="about-more-btn" id="openAboutModal" type="button">Saber Mais Sobre</button>
           </div>
         </div>
       </section>
-      <section class="section-card" id="skills">
-        <h3 class="section-title"><i class="bi bi-stars"></i> Skills | Exemplo para Desenvolvedor Back-end</h3>
-        <p class="section-description">Modelo de seção para apresentar competências técnicas e comportamentais de forma visual, estratégica e fácil de entender por recrutadores e clientes.</p>
+            <section class="section-card" id="skills">
+        <h3 class="section-title"><i class="bi bi-stars"></i> Skills | Arthur Ferreira</h3>
+        <p class="section-description">Resumo das minhas competências técnicas e comportamentais, com foco em desenvolvimento back-end, integrações, organização de produtos e entrega contínua de soluções.</p>
 
         <div class="skills-showcase">
           <div class="skills-summary">
-            <h4>Visão de Capacidade Técnica</h4>
-            <p>Perfil com foco em APIs, arquitetura de serviços, banco de dados e observabilidade. O gráfico distribui a atuação principal por áreas-chave do back-end, facilitando a leitura rápida do seu posicionamento técnico.</p>
+            <h4>Gráfico Inteligente de Competências</h4>
+            <p>Distribuição proporcional baseada no meu nível por competência para visualização rápida dos pontos mais fortes e áreas em evolução dentro do ecossistema back-end.</p>
 
             <div class="skills-chart-wrap">
-              <div class="skills-chart" aria-label="Distribuição de habilidades de back-end">
-                <span class="skills-chart-label">Back-end<br>Stack</span>
+              <div class="skills-chart" aria-label="Distribuição das competências de Arthur Ferreira" style="background: conic-gradient(#111 0 26%, #3a3a3a 26% 44%, #707070 44% 78%, #b4b4b4 78% 100%);">
+                <span class="skills-chart-label">Skill<br>Map</span>
               </div>
 
               <ul class="skills-chart-legend">
-                <li><span><i class="dot" style="background:#111"></i> APIs & Microsserviços</span> <strong>37%</strong></li>
-                <li><span><i class="dot" style="background:#3a3a3a"></i> Banco de Dados</span> <strong>29%</strong></li>
-                <li><span><i class="dot" style="background:#707070"></i> Cloud & DevOps</span> <strong>20%</strong></li>
-                <li><span><i class="dot" style="background:#b4b4b4"></i> Segurança & Testes</span> <strong>14%</strong></li>
+                <li><span><i class="dot" style="background:#111"></i> Back-End</span> <strong>61%</strong></li>
+                <li><span><i class="dot" style="background:#3a3a3a"></i> Banco de Dados</span> <strong>42%</strong></li>
+                <li><span><i class="dot" style="background:#707070"></i> Observabilidade</span> <strong>78%</strong></li>
+                <li><span><i class="dot" style="background:#b4b4b4"></i> APIs & Integrações</span> <strong>51%</strong></li>
               </ul>
             </div>
           </div>
@@ -1235,42 +1380,47 @@
             <div>
               <h4>Hard Skills</h4>
               <div class="skills-tags">
-                <span class="skills-tag">Node.js</span>
-                <span class="skills-tag">TypeScript</span>
-                <span class="skills-tag">Java + Spring</span>
-                <span class="skills-tag">Python</span>
-                <span class="skills-tag">REST / GraphQL</span>
-                <span class="skills-tag">PostgreSQL</span>
-                <span class="skills-tag">Redis</span>
-                <span class="skills-tag">Docker</span>
+                <span class="skills-tag">NodeJS</span>
+                <span class="skills-tag">MongoDB</span>
+                <span class="skills-tag">AWS</span>
+                <span class="skills-tag">JavaScript</span>
+                <span class="skills-tag">ReactJS</span>
+                <span class="skills-tag">Java</span>
+                <span class="skills-tag">APIs & Integrações</span>
               </div>
             </div>
 
             <div>
               <h4>Soft Skills</h4>
               <div class="skills-tags">
-                <span class="skills-tag">Comunicação Técnica</span>
-                <span class="skills-tag">Pensamento Analítico</span>
+                <span class="skills-tag">Paciência</span>
+                <span class="skills-tag">Trabalho sob Pressão</span>
+                <span class="skills-tag">Comunicativo</span>
+                <span class="skills-tag">Analítico</span>
                 <span class="skills-tag">Trabalho em Equipe</span>
                 <span class="skills-tag">Gestão de Prioridades</span>
-                <span class="skills-tag">Resolução de Problemas</span>
+                <span class="skills-tag">Organização</span>
               </div>
             </div>
 
             <div>
-              <h4>Nível por Competência (exemplo)</h4>
+              <h4>Nível por Competência</h4>
               <div class="skills-bars">
                 <div class="skill-bar-item">
-                  <div class="skill-bar-head"><span>Arquitetura de APIs</span><span>92%</span></div>
-                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div>
+                  <div class="skill-bar-head"><span>Back-End</span><span>61%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:61%"></div></div>
                 </div>
                 <div class="skill-bar-item">
-                  <div class="skill-bar-head"><span>Modelagem de Dados</span><span>88%</span></div>
-                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div>
+                  <div class="skill-bar-head"><span>Banco de Dados</span><span>42%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:42%"></div></div>
                 </div>
                 <div class="skill-bar-item">
-                  <div class="skill-bar-head"><span>Observabilidade</span><span>80%</span></div>
-                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
+                  <div class="skill-bar-head"><span>Observabilidade</span><span>78%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:78%"></div></div>
+                </div>
+                <div class="skill-bar-item">
+                  <div class="skill-bar-head"><span>APIs & Integrações</span><span>51%</span></div>
+                  <div class="skill-bar-track"><div class="skill-bar-fill" style="width:51%"></div></div>
                 </div>
               </div>
             </div>
@@ -1284,7 +1434,7 @@
           </article>
           <article class="skills-extra-card">
             <h4>Ferramentas</h4>
-            <p>GitHub Actions, Postman, Swagger/OpenAPI, CI/CD e monitoramento com foco em estabilidade e entrega segura.</p>
+            <p>GitHub, MongoDB, Swagger/OpenAPI e monitoramento com foco em estabilidade e entrega segura.</p>
           </article>
           <article class="skills-extra-card">
             <h4>Diferencial</h4>
@@ -1293,9 +1443,107 @@
         </div>
       </section>
 
-      <section class="section-card" id="formacoes">
-        <h3 class="section-title"><i class="bi bi-mortarboard"></i> Preview da área de Formações</h3>
-        <p class="section-description">Esse espaço pode receber sua formação acadêmica, certificações, cronologia educacional e destaques estratégicos da sua carreira.</p>
+            <section class="section-card" id="formacoes">
+        <h3 class="section-title"><i class="bi bi-mortarboard"></i> Formações & Capacitações</h3>
+        <p class="section-description">Seção completa para apresentar trajetória de formação, cursos e experiências de aprendizado contínuo com filtros para facilitar a consulta por recrutadores e clientes.</p>
+
+        <div class="formacoes-controls">
+          <input class="form-control-clean" id="formacaoSearch" type="text" placeholder="Pesquisar por formação, tema ou tecnologia...">
+          <select class="form-select-clean" id="formacaoTipo">
+            <option value="all">Todos os tipos</option>
+            <option value="academica">Acadêmica</option>
+            <option value="curso">Curso</option>
+            <option value="experiencia">Experiência</option>
+          </select>
+          <select class="form-select-clean" id="formacaoStatus">
+            <option value="all">Todos os status</option>
+            <option value="concluido">Concluído</option>
+            <option value="andamento">Em andamento</option>
+          </select>
+          <select class="form-select-clean" id="formacaoAno">
+            <option value="all">Todos os anos</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+          </select>
+        </div>
+
+        <div class="formacoes-grid" id="formacoesGrid">
+          <article class="formacao-card" data-tipo="experiencia" data-status="concluido" data-ano="2025" data-keywords="estágio desenvolvimento sistemas páginas suporte onboarding clientes">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Estágio em Desenvolvimento de Sistemas</h4>
+                <p class="formacao-meta">Primeira experiência profissional em tecnologia</p>
+              </div>
+              <span class="formacao-badge">Concluído</span>
+            </div>
+            <div class="formacao-tags"><span>Onboarding</span><span>Suporte Técnico</span><span>Desenvolvimento Web</span></div>
+            <p class="formacao-desc">Atuação prática com desenvolvimento de sistemas e páginas, suporte técnico ao cliente e entendimento de processos de negócio.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="experiencia" data-status="concluido" data-ano="2025" data-keywords="low-code natura redemg farma crm ong expocrm">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Desenvolvedor Low-Code</h4>
+                <p class="formacao-meta">Projetos reais para grandes marcas e terceiro setor</p>
+              </div>
+              <span class="formacao-badge">Concluído</span>
+            </div>
+            <div class="formacao-tags"><span>Low-Code</span><span>Natura</span><span>RedeMG Farma</span><span>ExpoCRM</span></div>
+            <p class="formacao-desc">Participação no desenvolvimento de soluções web e CRM para ONG, com foco em entrega de valor e organização de processos.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="experiencia" data-status="andamento" data-ano="2026" data-keywords="contabilidade chamados agenda educação interna chat automação emails">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Sistemas Internos para Empresa de Contabilidade</h4>
+                <p class="formacao-meta">Projetos internos e automações de alto impacto</p>
+              </div>
+              <span class="formacao-badge">Em andamento</span>
+            </div>
+            <div class="formacao-tags"><span>Chamados</span><span>Agenda</span><span>Chat Interno</span><span>Automação de E-mails</span></div>
+            <p class="formacao-desc">Criação de produtos internos, plataforma de educação corporativa e automações para envios em massa para mais de 100 empresas.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="curso" data-status="andamento" data-ano="2026" data-keywords="nodejs reactjs java aws mongodb apis integrações observabilidade">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Trilha Contínua de Back-end & Cloud</h4>
+                <p class="formacao-meta">Aprimoramento técnico com foco em mercado</p>
+              </div>
+              <span class="formacao-badge">Em andamento</span>
+            </div>
+            <div class="formacao-tags"><span>NodeJS</span><span>AWS</span><span>MongoDB</span><span>APIs</span></div>
+            <p class="formacao-desc">Evolução contínua por meio de cursos, projetos práticos e laboratório pessoal para aprofundar arquitetura e integrações.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="curso" data-status="concluido" data-ano="2024" data-keywords="javascript react desenvolvimento web interfaces ux">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Formação em Desenvolvimento Web Moderno</h4>
+                <p class="formacao-meta">Base sólida para front-end e integração com back-end</p>
+              </div>
+              <span class="formacao-badge">Concluído</span>
+            </div>
+            <div class="formacao-tags"><span>JavaScript</span><span>ReactJS</span><span>UI</span><span>Integrações</span></div>
+            <p class="formacao-desc">Estruturação de interfaces, consumo de APIs e práticas para construir aplicações performáticas e responsivas.</p>
+          </article>
+
+          <article class="formacao-card" data-tipo="academica" data-status="andamento" data-ano="2026" data-keywords="tecnologia sistemas análise desenvolvimento software">
+            <div class="formacao-head">
+              <div>
+                <h4 class="formacao-title">Formação Acadêmica em Tecnologia (em evolução)</h4>
+                <p class="formacao-meta">Construção contínua de fundamentos e visão sistêmica</p>
+              </div>
+              <span class="formacao-badge">Em andamento</span>
+            </div>
+            <div class="formacao-tags"><span>Engenharia de Software</span><span>Análise</span><span>Projeto</span></div>
+            <p class="formacao-desc">Aprofundamento em fundamentos de tecnologia, modelagem de soluções e tomada de decisão técnica com foco em escala.</p>
+          </article>
+        </div>
+
+        <div class="formacoes-empty" id="formacoesEmpty">Nenhuma formação encontrada para os filtros aplicados.</div>
       </section>
 
       <section class="section-card" id="cursos">
@@ -1331,15 +1579,12 @@
       </div>
       <div class="about-divider"></div>
       <div class="about-modal-body">
-        <p>
-          Olá, tudo bem? Me chamo Arthur e trabalho na
-          <a class="about-company-link" href="https://www.suaempresa.com.br" target="_blank" rel="noopener noreferrer">
-            NomeDaEmpresa <i class="bi bi-box-arrow-up-right"></i>
-          </a>.
-          Nesse exemplo, atuo na criação de soluções digitais voltadas para performance, experiência do usuário e evolução contínua dos produtos. Participo desde o levantamento de requisitos até a entrega final, cuidando da arquitetura, da implementação e dos ajustes necessários para manter o sistema eficiente.
-        </p>
-        <p>
-          Também colaboro com times de design e negócios para transformar ideias em funcionalidades objetivas, com foco em resultado. Gosto de construir interfaces claras, acessíveis e responsivas, além de integrar serviços externos para automatizar processos e melhorar a produtividade. Sempre busco escrever código limpo, documentado e preparado para crescimento, pensando no longo prazo e na facilidade de manutenção.
+        <p>Olá, tudo bem? Me chamo Arthur Ferreira, tenho 19 anos e estou na área de tecnologia desde os 15, sempre com foco em aprender, evoluir e construir soluções digitais que realmente impactem negócios e pessoas. Iniciei minha trajetória profissional aos 17 anos, no meu primeiro estágio, onde atuei com desenvolvimento de sistemas e páginas, suporte técnico ao cliente e participação em reuniões para onboarding de projetos, entendendo processos, dores e oportunidades de melhoria.</p>
+        <p>Aos 18 anos fui convidado para atuar como Desenvolvedor Low-Code na mesma empresa, ampliando minha participação em projetos estratégicos como sites para Natura e RedeMG Farma. Nesse período, também colaborei na criação de um CRM para uma ONG de ajuda animal utilizando ExpoCRM, experiência que fortaleceu minha visão de produto, organização de fluxos e entrega orientada a valor.</p>
+        <p>No final de 2025, entrei em uma nova equipe com foco em desafios internos de uma empresa de contabilidade, contribuindo em diversos setores com suporte técnico e desenvolvimento de novos sistemas. Entre as entregas, participei da criação de agenda interna, sistema de chamados, plataforma de educação corporativa, chat interno estilo Teams e automações de e-mail em massa para mais de 100 empresas por vez.</p>
+        <p>Além das atividades profissionais, sigo desenvolvendo projetos autorais e estudando continuamente para evoluir como profissional e pessoa. Entre os projetos em andamento, destaco:
+          <a class="about-company-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">thynkBarber <i class="bi bi-box-arrow-up-right"></i></a>, uma barbearia inteligente com agendamentos, assinaturas e estatísticas internas/externas; e
+          <a class="about-company-link" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">thynkWorking <i class="bi bi-box-arrow-up-right"></i></a>, uma plataforma de vagas tech com IA para conectar profissionais e RHs por meio de vagas e base de currículos qualificados.
         </p>
       </div>
     </div>
@@ -1674,6 +1919,45 @@
         toggleAboutModal(false);
       }
     });
+
+
+
+    const formacaoSearch = document.getElementById('formacaoSearch');
+    const formacaoTipo = document.getElementById('formacaoTipo');
+    const formacaoStatus = document.getElementById('formacaoStatus');
+    const formacaoAno = document.getElementById('formacaoAno');
+    const formacaoCards = document.querySelectorAll('#formacoesGrid .formacao-card');
+    const formacoesEmpty = document.getElementById('formacoesEmpty');
+
+    function applyFormacoesFilters() {
+      const term = (formacaoSearch?.value || '').toLowerCase().trim();
+      const tipo = formacaoTipo?.value || 'all';
+      const status = formacaoStatus?.value || 'all';
+      const ano = formacaoAno?.value || 'all';
+
+      let visibleCount = 0;
+
+      formacaoCards.forEach((card) => {
+        const matchesTerm = !term || card.dataset.keywords.includes(term) || card.textContent.toLowerCase().includes(term);
+        const matchesTipo = tipo === 'all' || card.dataset.tipo === tipo;
+        const matchesStatus = status === 'all' || card.dataset.status === status;
+        const matchesAno = ano === 'all' || card.dataset.ano === ano;
+
+        const show = matchesTerm && matchesTipo && matchesStatus && matchesAno;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount += 1;
+      });
+
+      formacoesEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    [formacaoSearch, formacaoTipo, formacaoStatus, formacaoAno].forEach((el) => {
+      if (!el) return;
+      el.addEventListener('input', applyFormacoesFilters);
+      el.addEventListener('change', applyFormacoesFilters);
+    });
+
+    applyFormacoesFilters();
 
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.menu-item a[href^="#"]');
