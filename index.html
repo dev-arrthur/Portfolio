@@ -411,37 +411,6 @@
       text-decoration: underline;
     }
 
-    .about-more-btn {
-      background: #111;
-      color: #fff;
-      border: 1px solid #111;
-      border-radius: 999px;
-      padding: 12px 22px;
-      font-weight: 700;
-      transition: .25s ease;
-      box-shadow: none;
-    }
-
-    .about-more-btn:hover {
-      transform: translateY(-3px);
-      background: #222;
-    }
-
-    .about-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(8, 10, 16, 0.65);
-      backdrop-filter: blur(6px);
-      z-index: 1500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 15%;
-      opacity: 0;
-      pointer-events: none;
-      transition: .25s ease;
-    }
-
     .about-modal.show {
       opacity: 1;
       pointer-events: auto;
@@ -1654,11 +1623,11 @@
     }
 
     .site-footer {
-      width: 100%;
-      margin: 18px 0 0;
-      padding: 18px 22px;
-      border-top: 1px solid rgba(0,0,0,0.1);
-      background: rgba(255,255,255,0.94);
+      margin: 28px 0 0;
+      padding: 18px 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.92);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -2623,12 +2592,6 @@
       </footer>
     </main>
   </div>
-
-  <footer class="site-footer">
-    <span>© 2026 Arthur Ferreira. Todos os direitos reservados.</span>
-    <span>Desenvolvido com foco em performance, experiência e evolução contínua.</span>
-    <a href="#sobre">Voltar ao topo <i class="bi bi-arrow-up-right"></i></a>
-  </footer>
 
 
   <div class="about-modal" id="aboutModal" aria-hidden="true">
