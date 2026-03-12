@@ -258,6 +258,8 @@
 
     .about-section {
       width: 100%;
+      display: grid;
+      gap: 0;
     }
 
     .about-header {
@@ -282,11 +284,16 @@
     }
 
     .about-preview {
-      max-width: 980px;
+      width: 100%;
       font-size: 1rem;
       color: var(--muted);
       line-height: 1.85;
       margin: 0;
+      text-wrap: pretty;
+    }
+
+    .about-preview-mobile {
+      display: none;
     }
 
     .about-more-wrap {
@@ -1136,6 +1143,12 @@
         padding-left: 16px;
         padding-right: 16px;
       }
+      .about-preview-desktop {
+        display: none;
+      }
+      .about-preview-mobile {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -1184,8 +1197,11 @@
             <h2 class="about-title">Sobre Mim</h2>
           </div>
           <div class="about-divider"></div>
-          <p class="about-preview">
-            Sou Arthur Ferreira, desenvolvedor full stack apaixonado por criar produtos digitais que unem estratégia, performance e uma experiência realmente agradável para quem usa. Atuo no desenvolvimento de interfaces modernas, integração com APIs, organização de fluxos e evolução contínua de sistemas, sempre com atenção à clareza do código, aos detalhes visuais e aos objetivos do projeto. Cada entrega é pensada para gerar valor, confiança e resultado real.
+          <p class="about-preview about-preview-desktop">
+            Sou Arthur Ferreira, desenvolvedor full stack com foco em back-end e na construção de soluções digitais robustas, seguras e escaláveis para diferentes contextos de negócio. Ao longo da minha atuação, participo desde o entendimento do problema até a entrega em produção, estruturando APIs, modelando bancos de dados, organizando regras de negócio e garantindo integração eficiente entre serviços. Também contribuo com observabilidade, melhoria contínua e boas práticas de código, sempre priorizando performance, manutenibilidade e clareza técnica. Minha forma de trabalho combina visão estratégica com execução prática, o que permite transformar necessidades reais em produtos digitais confiáveis, com foco em resultado, experiência do usuário e evolução constante das aplicações e equipes em escala.
+          </p>
+          <p class="about-preview about-preview-mobile">
+            Sou Arthur Ferreira, desenvolvedor full stack com foco em criar soluções digitais robustas, performáticas e alinhadas ao objetivo do negócio. Atuo no desenvolvimento de APIs, integrações, modelagem de dados e evolução contínua de sistemas, sempre priorizando organização, clareza técnica e experiência para o usuário final. Trabalho da ideia ao deploy com responsabilidade, visão de produto e foco em resultado consistente, escalável e com qualidade.
           </p>
           <div class="about-more-wrap">
             <button class="about-more-btn" id="openAboutModal" type="button">Saber Mais Sobre</button>
