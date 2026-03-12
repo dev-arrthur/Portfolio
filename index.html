@@ -926,17 +926,74 @@
 
 
     .projects-controls {
-      margin-top: 14px;
+      margin-top: 18px;
       display: grid;
       grid-template-columns: 1.2fr repeat(2, minmax(0, 1fr)) 1.3fr;
-      gap: 10px;
+      gap: 12px;
+      align-items: stretch;
     }
 
+
+
+    .tech-dropdown {
+      position: relative;
+    }
+
+    .tech-dropdown-trigger {
+      width: 100%;
+      height: 100%;
+      min-height: 44px;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .tech-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 12px;
+      padding: 8px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 12;
+      max-height: 220px;
+      overflow: auto;
+    }
+
+    .tech-dropdown.open .tech-dropdown-menu {
+      display: grid;
+      gap: 6px;
+    }
+
+    .tech-dropdown-menu label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+
+    .tech-dropdown-menu label:hover {
+      background: #f6f6f2;
+    }
     .projects-grid {
-      margin-top: 14px;
+      margin-top: 18px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 16px;
     }
 
     .project-card {
@@ -959,9 +1016,9 @@
     }
 
     .project-body {
-      padding: 12px;
+      padding: 14px;
       display: grid;
-      gap: 8px;
+      gap: 10px;
       flex: 1;
     }
 
@@ -1064,10 +1121,10 @@
     }
 
     .project-detail-content {
-      padding: 12px 18px 20px;
+      padding: 14px 18px 22px;
       overflow: auto;
       display: grid;
-      gap: 12px;
+      gap: 14px;
     }
 
     .project-preview-grid {
@@ -1114,17 +1171,55 @@
       padding: 12px;
       background: #fff;
       display: grid;
+      gap: 10px;
+    }
+
+    .testimonial-card {
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #fafaf8;
+      border-radius: 10px;
+      padding: 10px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .testimonial-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 8px;
     }
 
-    .project-testimonials blockquote {
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .testimonial-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+    }
+
+    .testimonial-stars {
+      color: #d8a500;
+      font-size: 0.75rem;
+    }
+
+    .testimonial-card p {
       margin: 0;
-      padding: 10px;
-      border-left: 3px solid #111;
-      background: #f8f8f5;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.86rem;
-      color: #333;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: #343434;
     }
 
     .updates-commits {
@@ -1156,15 +1251,40 @@
     .commits-board {
       border: 1px solid rgba(0,0,0,0.09);
       border-radius: 12px;
-      padding: 10px;
+      padding: 12px;
       background: #fff;
       display: grid;
+      gap: 10px;
+    }
+
+    .commit-months {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      font-size: 0.72rem;
+      color: #666;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .commit-wrap {
+      display: flex;
       gap: 8px;
+      align-items: flex-start;
+    }
+
+    .commit-weekdays {
+      display: grid;
+      gap: 18px;
+      font-size: 0.67rem;
+      color: #777;
+      padding-top: 2px;
+      min-width: 20px;
     }
 
     .commit-grid {
       display: grid;
-      grid-template-columns: repeat(7, 11px);
+      grid-template-columns: repeat(12, 11px);
+      grid-template-rows: repeat(7, 11px);
       gap: 5px;
       width: fit-content;
     }
@@ -1173,6 +1293,13 @@
       width: 11px;
       height: 11px;
       border-radius: 2px;
+    }
+
+    .commit-legend {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #666;
     }
 
     .commit-0 { background: #ffffff; border: 1px solid rgba(0,0,0,0.15); }
@@ -1991,17 +2118,23 @@
             <option value="webapp">Web App</option>
             <option value="plataforma">Plataforma</option>
           </select>
-          <select class="form-select-clean" id="projectTech" multiple aria-label="Selecionar tecnologias">
-            <option value="nodejs">NodeJS</option>
-            <option value="react">ReactJS</option>
-            <option value="mongodb">MongoDB</option>
-            <option value="aws">AWS</option>
-            <option value="expo">ExpoCRM</option>
-            <option value="ia">IA</option>
-          </select>
+          <div class="tech-dropdown" id="projectTechDropdown">
+            <button class="tech-dropdown-trigger" id="projectTechTrigger" type="button" aria-expanded="false">
+              Tecnologias: <span id="projectTechSummary">Todas</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="tech-dropdown-menu" id="projectTechMenu">
+              <label><input type="checkbox" class="project-tech-check" value="nodejs"> NodeJS</label>
+              <label><input type="checkbox" class="project-tech-check" value="react"> ReactJS</label>
+              <label><input type="checkbox" class="project-tech-check" value="mongodb"> MongoDB</label>
+              <label><input type="checkbox" class="project-tech-check" value="aws"> AWS</label>
+              <label><input type="checkbox" class="project-tech-check" value="expo"> ExpoCRM</label>
+              <label><input type="checkbox" class="project-tech-check" value="ia"> IA</label>
+            </div>
+          </div>
         </div>
 
-        <div class="about-divider"></div>
+        <div class="about-divider" style="margin: 18px 0 2px;"></div>
 
         <div class="projects-grid" id="projectsGrid">
           <article class="project-card" data-status="producao" data-tipo="saas" data-tech="nodejs react mongodb aws" data-keywords="thynkbarber barbearia agendamento assinatura estatisticas">
@@ -2156,8 +2289,21 @@
             <div class="updates-list" id="projectUpdatesList"></div>
             <div class="commits-board">
               <strong>Commits</strong>
-              <div class="commit-grid" id="projectCommitGrid"></div>
-              <small>Branco: 0 • Cinza-claro: 1-3 • Cinza-escuro: 4-5 • Preto: 6+</small>
+              <div class="commit-months" id="projectCommitMonths"></div>
+              <div class="commit-wrap">
+                <div class="commit-weekdays">
+                  <span>Seg</span><span>Qua</span><span>Sex</span>
+                </div>
+                <div class="commit-grid" id="projectCommitGrid"></div>
+              </div>
+              <div class="commit-legend">
+                <small>Menos</small>
+                <span class="commit-cell commit-0"></span>
+                <span class="commit-cell commit-1"></span>
+                <span class="commit-cell commit-2"></span>
+                <span class="commit-cell commit-3"></span>
+                <small>Mais</small>
+              </div>
             </div>
           </div>
         </div>
@@ -2765,12 +2911,16 @@
     const projectAboutDescription = document.getElementById('projectAboutDescription');
     const projectUpdatesList = document.getElementById('projectUpdatesList');
     const projectCommitGrid = document.getElementById('projectCommitGrid');
+    const projectCommitMonths = document.getElementById('projectCommitMonths');
     const projectVisitLink = document.getElementById('projectVisitLink');
 
     const projectSearch = document.getElementById('projectSearch');
     const projectStatus = document.getElementById('projectStatus');
     const projectTipo = document.getElementById('projectTipo');
-    const projectTech = document.getElementById('projectTech');
+    const projectTechDropdown = document.getElementById('projectTechDropdown');
+    const projectTechTrigger = document.getElementById('projectTechTrigger');
+    const projectTechSummary = document.getElementById('projectTechSummary');
+    const projectTechChecks = document.querySelectorAll('.project-tech-check');
     const projectCards = document.querySelectorAll('#projectsGrid .project-card');
     const projectsEmpty = document.getElementById('projectsEmpty');
     const projectButtons = document.querySelectorAll('[data-project-id]');
@@ -2809,10 +2959,24 @@
       renderProjectImage();
 
       projectTestimonials.innerHTML = '<strong>Depoimentos</strong>';
-      project.testimonials.forEach((t) => {
-        const quote = document.createElement('blockquote');
-        quote.textContent = t;
-        projectTestimonials.appendChild(quote);
+      const roles = ['Cliente', 'Gestão', 'Equipe'];
+      project.testimonials.forEach((t, index) => {
+        const card = document.createElement('article');
+        card.className = 'testimonial-card';
+        const text = typeof t === 'string' ? t : t.text;
+        const author = typeof t === 'string' ? `Pessoa ${index + 1}` : t.author;
+        const role = typeof t === 'string' ? roles[index] || 'Usuário' : t.role;
+        card.innerHTML = `
+          <div class="testimonial-head">
+            <div class="testimonial-author">
+              <span class="testimonial-avatar">${author.charAt(0)}</span>
+              <span>${author} • ${role}</span>
+            </div>
+            <span class="testimonial-stars">★★★★★</span>
+          </div>
+          <p>${text}</p>
+        `;
+        projectTestimonials.appendChild(card);
       });
 
       projectAboutDescription.textContent = project.about;
@@ -2825,8 +2989,16 @@
         projectUpdatesList.appendChild(item);
       });
 
+      projectCommitMonths.innerHTML = '';
+      ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'].forEach((m) => {
+        const month = document.createElement('span');
+        month.textContent = m;
+        projectCommitMonths.appendChild(month);
+      });
+
       projectCommitGrid.innerHTML = '';
-      project.commits.forEach((c) => {
+      const normalizedCommits = project.commits.length >= 84 ? project.commits.slice(0, 84) : [...project.commits, ...Array(84 - project.commits.length).fill(0)];
+      normalizedCommits.forEach((c) => {
         const cell = document.createElement('span');
         cell.className = `commit-cell ${getCommitClass(c)}`;
         projectCommitGrid.appendChild(cell);
@@ -2863,7 +3035,7 @@
       const term = (projectSearch?.value || '').toLowerCase().trim();
       const status = projectStatus?.value || 'all';
       const tipo = projectTipo?.value || 'all';
-      const selectedTech = Array.from(projectTech?.selectedOptions || []).map(option => option.value);
+      const selectedTech = Array.from(projectTechChecks).filter((check) => check.checked).map((check) => check.value);
 
       let visibleCount = 0;
 
@@ -2882,10 +3054,30 @@
       projectsEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
     }
 
-    [projectSearch, projectStatus, projectTipo, projectTech].forEach((el) => {
+    [projectSearch, projectStatus, projectTipo].forEach((el) => {
       if (!el) return;
       el.addEventListener('input', applyProjectFilters);
       el.addEventListener('change', applyProjectFilters);
+    });
+
+    projectTechTrigger.addEventListener('click', () => {
+      const isOpen = projectTechDropdown.classList.toggle('open');
+      projectTechTrigger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    projectTechChecks.forEach((check) => {
+      check.addEventListener('change', () => {
+        const selected = Array.from(projectTechChecks).filter((c) => c.checked).map((c) => c.parentElement.textContent.trim());
+        projectTechSummary.textContent = selected.length ? selected.join(', ') : 'Todas';
+        applyProjectFilters();
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!projectTechDropdown.contains(event.target)) {
+        projectTechDropdown.classList.remove('open');
+        projectTechTrigger.setAttribute('aria-expanded', 'false');
+      }
     });
 
     applyProjectFilters();
