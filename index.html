@@ -718,8 +718,10 @@
       border: 1px solid rgba(0,0,0,0.08);
       border-radius: 16px;
       padding: 14px;
+      padding-bottom: 56px;
       display: grid;
       gap: 10px;
+      position: relative;
     }
 
     .formacao-head,
@@ -783,6 +785,9 @@
     }
 
     .card-top-actions {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
       display: flex;
       justify-content: flex-end;
     }
@@ -918,6 +923,262 @@
       font-weight: 700;
     }
 
+
+
+    .projects-controls {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1.2fr repeat(2, minmax(0, 1fr)) 1.3fr;
+      gap: 10px;
+    }
+
+    .projects-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-height: 100%;
+    }
+
+    .project-thumb {
+      width: 100%;
+      height: 165px;
+      object-fit: cover;
+      background: #efefeb;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .project-body {
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .project-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .project-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding-top: 4px;
+    }
+
+    .project-btn {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,0.1);
+      background: #fff;
+      color: #111;
+    }
+
+    .project-btn:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .project-eye-wrap {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 1;
+    }
+
+    .project-detail-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1700;
+      background: rgba(8,10,16,0.72);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 8%;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .project-detail-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .project-detail-panel {
+      width: 100%;
+      height: calc(100vh - 28px);
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-detail-head {
+      padding: 18px 18px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-detail-title {
+      margin: 0;
+      font-size: clamp(1.15rem, 2vw, 1.7rem);
+      font-weight: 800;
+    }
+
+    .project-detail-close {
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 10px;
+      background: #f2f2ef;
+      color: #111;
+    }
+
+    .project-detail-content {
+      padding: 12px 18px 20px;
+      overflow: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .project-preview-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .project-carousel {
+      background: #f7f7f4;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .project-carousel-main {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    .carousel-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.12);
+      background: #fff;
+      color: #111;
+    }
+
+    .project-testimonials {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 12px;
+      background: #fff;
+      display: grid;
+      gap: 8px;
+    }
+
+    .project-testimonials blockquote {
+      margin: 0;
+      padding: 10px;
+      border-left: 3px solid #111;
+      background: #f8f8f5;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.86rem;
+      color: #333;
+    }
+
+    .updates-commits {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .updates-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .update-item h5 {
+      margin: 0 0 6px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #1b8f4e;
+    }
+
+    .update-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .commits-board {
+      border: 1px solid rgba(0,0,0,0.09);
+      border-radius: 12px;
+      padding: 10px;
+      background: #fff;
+      display: grid;
+      gap: 8px;
+    }
+
+    .commit-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 11px);
+      gap: 5px;
+      width: fit-content;
+    }
+
+    .commit-cell {
+      width: 11px;
+      height: 11px;
+      border-radius: 2px;
+    }
+
+    .commit-0 { background: #ffffff; border: 1px solid rgba(0,0,0,0.15); }
+    .commit-1 { background: #d8d8d8; }
+    .commit-2 { background: #888888; }
+    .commit-3 { background: #111111; }
     .section-card {
       margin-top: 24px;
       background: rgba(255,255,255,0.94);
@@ -1385,7 +1646,11 @@
       .formacoes-controls,
       .formacoes-grid,
       .cursos-controls,
-      .cursos-grid {
+      .cursos-grid,
+      .projects-controls,
+      .projects-grid,
+      .project-preview-grid,
+      .updates-commits {
         grid-template-columns: 1fr;
       }
       .sidebar {
@@ -1433,6 +1698,20 @@
       .details-content {
         padding-left: 14px;
         padding-right: 14px;
+      }
+      .project-detail-modal {
+        padding: 10px 12px;
+      }
+      .project-detail-panel {
+        height: calc(100vh - 20px);
+      }
+      .project-detail-head,
+      .project-detail-content {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+      .project-carousel-main {
+        height: 220px;
       }
     }
   </style>
@@ -1695,9 +1974,86 @@
         <div class="cursos-empty" id="cursosEmpty">Nenhum curso encontrado para os filtros aplicados.</div>
       </section>
 
-      <section class="section-card" id="projetos">
-        <h3 class="section-title"><i class="bi bi-kanban"></i> Preview da área de Projetos</h3>
-        <p class="section-description">Perfeito para destacar projetos autorais, cases reais, repositórios, links externos, métricas e screenshots.</p>
+            <section class="section-card" id="projetos">
+        <h3 class="section-title"><i class="bi bi-kanban"></i> Projetos</h3>
+        <p class="section-description">Portfólio de projetos com pesquisa, filtros e visão detalhada por modal.</p>
+
+        <div class="projects-controls">
+          <input class="form-control-clean" id="projectSearch" type="text" placeholder="Pesquisar projeto...">
+          <select class="form-select-clean" id="projectStatus">
+            <option value="all">Todos os status</option>
+            <option value="producao">Em produção</option>
+            <option value="evolucao">Em evolução</option>
+          </select>
+          <select class="form-select-clean" id="projectTipo">
+            <option value="all">Todos os tipos</option>
+            <option value="saas">SaaS</option>
+            <option value="webapp">Web App</option>
+            <option value="plataforma">Plataforma</option>
+          </select>
+          <select class="form-select-clean" id="projectTech" multiple aria-label="Selecionar tecnologias">
+            <option value="nodejs">NodeJS</option>
+            <option value="react">ReactJS</option>
+            <option value="mongodb">MongoDB</option>
+            <option value="aws">AWS</option>
+            <option value="expo">ExpoCRM</option>
+            <option value="ia">IA</option>
+          </select>
+        </div>
+
+        <div class="about-divider"></div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <article class="project-card" data-status="producao" data-tipo="saas" data-tech="nodejs react mongodb aws" data-keywords="thynkbarber barbearia agendamento assinatura estatisticas">
+            <div class="project-eye-wrap">
+              <button class="view-detail-btn" type="button" data-project-id="thynkbarber" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
+            </div>
+            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=thynkBarber" alt="Preview thynkBarber">
+            <div class="project-body">
+              <div class="about-divider"></div>
+              <h4 class="project-title">thynkBarber</h4>
+              <p class="project-desc">Plataforma para gestão de barbearia com agendamentos inteligentes, assinaturas, dashboards e controle interno/externo.</p>
+              <div class="project-actions">
+                <a class="project-btn" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+                <button class="project-btn" type="button" data-project-id="thynkbarber" data-open-tab="testimonials">Depoimentos</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-status="evolucao" data-tipo="plataforma" data-tech="nodejs react mongodb ia" data-keywords="thynkworking vagas tech ia rh curriculos">
+            <div class="project-eye-wrap">
+              <button class="view-detail-btn" type="button" data-project-id="thynkworking" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
+            </div>
+            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=thynkWorking" alt="Preview thynkWorking">
+            <div class="project-body">
+              <div class="about-divider"></div>
+              <h4 class="project-title">thynkWorking</h4>
+              <p class="project-desc">Plataforma de vagas tech com IA para conectar candidatos e RHs por meio de vagas, filtros e base estratégica de currículos.</p>
+              <div class="project-actions">
+                <a class="project-btn" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+                <button class="project-btn" type="button" data-project-id="thynkworking" data-open-tab="testimonials">Depoimentos</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-status="producao" data-tipo="webapp" data-tech="nodejs react expo aws" data-keywords="crm ong expocrm painel atendimento processos">
+            <div class="project-eye-wrap">
+              <button class="view-detail-btn" type="button" data-project-id="expocrm-social" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
+            </div>
+            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=ExpoCRM+Social" alt="Preview ExpoCRM Social">
+            <div class="project-body">
+              <div class="about-divider"></div>
+              <h4 class="project-title">ExpoCRM Social</h4>
+              <p class="project-desc">CRM social para ONG com foco em organização de atendimento, gestão de histórico e melhoria de produtividade operacional.</p>
+              <div class="project-actions">
+                <a class="project-btn" href="#" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+                <button class="project-btn" type="button" data-project-id="expocrm-social" data-open-tab="testimonials">Depoimentos</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="formacoes-empty" id="projectsEmpty">Nenhum projeto encontrado para os filtros aplicados.</div>
       </section>
 
       <section class="section-card" id="experiencia">
@@ -1760,6 +2116,55 @@
           <a class="details-notes-link" id="detailsNotesLink" href="#" target="_blank" rel="noopener noreferrer">
             Notas <i class="bi bi-file-earmark-pdf"></i>
           </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="project-detail-modal" id="projectDetailModal" aria-hidden="true">
+    <div class="project-detail-panel" role="dialog" aria-modal="true" aria-labelledby="projectDetailTitle">
+      <div class="project-detail-head">
+        <h3 class="project-detail-title" id="projectDetailTitle">Projeto</h3>
+        <button class="project-detail-close" id="closeProjectDetailModal" aria-label="Fechar detalhes do projeto">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="about-divider"></div>
+      <div class="project-detail-content">
+        <div class="project-preview-grid">
+          <div class="project-carousel">
+            <img id="projectCarouselImage" class="project-carousel-main" src="" alt="Preview do projeto">
+            <div class="project-carousel-controls">
+              <button class="carousel-btn" id="projectPrevImage" aria-label="Imagem anterior"><i class="bi bi-chevron-left"></i></button>
+              <button class="carousel-btn" id="projectNextImage" aria-label="Próxima imagem"><i class="bi bi-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="project-testimonials" id="projectTestimonials"></div>
+        </div>
+
+        <div class="about-divider"></div>
+        <div>
+          <h4>Sobre o Projeto</h4>
+          <p id="projectAboutDescription"></p>
+        </div>
+
+        <div class="about-divider"></div>
+        <div>
+          <h4>Atualizações & Commits</h4>
+          <div class="updates-commits">
+            <div class="updates-list" id="projectUpdatesList"></div>
+            <div class="commits-board">
+              <strong>Commits</strong>
+              <div class="commit-grid" id="projectCommitGrid"></div>
+              <small>Branco: 0 • Cinza-claro: 1-3 • Cinza-escuro: 4-5 • Preto: 6+</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-divider"></div>
+        <div>
+          <a class="details-notes-link" id="projectVisitLink" href="#" target="_blank" rel="noopener noreferrer">Visualizar Página <i class="bi bi-box-arrow-up-right"></i></a>
         </div>
       </div>
     </div>
@@ -1856,9 +2261,18 @@
     function toggleWhatsapp(show) {
       whatsappBalloon.classList.toggle('show', show);
       openWhatsappBtn.style.display = show ? 'none' : 'grid';
+
       if (show && !chatInitialized) {
         chatInitialized = true;
         startInitialConversation();
+      }
+
+      if (!show) {
+        chatInitialized = false;
+        chatBody.innerHTML = '';
+        customInputWrap.classList.remove('show');
+        customInput.value = '';
+        clearPortalTimeout();
       }
     }
 
@@ -1972,6 +2386,7 @@
     }
 
     async function handleOptionSelection(event) {
+      event.stopPropagation();
       const label = event.currentTarget.dataset.option;
       clearOptionButtons();
       clearPortalTimeout();
@@ -2029,6 +2444,7 @@
         button.textContent = item.label;
         button.dataset.action = item.action;
         button.addEventListener('click', async (e) => {
+          e.stopPropagation();
           clearPortalTimeout();
           container.remove();
           addUserMessage(item.label);
@@ -2095,6 +2511,9 @@
       }
       if (event.key === 'Escape' && detailsModal.classList.contains('show')) {
         toggleDetailsModal(false);
+      }
+      if (event.key === 'Escape' && projectDetailModal.classList.contains('show')) {
+        toggleProjectDetailModal(false);
       }
     });
 
@@ -2240,6 +2659,236 @@
     applyFormacoesFilters();
     applyCursosFilters();
 
+
+
+
+    const projectData = {
+      thynkbarber: {
+        name: 'thynkBarber',
+        images: [
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+01',
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+02',
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+03',
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+04',
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+05',
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+06',
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+07',
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+08',
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+09',
+          'https://via.placeholder.com/1200x700.png?text=thynkBarber+10'
+        ],
+        testimonials: [
+          '“A experiência de agendamento ficou muito mais rápida e organizada.” — Cliente parceiro',
+          '“A visão de assinaturas e recorrência trouxe previsibilidade para o negócio.” — Gestão',
+          '“O painel é claro e ajudou no controle operacional diário.” — Equipe interna'
+        ],
+        about: 'Projeto SaaS para digitalizar operações de barbearias, centralizando agendamentos, assinaturas e métricas de desempenho. O foco foi escalar a operação com usabilidade simples, visão de negócio e automações para reduzir esforço manual.',
+        updates: [
+          { title: 'Dashboard Financeiro', date: '12/03/2026', description: 'Adição de indicadores de receita por período e comparativo com meses anteriores.' },
+          { title: 'Fluxo de Assinaturas', date: '08/03/2026', description: 'Ajustes no ciclo de cobrança e na gestão de recorrência para reduzir falhas de renovação.' },
+          { title: 'Novo Onboarding', date: '02/03/2026', description: 'Melhorias no primeiro acesso para diminuir abandono durante configuração inicial.' },
+          { title: 'Alertas Automáticos', date: '26/02/2026', description: 'Implementação de lembretes automáticos para clientes e equipe operacional.' },
+          { title: 'Refino de Performance', date: '20/02/2026', description: 'Otimizações de consultas e carregamento para reduzir tempo de resposta do painel.' }
+        ],
+        commits: [0,2,4,6,1,0,3,5,0,2,7,1,0,4,3,6,0,1,2,5,0,7,4,2,1,0,3,6],
+        link: 'https://thynkbarber.com'
+      },
+      thynkworking: {
+        name: 'thynkWorking',
+        images: [
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+01',
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+02',
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+03',
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+04',
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+05',
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+06',
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+07',
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+08',
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+09',
+          'https://via.placeholder.com/1200x700.png?text=thynkWorking+10'
+        ],
+        testimonials: [
+          '“Encontramos vagas mais relevantes em menos tempo.” — Dev júnior',
+          '“A triagem ficou muito mais assertiva para o RH.” — Recrutadora parceira',
+          '“A proposta de IA trouxe ganho real na curadoria de perfis.” — Mentor técnico'
+        ],
+        about: 'Plataforma focada em conectar profissionais de tecnologia a oportunidades relevantes, com recursos de IA para melhorar busca, priorização e matching entre vaga e perfil. Evolução contínua com visão de produto e empregabilidade.',
+        updates: [
+          { title: 'Filtro Inteligente de Vagas', date: '10/03/2026', description: 'Aprimoramento do ranking de vagas com critérios por senioridade e stack.' },
+          { title: 'Base de Currículos RH', date: '05/03/2026', description: 'Primeira versão do módulo para RHs consultarem perfis qualificados.' },
+          { title: 'Painel de Tendências', date: '28/02/2026', description: 'Inclusão de dados sobre tecnologias mais pedidas por região e vaga.' },
+          { title: 'Notificações Personalizadas', date: '23/02/2026', description: 'Entrega de alertas com base no interesse e histórico do candidato.' },
+          { title: 'Melhoria no Parser de Vagas', date: '16/02/2026', description: 'Ajustes na coleta e normalização de vagas públicas em diferentes fontes.' }
+        ],
+        commits: [1,0,3,4,6,2,0,5,2,1,0,4,6,3,1,2,0,5,6,2,1,0,3,4,7,1,2,0],
+        link: 'https://thynkworking.com'
+      },
+      'expocrm-social': {
+        name: 'ExpoCRM Social',
+        images: [
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+01',
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+02',
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+03',
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+04',
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+05',
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+06',
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+07',
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+08',
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+09',
+          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+10'
+        ],
+        testimonials: [
+          '“Conseguimos acompanhar atendimentos com mais clareza.” — Coordenação ONG',
+          '“As informações ficaram centralizadas e acessíveis.” — Time administrativo',
+          '“O CRM simplificou nossa rotina de organização.” — Operação interna'
+        ],
+        about: 'Projeto CRM para ONG com objetivo de organizar fluxo de atendimento, histórico de interações e dados essenciais para tomada de decisão social. Estrutura pensada para equipes enxutas e processos de alto volume.',
+        updates: [
+          { title: 'Módulo de Histórico', date: '11/03/2026', description: 'Criação da linha do tempo para registrar eventos e interação por caso.' },
+          { title: 'Permissões por Perfil', date: '06/03/2026', description: 'Definição de níveis de acesso para proteger dados sensíveis da operação.' },
+          { title: 'Painel de Indicadores', date: '01/03/2026', description: 'Visão consolidada de atendimentos concluídos, pendentes e urgentes.' },
+          { title: 'Exportação de Relatórios', date: '24/02/2026', description: 'Entrega de exportação simplificada para acompanhamento institucional.' },
+          { title: 'Refatoração de Fluxo', date: '18/02/2026', description: 'Ajustes no fluxo interno para reduzir cliques e acelerar atendimento.' }
+        ],
+        commits: [0,1,2,4,5,0,3,2,1,6,0,4,3,2,1,0,5,6,2,1,3,0,4,2,1,0,6,5],
+        link: '#'
+      }
+    };
+
+    const projectDetailModal = document.getElementById('projectDetailModal');
+    const closeProjectDetailModal = document.getElementById('closeProjectDetailModal');
+    const projectDetailTitle = document.getElementById('projectDetailTitle');
+    const projectCarouselImage = document.getElementById('projectCarouselImage');
+    const projectPrevImage = document.getElementById('projectPrevImage');
+    const projectNextImage = document.getElementById('projectNextImage');
+    const projectTestimonials = document.getElementById('projectTestimonials');
+    const projectAboutDescription = document.getElementById('projectAboutDescription');
+    const projectUpdatesList = document.getElementById('projectUpdatesList');
+    const projectCommitGrid = document.getElementById('projectCommitGrid');
+    const projectVisitLink = document.getElementById('projectVisitLink');
+
+    const projectSearch = document.getElementById('projectSearch');
+    const projectStatus = document.getElementById('projectStatus');
+    const projectTipo = document.getElementById('projectTipo');
+    const projectTech = document.getElementById('projectTech');
+    const projectCards = document.querySelectorAll('#projectsGrid .project-card');
+    const projectsEmpty = document.getElementById('projectsEmpty');
+    const projectButtons = document.querySelectorAll('[data-project-id]');
+
+    let currentProjectId = null;
+    let currentProjectImageIndex = 0;
+
+    function toggleProjectDetailModal(show) {
+      projectDetailModal.classList.toggle('show', show);
+      projectDetailModal.setAttribute('aria-hidden', String(!show));
+      document.body.style.overflow = show ? 'hidden' : '';
+    }
+
+    function getCommitClass(value) {
+      if (value === 0) return 'commit-0';
+      if (value <= 3) return 'commit-1';
+      if (value <= 5) return 'commit-2';
+      return 'commit-3';
+    }
+
+    function renderProjectImage() {
+      const project = projectData[currentProjectId];
+      if (!project) return;
+      projectCarouselImage.src = project.images[currentProjectImageIndex];
+      projectCarouselImage.alt = `Preview ${project.name} ${currentProjectImageIndex + 1}`;
+    }
+
+    function openProjectDetails(projectId) {
+      const project = projectData[projectId];
+      if (!project) return;
+
+      currentProjectId = projectId;
+      currentProjectImageIndex = 0;
+
+      projectDetailTitle.textContent = project.name;
+      renderProjectImage();
+
+      projectTestimonials.innerHTML = '<strong>Depoimentos</strong>';
+      project.testimonials.forEach((t) => {
+        const quote = document.createElement('blockquote');
+        quote.textContent = t;
+        projectTestimonials.appendChild(quote);
+      });
+
+      projectAboutDescription.textContent = project.about;
+
+      projectUpdatesList.innerHTML = '';
+      project.updates.forEach((u, index) => {
+        const item = document.createElement('div');
+        item.className = 'update-item';
+        item.innerHTML = `<h5>${u.title} - ${u.date}</h5><p>${u.description}</p>${index < project.updates.length - 1 ? '<div class="about-divider"></div>' : ''}`;
+        projectUpdatesList.appendChild(item);
+      });
+
+      projectCommitGrid.innerHTML = '';
+      project.commits.forEach((c) => {
+        const cell = document.createElement('span');
+        cell.className = `commit-cell ${getCommitClass(c)}`;
+        projectCommitGrid.appendChild(cell);
+      });
+
+      projectVisitLink.href = project.link;
+      toggleProjectDetailModal(true);
+    }
+
+    projectPrevImage.addEventListener('click', () => {
+      const project = projectData[currentProjectId];
+      if (!project) return;
+      currentProjectImageIndex = (currentProjectImageIndex - 1 + project.images.length) % project.images.length;
+      renderProjectImage();
+    });
+
+    projectNextImage.addEventListener('click', () => {
+      const project = projectData[currentProjectId];
+      if (!project) return;
+      currentProjectImageIndex = (currentProjectImageIndex + 1) % project.images.length;
+      renderProjectImage();
+    });
+
+    projectButtons.forEach((btn) => {
+      btn.addEventListener('click', () => openProjectDetails(btn.dataset.projectId));
+    });
+
+    closeProjectDetailModal.addEventListener('click', () => toggleProjectDetailModal(false));
+    projectDetailModal.addEventListener('click', (event) => {
+      if (event.target === projectDetailModal) toggleProjectDetailModal(false);
+    });
+
+    function applyProjectFilters() {
+      const term = (projectSearch?.value || '').toLowerCase().trim();
+      const status = projectStatus?.value || 'all';
+      const tipo = projectTipo?.value || 'all';
+      const selectedTech = Array.from(projectTech?.selectedOptions || []).map(option => option.value);
+
+      let visibleCount = 0;
+
+      projectCards.forEach((card) => {
+        const cardTech = card.dataset.tech.split(' ');
+        const matchesTerm = !term || card.dataset.keywords.includes(term) || card.textContent.toLowerCase().includes(term);
+        const matchesStatus = status === 'all' || card.dataset.status === status;
+        const matchesTipo = tipo === 'all' || card.dataset.tipo === tipo;
+        const matchesTech = selectedTech.length === 0 || selectedTech.every((tech) => cardTech.includes(tech));
+
+        const show = matchesTerm && matchesStatus && matchesTipo && matchesTech;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount += 1;
+      });
+
+      projectsEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    [projectSearch, projectStatus, projectTipo, projectTech].forEach((el) => {
+      if (!el) return;
+      el.addEventListener('input', applyProjectFilters);
+      el.addEventListener('change', applyProjectFilters);
+    });
+
+    applyProjectFilters();
 
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.menu-item a[href^="#"]');
