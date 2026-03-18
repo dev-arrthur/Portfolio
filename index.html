@@ -411,82 +411,18 @@
       text-decoration: underline;
     }
 
-    .about-modal.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .about-modal-panel {
-      width: 100%;
-      height: calc(100vh - 40px);
+    .btn-premium,
+    .btn-outline-premium {
       background: #fff;
-      border-radius: 20px;
-      border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.16);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+      color: var(--text);
+      border: 1px solid var(--line);
+      box-shadow: none;
     }
 
-    .about-modal-header {
-      padding: 24px 24px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .about-modal-title {
-      margin: 0;
-      font-size: clamp(1.4rem, 2.2vw, 2rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .about-modal-close {
-      width: 42px;
-      height: 42px;
-      border: none;
-      border-radius: 12px;
-      background: #f2f2ef;
-      color: #111;
-      transition: .25s ease;
-    }
-
-    .about-modal-close:hover {
+    .btn-premium {
       background: #111;
       color: #fff;
-      transform: rotate(90deg);
-    }
-
-    .about-modal-body {
-      padding: 18px 24px 24px;
-      overflow: auto;
-      color: #2a2a2a;
-      line-height: 1.9;
-      font-size: 1rem;
-    }
-
-    .about-modal-body::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .about-modal-body::-webkit-scrollbar-thumb {
-      background: rgba(0,0,0,0.18);
-      border-radius: 999px;
-    }
-
-    .about-company-link {
-      color: #0d6efd;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .about-company-link:hover {
-      text-decoration: underline;
+      box-shadow: none;
     }
 
     .btn-outline-premium {
@@ -2247,10 +2183,10 @@
           </div>
           <div class="about-divider"></div>
           <p class="about-preview about-preview-desktop">
-            Me chamo Arthur Ferreira, tenho 19 anos e iniciei minha jornada em tecnologia aos 15, com foco em desenvolvimento de sistemas e soluções capazes de gerar impacto real no mercado. Aos 17 anos comecei meu primeiro estágio, atuando com desenvolvimento de sistemas e páginas, suporte técnico e participação em reuniões de onboarding para entender dores, objetivos e necessidades de cada cliente. Aos 18, fui convidado para atuar como Desenvolvedor Low-Code na mesma empresa, contribuindo em projetos para Natura e RedeMG Farma, além de apoiar a criação de um CRM para ONG de ajuda animal usando ExpoCRM. No fim de 2025, assumi novos desafios em uma equipe voltada para contabilidade, desenvolvendo sistemas internos, automações e produtos digitais escaláveis.
+            Me chamo Arthur Ferreira, tenho 19 anos e iniciei minha jornada em tecnologia aos 15, com foco em desenvolvimento de sistemas e soluções capazes de gerar impacto real no mercado. Em setembro de 2024 comecei meu primeiro estágio, atuando com desenvolvimento de sistemas e páginas, suporte técnico e participação em reuniões de onboarding para entender dores, objetivos e necessidades de cada cliente. Em 2025, fui convidado para atuar como Auxiliar de Programação e Desenvolvedor Low-Code na mesma empresa, contribuindo em projetos para Natura, RedeMG Farma, Recrie e Envia Bem, além de apoiar a criação de um CRM para ONG de ajuda animal usando ExpoCRM. Em janeiro de 2026, assumi novos desafios presenciais em Juiz de Fora, desenvolvendo sistemas internos, automações e produtos digitais escaláveis.
           </p>
           <p class="about-preview about-preview-mobile">
-            Me chamo Arthur Ferreira, tenho 19 anos e estou na tecnologia desde os 15. Comecei meu estágio aos 17 com desenvolvimento, suporte e onboarding de clientes. Aos 18, atuei como Desenvolvedor Low-Code em projetos para Natura, RedeMG Farma e CRM para ONG. No fim de 2025, entrei em uma nova equipe para criar sistemas internos, automações e soluções escaláveis em uma empresa de contabilidade, sempre com foco em impacto, inovação e boa experiência.
+            Me chamo Arthur Ferreira, tenho 19 anos e estou na tecnologia desde os 15. Iniciei meu estágio em setembro de 2024 com desenvolvimento, suporte e onboarding de clientes. Em 2025, atuei como Auxiliar de Programação em projetos como Natura, RedeMG Farma, Recrie, Envia Bem e CRM para ONG. Desde janeiro de 2026, sigo presencialmente em Juiz de Fora criando sistemas internos, automações e soluções escaláveis.
           </p>
           <div class="about-project-links">
             <a class="about-project-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">
@@ -2495,6 +2431,86 @@
         <div class="about-divider" style="margin: 18px 0 2px;"></div>
 
         <div class="projects-grid" id="projectsGrid">
+          <article class="project-card" data-status="producao" data-tipo="webapp" data-tech="react aws" data-keywords="natura site institucional landing page recriação de páginas recriacao de paginas">
+            <div class="project-eye-wrap">
+              <button class="view-detail-btn" type="button" data-project-id="natura" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
+            </div>
+            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=Natura" alt="Preview Natura">
+            <div class="project-body">
+              <div class="about-divider"></div>
+              <h4 class="project-title">Natura</h4>
+              <p class="project-desc">Projeto focado em presença digital e apresentação institucional, com atenção à clareza visual, branding e experiência do usuário.</p>
+              <div class="project-actions">
+                <a class="project-btn" href="#" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+                <button class="project-btn" type="button" data-project-id="natura" data-open-tab="testimonials">Depoimentos</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-status="producao" data-tipo="webapp" data-tech="react aws" data-keywords="redemg farma farmacia institucional recriação de páginas recriacao de paginas">
+            <div class="project-eye-wrap">
+              <button class="view-detail-btn" type="button" data-project-id="redemg-farma" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
+            </div>
+            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=RedeMG+Farma" alt="Preview RedeMG Farma">
+            <div class="project-body">
+              <div class="about-divider"></div>
+              <h4 class="project-title">RedeMG Farma</h4>
+              <p class="project-desc">Projeto para reforço de presença online e comunicação clara da marca, com foco em navegação objetiva e visual profissional.</p>
+              <div class="project-actions">
+                <a class="project-btn" href="#" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+                <button class="project-btn" type="button" data-project-id="redemg-farma" data-open-tab="testimonials">Depoimentos</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-status="producao" data-tipo="webapp" data-tech="react nodejs" data-keywords="recrie recriação de páginas recriacao de paginas redesign paginas">
+            <div class="project-eye-wrap">
+              <button class="view-detail-btn" type="button" data-project-id="recrie" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
+            </div>
+            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=Recrie" alt="Preview Recrie">
+            <div class="project-body">
+              <div class="about-divider"></div>
+              <h4 class="project-title">Recrie</h4>
+              <p class="project-desc">Projeto voltado à recriação de páginas com foco em estética, conversão e modernização da experiência digital.</p>
+              <div class="project-actions">
+                <a class="project-btn" href="#" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+                <button class="project-btn" type="button" data-project-id="recrie" data-open-tab="testimonials">Depoimentos</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-status="producao" data-tipo="webapp" data-tech="nodejs react aws" data-keywords="envia bem automação email marketing campanhas">
+            <div class="project-eye-wrap">
+              <button class="view-detail-btn" type="button" data-project-id="envia-bem" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
+            </div>
+            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=Envia+Bem" alt="Preview Envia Bem">
+            <div class="project-body">
+              <div class="about-divider"></div>
+              <h4 class="project-title">Envia Bem</h4>
+              <p class="project-desc">Solução para comunicação e automações de envio, criada com foco em produtividade, escala operacional e clareza de uso.</p>
+              <div class="project-actions">
+                <a class="project-btn" href="#" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+                <button class="project-btn" type="button" data-project-id="envia-bem" data-open-tab="testimonials">Depoimentos</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-status="evolucao" data-tipo="saas" data-tech="nodejs react mongodb ia" data-keywords="thynkbuilder builder criador paginas automações">
+            <div class="project-eye-wrap">
+              <button class="view-detail-btn" type="button" data-project-id="thynkbuilder" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
+            </div>
+            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=thynkBuilder" alt="Preview thynkBuilder">
+            <div class="project-body">
+              <div class="about-divider"></div>
+              <h4 class="project-title">thynkBuilder</h4>
+              <p class="project-desc">Produto em evolução para acelerar construção de páginas e fluxos digitais com mais autonomia e padronização.</p>
+              <div class="project-actions">
+                <a class="project-btn" href="https://thynkbuilder.com" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+                <button class="project-btn" type="button" data-project-id="thynkbuilder" data-open-tab="testimonials">Depoimentos</button>
+              </div>
+            </div>
+          </article>
+
           <article class="project-card" data-status="producao" data-tipo="saas" data-tech="nodejs react mongodb aws" data-keywords="thynkbarber barbearia agendamento assinatura estatisticas">
             <div class="project-eye-wrap">
               <button class="view-detail-btn" type="button" data-project-id="thynkbarber" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
@@ -2604,9 +2620,9 @@
       </div>
       <div class="about-divider"></div>
       <div class="about-modal-body">
-        <p>Olá, tudo bem? Me chamo Arthur Ferreira, tenho 19 anos e estou na área de tecnologia desde os 15, sempre com foco em aprender, evoluir e construir soluções digitais que realmente impactem negócios e pessoas. Iniciei minha trajetória profissional aos 17 anos, no meu primeiro estágio, onde atuei com desenvolvimento de sistemas e páginas, suporte técnico ao cliente e participação em reuniões para onboarding de projetos, entendendo processos, dores e oportunidades de melhoria.</p>
-        <p>Aos 18 anos fui convidado para atuar como Desenvolvedor Low-Code na mesma empresa, ampliando minha participação em projetos estratégicos como sites para Natura e RedeMG Farma. Nesse período, também colaborei na criação de um CRM para uma ONG de ajuda animal utilizando ExpoCRM, experiência que fortaleceu minha visão de produto, organização de fluxos e entrega orientada a valor.</p>
-        <p>No final de 2025, entrei em uma nova equipe com foco em desafios internos de uma empresa de contabilidade, contribuindo em diversos setores com suporte técnico e desenvolvimento de novos sistemas. Entre as entregas, participei da criação de agenda interna, sistema de chamados, plataforma de educação corporativa, chat interno estilo Teams e automações de e-mail em massa para mais de 100 empresas por vez.</p>
+        <p>Olá, tudo bem? Me chamo Arthur Ferreira, tenho 19 anos e estou na área de tecnologia desde os 15, sempre com foco em aprender, evoluir e construir soluções digitais que realmente impactem negócios e pessoas. Iniciei minha trajetória profissional em setembro de 2024, no meu primeiro estágio como Estagiário de Programação, onde atuei com desenvolvimento de sistemas e páginas, suporte técnico ao cliente e participação em reuniões para onboarding de projetos, entendendo processos, dores e oportunidades de melhoria.</p>
+        <p>Em junho de 2025 fui convidado para atuar como Auxiliar de Programação e Desenvolvedor Low-Code na mesma empresa, ampliando minha participação em projetos estratégicos como Natura, RedeMG Farma, Recrie e Envia Bem. Nesse período, também colaborei na criação de um CRM para uma ONG de ajuda animal utilizando ExpoCRM, experiência que fortaleceu minha visão de produto, organização de fluxos e entrega orientada a valor.</p>
+        <p>Em janeiro de 2026, assumi uma nova etapa profissional como Auxiliar de Programação presencialmente em Juiz de Fora, com foco em desafios internos de uma empresa de contabilidade, contribuindo em diversos setores com suporte técnico e desenvolvimento de novos sistemas. Entre as entregas, participei da criação de agenda interna, sistema de chamados, plataforma de educação corporativa, chat interno estilo Teams e automações de e-mail em massa para mais de 100 empresas por vez.</p>
         <p>Além das atividades profissionais, sigo desenvolvendo projetos autorais e estudando continuamente para evoluir como profissional e pessoa. Entre os projetos em andamento, destaco:
           <a class="about-company-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">thynkBarber <i class="bi bi-box-arrow-up-right"></i></a>, uma barbearia inteligente com agendamentos, assinaturas e estatísticas internas/externas; e
           <a class="about-company-link" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">thynkWorking <i class="bi bi-box-arrow-up-right"></i></a>, uma plataforma de vagas tech com IA para conectar profissionais e RHs por meio de vagas e base de currículos qualificados.
@@ -3228,34 +3244,34 @@
 
     const experiencesData = [
       {
-        id: 'exp-estagio-dev',
-        role: 'Estagiário em Desenvolvimento de Sistemas',
-        date: '2023 - 2024',
-        company: 'Empresa de Soluções Digitais',
-        locationWork: 'Belo Horizonte • Híbrido',
-        shortDescription: 'Atuação com desenvolvimento de sistemas e páginas, suporte técnico e participação em reuniões de onboarding para mapear dores de clientes.',
-        fullDescription: 'Durante essa experiência, atuei no desenvolvimento e manutenção de sistemas web, criação de páginas e suporte técnico para clientes. Também participei ativamente de reuniões de onboarding, entendendo necessidades, mapeando processos e propondo melhorias com foco em usabilidade e eficiência operacional.',
-        projects: ['expocrm-social']
-      },
-      {
-        id: 'exp-lowcode',
-        role: 'Desenvolvedor Low-Code',
-        date: '2024 - 2025',
-        company: 'Empresa de Soluções Digitais',
-        locationWork: 'Belo Horizonte • Presencial',
-        shortDescription: 'Participação em projetos de grande visibilidade para Natura e RedeMG Farma, além da criação de CRM para ONG de ajuda animal.',
-        fullDescription: 'Como Desenvolvedor Low-Code, participei de projetos relevantes para grandes marcas, com foco em entrega rápida e qualidade visual. Trabalhei na construção de soluções com alto impacto de negócio e também no desenvolvimento de um CRM social com ExpoCRM para apoiar uma ONG no controle de atendimentos e processos internos.',
-        projects: ['thynkbarber', 'expocrm-social']
-      },
-      {
-        id: 'exp-contabilidade',
-        role: 'Desenvolvedor de Sistemas Internos',
-        date: '2025 - Atual',
+        id: 'exp-aux-programacao-atual',
+        role: 'Auxiliar de Programação',
+        date: 'JAN/2026 - Atualmente',
         company: 'Empresa de Contabilidade',
-        locationWork: 'Remoto • Full-time',
-        shortDescription: 'Desenvolvimento de agenda, chamados, educação interna, chat corporativo e automações de e-mail para mais de 100 empresas.',
-        fullDescription: 'Na atuação atual, contribuo no ajuste e criação de sistemas internos para diferentes setores da empresa. Desenvolvi soluções de agenda e chamados, uma plataforma de educação interna, chat corporativo e automações de e-mail em massa para mais de 100 empresas por envio, sempre focando em produtividade, padronização e escalabilidade.',
-        projects: ['thynkworking', 'thynkbarber']
+        locationWork: 'Juiz de Fora • Presencial',
+        shortDescription: 'Atuação com sistemas internos, automações, suporte entre setores e evolução contínua de soluções corporativas.',
+        fullDescription: 'Atuação presencial em Juiz de Fora, contribuindo com desenvolvimento de sistemas internos, agenda, chamados, educação interna, chat corporativo e automações de e-mail em massa. O foco tem sido produtividade, clareza dos fluxos internos e entrega de soluções que gerem impacto operacional real para a empresa.',
+        projects: ['envia-bem', 'thynkbuilder', 'thynkworking']
+      },
+      {
+        id: 'exp-aux-programacao-remoto',
+        role: 'Auxiliar de Programação',
+        date: 'JUN/2025 - DEZ/2025',
+        company: 'Empresa de Soluções Digitais',
+        locationWork: 'Juiz de Fora • Remoto',
+        shortDescription: 'Participação em projetos estratégicos e recriação de páginas com foco em entrega visual e valor para o cliente.',
+        fullDescription: 'Atuação remota como Auxiliar de Programação em entregas voltadas a sites, páginas e soluções digitais para clientes de diferentes segmentos. Nesse período, participei de projetos como Natura, RedeMG Farma, Recrie e Envia Bem, além de iniciativas com foco em recriação de páginas, organização visual e experiências digitais mais modernas.',
+        projects: ['natura', 'redemg-farma', 'recrie', 'envia-bem']
+      },
+      {
+        id: 'exp-estagio-programacao',
+        role: 'Estagiário de Programação',
+        date: 'SET/2024 - JUN/2025',
+        company: 'Empresa de Soluções Digitais',
+        locationWork: 'Juiz de Fora • Híbrido',
+        shortDescription: 'Primeira experiência profissional em tecnologia com desenvolvimento, suporte técnico e onboarding de clientes.',
+        fullDescription: 'Início da trajetória profissional em tecnologia como Estagiário de Programação, com atuação em desenvolvimento de sistemas e páginas, suporte técnico ao cliente e participação em reuniões de onboarding. Essa fase foi essencial para consolidar visão de produto, entendimento de dores reais e organização de entregas orientadas à necessidade do cliente.',
+        projects: ['expocrm-social', 'recrie']
       }
     ];
 
@@ -3349,6 +3365,156 @@
     });
 
     const projectData = {
+      natura: {
+        name: 'Natura',
+        images: [
+          'https://via.placeholder.com/1200x700.png?text=Natura+01',
+          'https://via.placeholder.com/1200x700.png?text=Natura+02',
+          'https://via.placeholder.com/1200x700.png?text=Natura+03',
+          'https://via.placeholder.com/1200x700.png?text=Natura+04',
+          'https://via.placeholder.com/1200x700.png?text=Natura+05',
+          'https://via.placeholder.com/1200x700.png?text=Natura+06',
+          'https://via.placeholder.com/1200x700.png?text=Natura+07',
+          'https://via.placeholder.com/1200x700.png?text=Natura+08',
+          'https://via.placeholder.com/1200x700.png?text=Natura+09',
+          'https://via.placeholder.com/1200x700.png?text=Natura+10'
+        ],
+        testimonials: [
+          '“Excelente cuidado com identidade visual e navegação.” — Cliente parceiro',
+          '“A recriação da página deixou a comunicação muito mais clara.” — Equipe do projeto',
+          '“Entrega visual refinada e alinhada ao objetivo do projeto.” — Stakeholder'
+        ],
+        about: 'Projeto focado em presença digital e recriação de páginas com ênfase em experiência do usuário, consistência visual e comunicação clara da marca.',
+        updates: [
+          { title: 'Refino da Home', date: '14/03/2026', description: 'Melhorias em hierarquia visual e distribuição de conteúdo principal.' },
+          { title: 'Blocos Institucionais', date: '09/03/2026', description: 'Ajustes na apresentação institucional com mais clareza de leitura.' },
+          { title: 'Otimização Mobile', date: '03/03/2026', description: 'Correções de responsividade e espaçamento em telas menores.' },
+          { title: 'Revisão Visual', date: '26/02/2026', description: 'Atualização de componentes com foco em consistência da marca.' },
+          { title: 'Estrutura Base', date: '18/02/2026', description: 'Definição inicial de layout e componentes reutilizáveis.' }
+        ],
+        commits: [0,1,2,4,6,0,2,3,5,1,0,4,2,6,3,1,0,2,4,5,1,0,3,6,2,1,4,0],
+        link: '#'
+      },
+      'redemg-farma': {
+        name: 'RedeMG Farma',
+        images: [
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+01',
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+02',
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+03',
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+04',
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+05',
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+06',
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+07',
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+08',
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+09',
+          'https://via.placeholder.com/1200x700.png?text=RedeMG+Farma+10'
+        ],
+        testimonials: [
+          '“Projeto com comunicação visual muito mais objetiva.” — Cliente parceiro',
+          '“A apresentação da marca ficou mais profissional e moderna.” — Equipe interna',
+          '“Boa experiência de navegação e organização de conteúdo.” — Usuário avaliado'
+        ],
+        about: 'Projeto de presença digital com foco em clareza de informações, apresentação da marca e boa navegação para diferentes públicos.',
+        updates: [
+          { title: 'Página Institucional', date: '13/03/2026', description: 'Melhoria no fluxo de leitura e destaque dos principais blocos.' },
+          { title: 'Sessões de Conteúdo', date: '07/03/2026', description: 'Reorganização da estrutura para facilitar consumo da informação.' },
+          { title: 'Ajustes de Responsividade', date: '01/03/2026', description: 'Adequação do layout para celular, tablet e desktop.' },
+          { title: 'Padronização Visual', date: '23/02/2026', description: 'Definição de componentes consistentes para páginas internas.' },
+          { title: 'Estrutura Inicial', date: '17/02/2026', description: 'Construção inicial do projeto com base visual principal.' }
+        ],
+        commits: [1,0,3,4,2,1,0,5,6,2,1,0,4,3,2,1,5,0,2,4,6,1,0,3,2,5,1,0],
+        link: '#'
+      },
+      recrie: {
+        name: 'Recrie',
+        images: [
+          'https://via.placeholder.com/1200x700.png?text=Recrie+01',
+          'https://via.placeholder.com/1200x700.png?text=Recrie+02',
+          'https://via.placeholder.com/1200x700.png?text=Recrie+03',
+          'https://via.placeholder.com/1200x700.png?text=Recrie+04',
+          'https://via.placeholder.com/1200x700.png?text=Recrie+05',
+          'https://via.placeholder.com/1200x700.png?text=Recrie+06',
+          'https://via.placeholder.com/1200x700.png?text=Recrie+07',
+          'https://via.placeholder.com/1200x700.png?text=Recrie+08',
+          'https://via.placeholder.com/1200x700.png?text=Recrie+09',
+          'https://via.placeholder.com/1200x700.png?text=Recrie+10'
+        ],
+        testimonials: [
+          '“A recriação deixou a página muito mais moderna.” — Cliente parceiro',
+          '“O novo visual melhorou bastante a percepção do produto.” — Time comercial',
+          '“Excelente trabalho na reorganização do conteúdo.” — Stakeholder'
+        ],
+        about: 'Projeto dedicado à recriação de páginas, redesign visual e reestruturação de blocos com foco em conversão, clareza e experiência.',
+        updates: [
+          { title: 'Recriação da Página Principal', date: '15/03/2026', description: 'Nova estrutura visual com foco em impacto inicial e melhor conversão.' },
+          { title: 'Ajuste de Sessões', date: '10/03/2026', description: 'Revisão completa de blocos para melhorar ritmo de leitura.' },
+          { title: 'CTA Estratégico', date: '05/03/2026', description: 'Reposicionamento e destaque de chamadas principais.' },
+          { title: 'Design Mobile', date: '27/02/2026', description: 'Refino de comportamento responsivo para melhor experiência móvel.' },
+          { title: 'Wireframe Base', date: '20/02/2026', description: 'Definição inicial da nova arquitetura visual da página.' }
+        ],
+        commits: [0,2,3,6,1,0,4,5,2,1,0,3,6,2,4,1,0,5,3,2,1,0,4,6,2,1,3,0],
+        link: '#'
+      },
+      'envia-bem': {
+        name: 'Envia Bem',
+        images: [
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+01',
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+02',
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+03',
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+04',
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+05',
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+06',
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+07',
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+08',
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+09',
+          'https://via.placeholder.com/1200x700.png?text=Envia+Bem+10'
+        ],
+        testimonials: [
+          '“A solução trouxe mais escala para os envios.” — Cliente interno',
+          '“O fluxo ficou mais organizado e prático para operação.” — Equipe operacional',
+          '“Boa clareza no produto e na experiência de uso.” — Stakeholder'
+        ],
+        about: 'Solução com foco em comunicação, automação de envio e produtividade operacional, pensada para suportar maior volume com organização e clareza.',
+        updates: [
+          { title: 'Painel de Campanhas', date: '11/03/2026', description: 'Visão consolidada das campanhas e status de envios.' },
+          { title: 'Ajustes de Fluxo', date: '06/03/2026', description: 'Melhorias na organização da jornada de criação e envio.' },
+          { title: 'Controle Operacional', date: '28/02/2026', description: 'Novos estados para acompanhar sucesso e falha dos processos.' },
+          { title: 'Layout de Gestão', date: '22/02/2026', description: 'Refinamento visual do painel para leitura mais rápida.' },
+          { title: 'Base do Produto', date: '15/02/2026', description: 'Primeira versão funcional do fluxo principal da solução.' }
+        ],
+        commits: [1,2,4,5,0,3,2,1,6,0,4,3,1,2,5,0,6,2,1,3,4,0,2,5,1,6,0,3],
+        link: '#'
+      },
+      thynkbuilder: {
+        name: 'thynkBuilder',
+        images: [
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+01',
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+02',
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+03',
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+04',
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+05',
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+06',
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+07',
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+08',
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+09',
+          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+10'
+        ],
+        testimonials: [
+          '“Produto com muito potencial para acelerar entregas.” — Parceiro de produto',
+          '“A ideia de builder ajuda bastante na produtividade.” — Desenvolvedor parceiro',
+          '“Boa proposta para padronizar fluxos e páginas.” — Stakeholder'
+        ],
+        about: 'Produto em evolução para facilitar construção de páginas e fluxos digitais com mais velocidade, consistência visual e reaproveitamento de estruturas.',
+        updates: [
+          { title: 'Editor Inicial', date: '12/03/2026', description: 'Primeiros blocos e lógica de edição para construção de páginas.' },
+          { title: 'Componentes Base', date: '08/03/2026', description: 'Criação de biblioteca inicial de componentes reutilizáveis.' },
+          { title: 'Estrutura de Builder', date: '02/03/2026', description: 'Definição da arquitetura principal do produto.' },
+          { title: 'Ajustes de UX', date: '24/02/2026', description: 'Melhorias de navegação para tornar o uso mais intuitivo.' },
+          { title: 'Prova de Conceito', date: '17/02/2026', description: 'Versão inicial para validar a proposta do produto.' }
+        ],
+        commits: [0,1,3,4,6,2,0,5,3,1,0,4,6,2,3,1,0,5,2,4,6,1,0,3,5,2,1,4],
+        link: 'https://thynkbuilder.com'
+      },
       thynkbarber: {
         name: 'thynkBarber',
         images: [
