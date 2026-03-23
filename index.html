@@ -915,12 +915,84 @@
       align-items: center;
       gap: 8px;
       width: fit-content;
+      border: none;
       border-radius: 999px;
       padding: 10px 14px;
       background: #111;
       color: #fff;
       text-decoration: none;
       font-weight: 700;
+    }
+
+    .details-notes-link:hover {
+      background: #222;
+      transform: translateY(-2px);
+    }
+
+    .certificate-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8,10,16,0.72);
+      backdrop-filter: blur(6px);
+      z-index: 1700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .certificate-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .certificate-panel {
+      width: min(75vw, 1200px);
+      height: 100vh;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .certificate-head {
+      padding: 18px 20px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .certificate-title {
+      margin: 0;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      font-weight: 800;
+    }
+
+    .certificate-close {
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 10px;
+      background: #f3f3f0;
+      color: #111;
+    }
+
+    .certificate-body {
+      flex: 1;
+      background: #f5f5f2;
+    }
+
+    .certificate-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
     }
 
 
@@ -2099,6 +2171,11 @@
         padding-left: 14px;
         padding-right: 14px;
       }
+      .certificate-panel {
+        width: 100%;
+        height: calc(100vh - 20px);
+        border-radius: 18px;
+      }
       .project-detail-modal {
         padding: 10px 12px;
       }
@@ -2370,8 +2447,8 @@
               </div>
               <span class="curso-badge">Em andamento</span>
             </div>
-            <div class="curso-tags"><span>Java</span><span>APIs</span><span>Banco de Dados</span><span>Full Stack</span></div>
-            <p class="curso-desc">Curso com foco em desenvolvimento de aplicações completas, da lógica de negócio ao consumo em interfaces modernas.</p>
+            <div class="curso-tags"><span>Java</span><span>Spring Boot</span><span>React</span><span>AWS</span></div>
+            <p class="curso-desc">Formação com trilhas de front-end e back-end Java, cobrindo web responsiva, React, Next.js, Redux, testes, Spring Boot, microsserviços, Docker, Kafka e AWS.</p>
           </article>
 
           <article class="curso-card" data-instituicao="ebac" data-status="andamento" data-area="ia" data-keywords="inteligência artificial ebac machine learning dados automações">
@@ -2387,8 +2464,8 @@
               </div>
               <span class="curso-badge">Em andamento</span>
             </div>
-            <div class="curso-tags"><span>IA</span><span>Modelos</span><span>Automação</span><span>Dados</span></div>
-            <p class="curso-desc">Capacitação para aplicar IA em produtos e fluxos reais, com foco em produtividade, análise e criação de soluções inteligentes.</p>
+            <div class="curso-tags"><span>ChatGPT</span><span>Midjourney</span></div>
+            <p class="curso-desc">Curso voltado à IA generativa com ChatGPT e Midjourney, abordando prompts, automações, APIs, ética, segurança e consistência visual para projetos e portfólio.</p>
           </article>
         </div>
 
@@ -2654,10 +2731,24 @@
         </div>
         <div class="about-divider"></div>
         <div>
-          <a class="details-notes-link" id="detailsNotesLink" href="#" target="_blank" rel="noopener noreferrer">
-            Notas <i class="bi bi-file-earmark-pdf"></i>
-          </a>
+          <button class="details-notes-link" id="detailsNotesLink" type="button">
+            Certificado <i class="bi bi-file-earmark-pdf"></i>
+          </button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="certificate-modal" id="certificateModal" aria-hidden="true">
+    <div class="certificate-panel" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle">
+      <div class="certificate-head">
+        <h3 class="certificate-title" id="certificateModalTitle">Certificado</h3>
+        <button class="certificate-close" id="closeCertificateModal" aria-label="Fechar certificado">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="certificate-body">
+        <iframe class="certificate-frame" id="certificateFrame" src="about:blank" title="Visualização do certificado em PDF"></iframe>
       </div>
     </div>
   </div>
@@ -3087,6 +3178,9 @@
       if (event.key === 'Escape' && detailsModal.classList.contains('show')) {
         toggleDetailsModal(false);
       }
+      if (event.key === 'Escape' && certificateModal.classList.contains('show')) {
+        toggleCertificateModal(false);
+      }
       if (event.key === 'Escape' && projectDetailModal.classList.contains('show')) {
         toggleProjectDetailModal(false);
       }
@@ -3104,18 +3198,18 @@
         notes: 'download/Historico-EstacioDeSa-EngenhariaDeSoftware.pdf'
       },
       'curso-fullstack-java': {
-        title: 'Desenvolvimento Full Stack Java',
-        description: 'Curso pela EBAC com foco em construção de aplicações completas, cobrindo fundamentos de back-end com Java, APIs, persistência e integração com interfaces para entrega de soluções de ponta a ponta.',
-        skills: ['Java', 'APIs REST', 'Banco de Dados', 'Integração Front + Back'],
-        projects: ['Aplicações full stack com Java', 'Projetos práticos orientados a cenário real'],
-        notes: 'download/Historico-EBAC-DesenvolvimentoFullStackJava.pdf'
+        title: 'Desenvolvimento FullStack Java',
+        description: 'Escola Britânica de Artes Criativas · 2026. Formação dividida entre front-end e back-end Java, cobrindo Fundamentos da Web, interfaces responsivas com Grid, Flexbox, BEM, SASS, Bootstrap e Tailwind, fundamentos de React, Next.js e Redux, testes, qualidade de código, cloud, DevOps, PWAs, performance, micro frontends e desenvolvimento de carreira. No back-end, aborda introdução ao Backend Java, fundamentos da programação, POO, estruturas de dados e algoritmos, banco de dados com MySQL/JDBC/CRUD, Spring Boot, Spring Security, JUnit, Mockito, microsserviços, Kafka, Docker e AWS.',
+        skills: ['Java', 'Spring Boot', 'REST APIs', 'SQL', 'JavaScript', 'React', 'Git', 'Docker', 'AWS'],
+        projects: ['Projetos full stack com foco em front-end responsivo e back-end Java', 'Aplicações práticas com Spring Boot, microsserviços, Docker e AWS'],
+        notes: 'download/pdfJavaEBAC.pdf'
       },
       'curso-inteligencia-artificial': {
         title: 'Inteligência Artificial',
-        description: 'Curso pela EBAC voltado para fundamentos e aplicações práticas de IA em produtos digitais, com foco em automação, análise de dados e uso de modelos para ganho de eficiência.',
-        skills: ['Fundamentos de IA', 'Análise de Dados', 'Automações Inteligentes', 'Aplicações Práticas'],
-        projects: ['Experimentos de IA aplicados a produtos', 'Fluxos automatizados com apoio de modelos'],
-        notes: 'download/Historico-EBAC-InteligenciaArtificial.pdf'
+        description: 'Escola Britânica de Artes Criativas · 2024. IA com ChatGPT: fundamentos de IA generativa e LLMs, engenharia de prompt com técnicas zero-shot e few-shot, refinamento de prompts, criação de assistentes, automações do dia a dia, integração por API e no-code, além de ética, segurança, avaliação e otimização de respostas. Imagens com Midjourney: sintaxe de prompts, estilos e referências, composição, iluminação, variações, upscales, Remix, Blend, geração por imagem de referência e boas práticas para consistência visual e portfólio.',
+        skills: ['ChatGPT', 'Midjourney'],
+        projects: ['Assistentes e automações com IA generativa', 'Criação visual com Midjourney para portfólio e identidade visual'],
+        notes: 'download/pdfIAEBAC.pdf'
       }
     };
 
@@ -3126,12 +3220,24 @@
     const detailsSkills = document.getElementById('detailsSkills');
     const detailsProjects = document.getElementById('detailsProjects');
     const detailsNotesLink = document.getElementById('detailsNotesLink');
+    const certificateModal = document.getElementById('certificateModal');
+    const closeCertificateModal = document.getElementById('closeCertificateModal');
+    const certificateModalTitle = document.getElementById('certificateModalTitle');
+    const certificateFrame = document.getElementById('certificateFrame');
     const viewDetailButtons = document.querySelectorAll('.view-detail-btn');
+    let activeCertificate = '';
 
     function toggleDetailsModal(show) {
       detailsModal.classList.toggle('show', show);
       detailsModal.setAttribute('aria-hidden', String(!show));
       document.body.style.overflow = show ? 'hidden' : '';
+    }
+
+    function toggleCertificateModal(show) {
+      certificateModal.classList.toggle('show', show);
+      certificateModal.setAttribute('aria-hidden', String(!show));
+      certificateFrame.src = show && activeCertificate ? activeCertificate : 'about:blank';
+      document.body.style.overflow = show || detailsModal.classList.contains('show') || projectDetailModal.classList.contains('show') || expModal.classList.contains('show') ? 'hidden' : '';
     }
 
     function openDetailsById(id) {
@@ -3142,6 +3248,8 @@
       detailsDescription.textContent = detail.description;
       detailsSkills.innerHTML = '';
       detailsProjects.innerHTML = '';
+      activeCertificate = detail.notes;
+      certificateModalTitle.textContent = `Certificado • ${detail.title}`;
 
       detail.skills.forEach((item) => {
         const chip = document.createElement('span');
@@ -3155,7 +3263,6 @@
         detailsProjects.appendChild(chip);
       });
 
-      detailsNotesLink.href = detail.notes;
       toggleDetailsModal(true);
     }
 
@@ -3163,9 +3270,18 @@
       btn.addEventListener('click', () => openDetailsById(btn.dataset.detailId));
     });
 
+    detailsNotesLink.addEventListener('click', () => {
+      if (!activeCertificate) return;
+      toggleCertificateModal(true);
+    });
+
     closeDetailsModal.addEventListener('click', () => toggleDetailsModal(false));
     detailsModal.addEventListener('click', (event) => {
       if (event.target === detailsModal) toggleDetailsModal(false);
+    });
+    closeCertificateModal.addEventListener('click', () => toggleCertificateModal(false));
+    certificateModal.addEventListener('click', (event) => {
+      if (event.target === certificateModal) toggleCertificateModal(false);
     });
 
     const formacaoSearch = document.getElementById('formacaoSearch');
