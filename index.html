@@ -1518,6 +1518,21 @@
       color: #2b2b2b;
     }
 
+    .exp-promotion-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(17,17,17,0.08);
+      border: 1px solid rgba(17,17,17,0.15);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #111;
+      width: fit-content;
+    }
+
     .exp-modal {
       position: fixed;
       inset: 0;
@@ -3403,34 +3418,35 @@
 
     const experiencesData = [
       {
-        id: 'exp-aux-programacao-atual',
+        id: 'exp-assistente-programacao-atual',
         role: 'Assistente de Programação',
-        date: 'JAN/2026 - Atualmente',
+        date: '04/2026 - Atualmente',
         company: 'Maximum Assessoria Contábil',
         locationWork: 'Juiz de Fora • Presencial',
-        shortDescription: 'Promoção de Auxiliar para Assistente de Programação, com foco em automações, integrações e suporte interno estratégico.',
-        fullDescription: 'Iniciei como Auxiliar de Programação na Maximum Assessoria Contábil e fui promovido para Assistente de Programação. Atuo no desenvolvimento de sistemas internos, automações de e-mail, acompanhamento de demandas e integrações com APIs como Questor, Acessorias, GOB e Sieg, apoiando diferentes setores e otimizando processos operacionais.',
-        projects: ['envia-bem', 'thynkbarber']
+        shortDescription: 'Promoção interna de Auxiliar para Assistente de Programação, com foco em automações, integrações e suporte aos setores.',
+        fullDescription: 'Após atuar como Auxiliar de Programação, fui promovido para Assistente de Programação na Maximum Assessoria Contábil em abril de 2026. Atualmente contribuo com automações, integrações com APIs (Questor, Acessorias, GOB e Sieg), suporte interno e melhoria contínua de processos corporativos.',
+        projects: [],
+        promotionLabel: 'Promoção de Auxiliar para Assistente'
       },
       {
-        id: 'exp-aux-programacao-remoto',
+        id: 'exp-auxiliar-programacao-maximum',
         role: 'Auxiliar de Programação',
-        date: 'JUN/2025 - DEZ/2025',
-        company: 'UsePress',
-        locationWork: 'Juiz de Fora • Remoto',
-        shortDescription: 'Participação em projetos estratégicos e recriação de páginas com foco em entrega visual e valor para o cliente.',
-        fullDescription: 'Atuação remota como Auxiliar de Programação em entregas voltadas a sites, páginas e soluções digitais para clientes de diferentes segmentos. Nesse período, participei de projetos como Natura, RedeMG Farma, Recrie e Envia Bem, além de iniciativas com foco em recriação de páginas, organização visual e experiências digitais mais modernas.',
-        projects: ['natura', 'redemg-farma', 'recrie', 'envia-bem']
+        date: '01/2026 - 04/2026',
+        company: 'Maximum Assesoria Contábil',
+        locationWork: 'Juiz de Fora • Presencial',
+        shortDescription: 'Início na Maximum com foco em organização de rotinas internas e preparação para evolução ao cargo de Assistente.',
+        fullDescription: 'Atuação inicial na Maximum Assesoria Contábil como Auxiliar de Programação, contribuindo com tarefas internas, suporte técnico e estruturação das primeiras automações que sustentaram a promoção para Assistente de Programação.',
+        projects: []
       },
       {
         id: 'exp-estagio-programacao',
-        role: 'Estagiário de Programação',
-        date: 'SET/2024 - JUN/2025',
+        role: 'Estagiário de Sistemas',
+        date: '06/2024 - 12/2025',
         company: 'UsePress',
         locationWork: 'Juiz de Fora • Híbrido',
-        shortDescription: 'Primeira experiência profissional em tecnologia com desenvolvimento, suporte técnico e onboarding de clientes.',
-        fullDescription: 'Início da trajetória profissional em tecnologia como Estagiário de Programação, com atuação em desenvolvimento de sistemas e páginas, suporte técnico ao cliente e participação em reuniões de onboarding. Essa fase foi essencial para consolidar visão de produto, entendimento de dores reais e organização de entregas orientadas à necessidade do cliente.',
-        projects: ['recrie', 'natura']
+        shortDescription: 'Primeira experiência profissional com desenvolvimento de sistemas, suporte e participação em projetos para clientes da UsePress.',
+        fullDescription: 'Experiência na UsePress com atuação em desenvolvimento, suporte e evolução de páginas/sistemas para clientes. Os principais projetos desse período foram Natura, RedeMG Farma, Recrie e Envia Bem.',
+        projects: ['natura', 'redemg-farma', 'recrie', 'envia-bem']
       }
     ];
 
@@ -3482,6 +3498,13 @@
           expModalProjects.appendChild(card);
         });
 
+      if (!exp.projects.length) {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.className = 'exp-description';
+        emptyMessage.textContent = 'Nenhum projeto disponível para visualização nesta experiência.';
+        expModalProjects.appendChild(emptyMessage);
+      }
+
       toggleExpModal(true);
     }
 
@@ -3508,7 +3531,8 @@
           </div>
           <p class="exp-company-line">${exp.company} | ${exp.locationWork}</p>
           <p class="exp-description">${exp.shortDescription}</p>
-          <div class="exp-project-badges">${projectNames.map((name) => `<span>${name}</span>`).join('')}</div>
+          ${exp.promotionLabel ? `<span class="exp-promotion-badge"><i class="bi bi-arrow-up-circle"></i>${exp.promotionLabel}</span>` : ''}
+          ${projectNames.length ? `<div class="exp-project-badges">${projectNames.map((name) => `<span>${name}</span>`).join('')}</div>` : ''}
         `;
         expTimeline.appendChild(article);
       });
