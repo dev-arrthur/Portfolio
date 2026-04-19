@@ -1087,6 +1087,54 @@
       border-bottom: 1px solid rgba(0,0,0,0.07);
     }
 
+    .project-thumb-preview {
+      padding: 12px;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 10px;
+      background: linear-gradient(135deg, #101010 0%, #2e2e2e 45%, #565656 100%);
+    }
+
+    .preview-badge {
+      justify-self: start;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #fff;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .preview-nav {
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.95) 0 24%, rgba(255,255,255,0.4) 24% 48%, rgba(255,255,255,0.22) 48% 100%);
+    }
+
+    .preview-hero {
+      height: 56px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: inset 0 -22px 0 rgba(0,0,0,0.07);
+    }
+
+    .preview-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      align-self: end;
+    }
+
+    .preview-cards span {
+      display: block;
+      height: 26px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.85);
+    }
+
     .project-body {
       padding: 14px;
       display: grid;
@@ -1468,6 +1516,21 @@
       padding: 5px 9px;
       font-weight: 600;
       color: #2b2b2b;
+    }
+
+    .exp-promotion-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(17,17,17,0.08);
+      border: 1px solid rgba(17,17,17,0.15);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #111;
+      width: fit-content;
     }
 
     .exp-modal {
@@ -2248,7 +2311,7 @@
 
           <div class="menu-subtitle">Utilidades</div>
           <li class="menu-item"><a href="https://seu-portal-de-vagas.com" target="_blank"><i class="bi bi-box-arrow-up-right"></i><span>Portal de Vagas</span></a></li>
-          <li class="menu-item"><a href="https://thynkbuilder.com" target="_blank"><i class="bi bi-tools"></i><span>thynkBuilder</span></a></li>
+          <li class="menu-item"><a href="https://thynkbarber.com" target="_blank"><i class="bi bi-scissors"></i><span>thynkBarber</span></a></li>
         </ul>
       </div>
     </aside>
@@ -2261,17 +2324,14 @@
           </div>
           <div class="about-divider"></div>
           <p class="about-preview about-preview-desktop">
-            Me chamo Arthur Ferreira, tenho 19 anos e iniciei minha jornada em tecnologia aos 15, com foco em desenvolvimento de sistemas e soluções capazes de gerar impacto real no mercado. Em setembro de 2024 comecei meu primeiro estágio, atuando com desenvolvimento de sistemas e páginas, suporte técnico e participação em reuniões de onboarding para entender dores, objetivos e necessidades de cada cliente. Em 2025, fui convidado para atuar como Auxiliar de Programação e Desenvolvedor Low-Code na mesma empresa, contribuindo em projetos para Natura, RedeMG Farma, Recrie e Envia Bem, além de apoiar a criação de um CRM para ONG de ajuda animal usando ExpoCRM. Em janeiro de 2026, assumi novos desafios presenciais em Juiz de Fora, desenvolvendo sistemas internos, automações e produtos digitais escaláveis.
+            Meu nome é Arthur Ferreira, tenho 19 anos e iniciei minha trajetória na área de tecnologia aos 16 anos, quando comecei a estudar de forma prática e aprofundada, explorando diferentes áreas do desenvolvimento. Nesse período, tive meus primeiros contatos com a criação de jogos, utilizando projetos open source como base para aprendizado, testes e evolução técnica.
           </p>
           <p class="about-preview about-preview-mobile">
-            Me chamo Arthur Ferreira, tenho 19 anos e estou na tecnologia desde os 15. Iniciei meu estágio em setembro de 2024 com desenvolvimento, suporte e onboarding de clientes. Em 2025, atuei como Auxiliar de Programação em projetos como Natura, RedeMG Farma, Recrie, Envia Bem e CRM para ONG. Desde janeiro de 2026, sigo presencialmente em Juiz de Fora criando sistemas internos, automações e soluções escaláveis.
+            Hoje atuo na Maximum Assessoria Contábil como Assistente de Programação, após promoção interna, com foco em automações, integrações e otimização de processos. Também desenvolvo projetos próprios como o thynkBarber e um SaaS de agendamento para barbearias.
           </p>
           <div class="about-project-links">
             <a class="about-project-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">
               thynkBarber <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-            <a class="about-project-link" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">
-              thynkWorking <i class="bi bi-box-arrow-up-right"></i>
             </a>
           </div>
           <div class="about-more-wrap">
@@ -2488,7 +2548,6 @@
             <option value="all">Todos os tipos</option>
             <option value="saas">SaaS</option>
             <option value="webapp">Web App</option>
-            <option value="plataforma">Plataforma</option>
           </select>
           <div class="tech-dropdown" id="projectTechDropdown">
             <button class="tech-dropdown-trigger" id="projectTechTrigger" type="button" aria-expanded="false">
@@ -2500,7 +2559,6 @@
               <label><input type="checkbox" class="project-tech-check" value="react"> ReactJS</label>
               <label><input type="checkbox" class="project-tech-check" value="mongodb"> MongoDB</label>
               <label><input type="checkbox" class="project-tech-check" value="aws"> AWS</label>
-              <label><input type="checkbox" class="project-tech-check" value="expo"> ExpoCRM</label>
               <label><input type="checkbox" class="project-tech-check" value="ia"> IA</label>
             </div>
           </div>
@@ -2513,7 +2571,12 @@
             <div class="project-eye-wrap">
               <button class="view-detail-btn" type="button" data-project-id="natura" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
             </div>
-            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=Natura" alt="Preview Natura">
+            <div class="project-thumb project-thumb-preview" aria-label="Preview moderno do projeto Natura">
+              <span class="preview-badge">Landing Preview</span>
+              <div class="preview-nav"></div>
+              <div class="preview-hero"></div>
+              <div class="preview-cards"><span></span><span></span><span></span></div>
+            </div>
             <div class="project-body">
               <div class="about-divider"></div>
               <h4 class="project-title">Natura</h4>
@@ -2529,7 +2592,12 @@
             <div class="project-eye-wrap">
               <button class="view-detail-btn" type="button" data-project-id="redemg-farma" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
             </div>
-            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=RedeMG+Farma" alt="Preview RedeMG Farma">
+            <div class="project-thumb project-thumb-preview" aria-label="Preview moderno do projeto RedeMG Farma">
+              <span class="preview-badge">Landing Preview</span>
+              <div class="preview-nav"></div>
+              <div class="preview-hero"></div>
+              <div class="preview-cards"><span></span><span></span><span></span></div>
+            </div>
             <div class="project-body">
               <div class="about-divider"></div>
               <h4 class="project-title">RedeMG Farma</h4>
@@ -2545,7 +2613,12 @@
             <div class="project-eye-wrap">
               <button class="view-detail-btn" type="button" data-project-id="recrie" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
             </div>
-            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=Recrie" alt="Preview Recrie">
+            <div class="project-thumb project-thumb-preview" aria-label="Preview moderno do projeto Recrie">
+              <span class="preview-badge">Landing Preview</span>
+              <div class="preview-nav"></div>
+              <div class="preview-hero"></div>
+              <div class="preview-cards"><span></span><span></span><span></span></div>
+            </div>
             <div class="project-body">
               <div class="about-divider"></div>
               <h4 class="project-title">Recrie</h4>
@@ -2561,7 +2634,12 @@
             <div class="project-eye-wrap">
               <button class="view-detail-btn" type="button" data-project-id="envia-bem" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
             </div>
-            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=Envia+Bem" alt="Preview Envia Bem">
+            <div class="project-thumb project-thumb-preview" aria-label="Preview moderno do projeto Envia Bem">
+              <span class="preview-badge">Landing Preview</span>
+              <div class="preview-nav"></div>
+              <div class="preview-hero"></div>
+              <div class="preview-cards"><span></span><span></span><span></span></div>
+            </div>
             <div class="project-body">
               <div class="about-divider"></div>
               <h4 class="project-title">Envia Bem</h4>
@@ -2577,7 +2655,12 @@
             <div class="project-eye-wrap">
               <button class="view-detail-btn" type="button" data-project-id="sistema-oficina" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
             </div>
-            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=Sistema+de+Gerenciamento+para+Oficina" alt="Preview Sistema de Gerenciamento para Oficina">
+            <div class="project-thumb project-thumb-preview" aria-label="Preview moderno do Sistema de Gerenciamento para Oficina">
+              <span class="preview-badge">Landing Preview</span>
+              <div class="preview-nav"></div>
+              <div class="preview-hero"></div>
+              <div class="preview-cards"><span></span><span></span><span></span></div>
+            </div>
             <div class="project-body">
               <div class="about-divider"></div>
               <h4 class="project-title">Sistema de Gerenciamento para Oficina</h4>
@@ -2589,27 +2672,16 @@
             </div>
           </article>
 
-          <article class="project-card" data-status="evolucao" data-tipo="saas" data-tech="nodejs react mongodb ia" data-keywords="thynkbuilder builder criador paginas automações">
-            <div class="project-eye-wrap">
-              <button class="view-detail-btn" type="button" data-project-id="thynkbuilder" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
-            </div>
-            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=thynkBuilder" alt="Preview thynkBuilder">
-            <div class="project-body">
-              <div class="about-divider"></div>
-              <h4 class="project-title">thynkBuilder</h4>
-              <p class="project-desc">Produto em evolução para acelerar construção de páginas e fluxos digitais com mais autonomia e padronização.</p>
-              <div class="project-actions">
-                <a class="project-btn" href="https://thynkbuilder.com" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
-                <button class="project-btn" type="button" data-project-id="thynkbuilder" data-open-tab="testimonials">Depoimentos</button>
-              </div>
-            </div>
-          </article>
-
           <article class="project-card" data-status="producao" data-tipo="saas" data-tech="nodejs react mongodb aws" data-keywords="thynkbarber barbearia agendamento assinatura estatisticas">
             <div class="project-eye-wrap">
               <button class="view-detail-btn" type="button" data-project-id="thynkbarber" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
             </div>
-            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=thynkBarber" alt="Preview thynkBarber">
+            <div class="project-thumb project-thumb-preview" aria-label="Preview moderno do projeto thynkBarber">
+              <span class="preview-badge">Landing Preview</span>
+              <div class="preview-nav"></div>
+              <div class="preview-hero"></div>
+              <div class="preview-cards"><span></span><span></span><span></span></div>
+            </div>
             <div class="project-body">
               <div class="about-divider"></div>
               <h4 class="project-title">thynkBarber</h4>
@@ -2621,37 +2693,6 @@
             </div>
           </article>
 
-          <article class="project-card" data-status="evolucao" data-tipo="plataforma" data-tech="nodejs react mongodb ia" data-keywords="thynkworking vagas tech ia rh curriculos">
-            <div class="project-eye-wrap">
-              <button class="view-detail-btn" type="button" data-project-id="thynkworking" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
-            </div>
-            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=thynkWorking" alt="Preview thynkWorking">
-            <div class="project-body">
-              <div class="about-divider"></div>
-              <h4 class="project-title">thynkWorking</h4>
-              <p class="project-desc">Plataforma de vagas tech com IA para conectar candidatos e RHs por meio de vagas, filtros e base estratégica de currículos.</p>
-              <div class="project-actions">
-                <a class="project-btn" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
-                <button class="project-btn" type="button" data-project-id="thynkworking" data-open-tab="testimonials">Depoimentos</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-status="producao" data-tipo="webapp" data-tech="nodejs react expo aws" data-keywords="crm ong expocrm painel atendimento processos">
-            <div class="project-eye-wrap">
-              <button class="view-detail-btn" type="button" data-project-id="expocrm-social" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
-            </div>
-            <img class="project-thumb" src="https://via.placeholder.com/800x500.png?text=ExpoCRM+Social" alt="Preview ExpoCRM Social">
-            <div class="project-body">
-              <div class="about-divider"></div>
-              <h4 class="project-title">ExpoCRM Social</h4>
-              <p class="project-desc">CRM social para ONG com foco em organização de atendimento, gestão de histórico e melhoria de produtividade operacional.</p>
-              <div class="project-actions">
-                <a class="project-btn" href="#" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
-                <button class="project-btn" type="button" data-project-id="expocrm-social" data-open-tab="testimonials">Depoimentos</button>
-              </div>
-            </div>
-          </article>
         </div>
 
         <div class="formacoes-empty" id="projectsEmpty">Nenhum projeto encontrado para os filtros aplicados.</div>
@@ -2714,13 +2755,11 @@
       </div>
       <div class="about-divider"></div>
       <div class="about-modal-body">
-        <p>Olá, tudo bem? Me chamo Arthur Ferreira, tenho 19 anos e estou na área de tecnologia desde os 15, sempre com foco em aprender, evoluir e construir soluções digitais que realmente impactem negócios e pessoas. Iniciei minha trajetória profissional em setembro de 2024, no meu primeiro estágio como Estagiário de Programação, onde atuei com desenvolvimento de sistemas e páginas, suporte técnico ao cliente e participação em reuniões para onboarding de projetos, entendendo processos, dores e oportunidades de melhoria.</p>
-        <p>Em junho de 2025 fui convidado para atuar como Auxiliar de Programação e Desenvolvedor Low-Code na mesma empresa, ampliando minha participação em projetos estratégicos como Natura, RedeMG Farma, Recrie e Envia Bem. Nesse período, também colaborei na criação de um CRM para uma ONG de ajuda animal utilizando ExpoCRM, experiência que fortaleceu minha visão de produto, organização de fluxos e entrega orientada a valor.</p>
-        <p>Em janeiro de 2026, assumi uma nova etapa profissional como Auxiliar de Programação presencialmente em Juiz de Fora, com foco em desafios internos de uma empresa de contabilidade, contribuindo em diversos setores com suporte técnico e desenvolvimento de novos sistemas. Entre as entregas, participei da criação de agenda interna, sistema de chamados, plataforma de educação corporativa, chat interno estilo Teams e automações de e-mail em massa para mais de 100 empresas por vez.</p>
-        <p>Além das atividades profissionais, sigo desenvolvendo projetos autorais e estudando continuamente para evoluir como profissional e pessoa. Entre os projetos em andamento, destaco:
-          <a class="about-company-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">thynkBarber <i class="bi bi-box-arrow-up-right"></i></a>, uma barbearia inteligente com agendamentos, assinaturas e estatísticas internas/externas; e
-          <a class="about-company-link" href="https://thynkworking.com" target="_blank" rel="noopener noreferrer">thynkWorking <i class="bi bi-box-arrow-up-right"></i></a>, uma plataforma de vagas tech com IA para conectar profissionais e RHs por meio de vagas e base de currículos qualificados.
-        </p>
+        <p>Meu nome é Arthur Ferreira, tenho 19 anos e iniciei minha trajetória na área de tecnologia aos 16 anos, quando comecei a estudar de forma prática e aprofundada, explorando diferentes áreas do desenvolvimento. Nesse período, tive meus primeiros contatos com a criação de jogos, utilizando projetos open source como base para aprendizado, testes e evolução técnica. Foi justamente nessa fase que desenvolvi não apenas o interesse pela tecnologia, mas também a certeza de que queria construir minha carreira profissional nessa área, buscando constantemente aprendizado, evolução e experiências que me permitissem crescer de forma sólida.</p>
+        <p>Aos 17 anos, tive a oportunidade de ingressar no meu primeiro estágio na área de Desenvolvimento de Sistemas, na empresa Usepress. Essa experiência foi um marco muito importante na minha formação profissional, pois me proporcionou contato direto com a rotina do mercado e com diversas demandas reais da área. Durante esse período, adquiri conhecimentos relevantes em versionamento de código, execução e organização de backups, suporte ao cliente, acompanhamento de servidores AWS, desenvolvimento pessoal e profissional, além de atuar no desenvolvimento de sites e sistemas. Também tive a oportunidade de participar de projetos importantes, que ampliaram minha visão sobre responsabilidade, organização e impacto do meu trabalho, envolvendo clientes e iniciativas como RedeMG Farma, Recrie, Natura e CRMs de grande relevância para o setor veterinário da minha cidade.</p>
+        <p>Posteriormente, no final de 2025, ingressei na Maximum Assessoria Contábil como Auxiliar de Programação. Com dedicação, evolução técnica e comprometimento com os resultados, fui promovido para Assistente de Programação, função que exerço atualmente. Nessa trajetória, venho atuando principalmente no desenvolvimento de automações e soluções internas com foco em otimizar a rotina dos colaboradores, reduzir processos manuais e tornar o fluxo de trabalho mais ágil, eficiente e organizado. Ao longo desse período, participei da criação de sistemas de envio automático de e-mails, soluções voltadas ao suporte interno e ao acompanhamento de demandas, além de realizar integrações com APIs de sistemas como Questor, Acessorias, GOB e Sieg. Essas experiências reforçaram ainda mais minha capacidade de identificar necessidades, propor melhorias e desenvolver soluções práticas que gerem valor no dia a dia da empresa.</p>
+        <p>Além da minha vivência profissional, também dedico parte do meu tempo ao desenvolvimento de projetos próprios, nos quais consigo expandir minha criatividade, aprofundar meus conhecimentos e colocar em prática ideias que podem gerar impacto real para diferentes públicos. Entre os projetos em andamento, destaco o <a class="about-company-link" href="https://thynkbarber.com" target="_blank" rel="noopener noreferrer">thynkBarber <i class="bi bi-box-arrow-up-right"></i></a>, uma proposta de barbearia inteligente com recursos como agendamentos, assinaturas e estatísticas internas e externas, pensada para oferecer mais controle, praticidade e modernização para o setor. Também desenvolvo um SaaS de agendamento para barbearias, construído do zero por mim, desde o front-end até o back-end, com o objetivo de facilitar a rotina dos barbeiros, automatizar processos e contribuir para uma gestão mais eficiente, prática e organizada.</p>
+        <p>Sou uma pessoa movida por aprendizado, desafios e evolução constante. Busco sempre crescer profissionalmente, aprimorar minhas habilidades técnicas e pessoais e contribuir de forma positiva em cada projeto e oportunidade que assumo. Tenho grande interesse em desenvolvimento de sistemas, automações, integração de tecnologias e criação de soluções que realmente façam diferença no ambiente em que são aplicadas. Minha trajetória, mesmo ainda em construção, já me proporcionou experiências valiosas que reforçam meu compromisso com a tecnologia e com o desenvolvimento de uma carreira sólida, consistente e cada vez mais preparada para novos desafios.</p>
       </div>
     </div>
   </div>
@@ -3377,34 +3416,35 @@
 
     const experiencesData = [
       {
-        id: 'exp-aux-programacao-atual',
-        role: 'Auxiliar de Programação',
-        date: 'JAN/2026 - Atualmente',
-        company: 'Maximum Assesoria Contabil',
+        id: 'exp-assistente-programacao-atual',
+        role: 'Assistente de Programação',
+        date: '04/2026 - Atualmente',
+        company: 'Maximum Assessoria Contábil',
         locationWork: 'Juiz de Fora • Presencial',
-        shortDescription: 'Atuação com sistemas internos, automações, suporte entre setores e evolução contínua de soluções corporativas.',
-        fullDescription: 'Atuação presencial em Juiz de Fora, contribuindo com desenvolvimento de sistemas internos, agenda, chamados, educação interna, chat corporativo e automações de e-mail em massa. O foco tem sido produtividade, clareza dos fluxos internos e entrega de soluções que gerem impacto operacional real para a empresa.',
-        projects: ['envia-bem', 'thynkbuilder', 'thynkworking']
+        shortDescription: 'Promoção interna de Auxiliar para Assistente de Programação, com foco em automações, integrações e suporte aos setores.',
+        fullDescription: 'Após atuar como Auxiliar de Programação, fui promovido para Assistente de Programação na Maximum Assessoria Contábil em abril de 2026. Atualmente contribuo com automações, integrações com APIs (Questor, Acessorias, GOB e Sieg), suporte interno e melhoria contínua de processos corporativos.',
+        projects: [],
+        promotionLabel: 'Promoção de Auxiliar para Assistente'
       },
       {
-        id: 'exp-aux-programacao-remoto',
+        id: 'exp-auxiliar-programacao-maximum',
         role: 'Auxiliar de Programação',
-        date: 'JUN/2025 - DEZ/2025',
-        company: 'UsePress',
-        locationWork: 'Juiz de Fora • Remoto',
-        shortDescription: 'Participação em projetos estratégicos e recriação de páginas com foco em entrega visual e valor para o cliente.',
-        fullDescription: 'Atuação remota como Auxiliar de Programação em entregas voltadas a sites, páginas e soluções digitais para clientes de diferentes segmentos. Nesse período, participei de projetos como Natura, RedeMG Farma, Recrie e Envia Bem, além de iniciativas com foco em recriação de páginas, organização visual e experiências digitais mais modernas.',
-        projects: ['natura', 'redemg-farma', 'recrie', 'envia-bem']
+        date: '01/2026 - 04/2026',
+        company: 'Maximum Assesoria Contábil',
+        locationWork: 'Juiz de Fora • Presencial',
+        shortDescription: 'Início na Maximum com foco em organização de rotinas internas e preparação para evolução ao cargo de Assistente.',
+        fullDescription: 'Atuação inicial na Maximum Assesoria Contábil como Auxiliar de Programação, contribuindo com tarefas internas, suporte técnico e estruturação das primeiras automações que sustentaram a promoção para Assistente de Programação.',
+        projects: []
       },
       {
         id: 'exp-estagio-programacao',
-        role: 'Estagiário de Programação',
-        date: 'SET/2024 - JUN/2025',
+        role: 'Estagiário de Sistemas',
+        date: '06/2024 - 12/2025',
         company: 'UsePress',
         locationWork: 'Juiz de Fora • Híbrido',
-        shortDescription: 'Primeira experiência profissional em tecnologia com desenvolvimento, suporte técnico e onboarding de clientes.',
-        fullDescription: 'Início da trajetória profissional em tecnologia como Estagiário de Programação, com atuação em desenvolvimento de sistemas e páginas, suporte técnico ao cliente e participação em reuniões de onboarding. Essa fase foi essencial para consolidar visão de produto, entendimento de dores reais e organização de entregas orientadas à necessidade do cliente.',
-        projects: ['expocrm-social', 'recrie']
+        shortDescription: 'Primeira experiência profissional com desenvolvimento de sistemas, suporte e participação em projetos para clientes da UsePress.',
+        fullDescription: 'Experiência na UsePress com atuação em desenvolvimento, suporte e evolução de páginas/sistemas para clientes. Os principais projetos desse período foram Natura, RedeMG Farma, Recrie e Envia Bem.',
+        projects: ['natura', 'redemg-farma', 'recrie', 'envia-bem']
       }
     ];
 
@@ -3456,6 +3496,13 @@
           expModalProjects.appendChild(card);
         });
 
+      if (!exp.projects.length) {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.className = 'exp-description';
+        emptyMessage.textContent = 'Nenhum projeto disponível para visualização nesta experiência.';
+        expModalProjects.appendChild(emptyMessage);
+      }
+
       toggleExpModal(true);
     }
 
@@ -3482,7 +3529,8 @@
           </div>
           <p class="exp-company-line">${exp.company} | ${exp.locationWork}</p>
           <p class="exp-description">${exp.shortDescription}</p>
-          <div class="exp-project-badges">${projectNames.map((name) => `<span>${name}</span>`).join('')}</div>
+          ${exp.promotionLabel ? `<span class="exp-promotion-badge"><i class="bi bi-arrow-up-circle"></i>${exp.promotionLabel}</span>` : ''}
+          ${projectNames.length ? `<div class="exp-project-badges">${projectNames.map((name) => `<span>${name}</span>`).join('')}</div>` : ''}
         `;
         expTimeline.appendChild(article);
       });
@@ -3648,36 +3696,6 @@
         commits: [0,1,2,4,5,0,3,2,1,6,0,4,3,2,1,0,5,6,2,1,3,0,4,2,1,0,6,5],
         link: 'https://heyarrthur.github.io/thynkrp/'
       },
-      thynkbuilder: {
-        name: 'thynkBuilder',
-        images: [
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+01',
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+02',
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+03',
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+04',
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+05',
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+06',
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+07',
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+08',
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+09',
-          'https://via.placeholder.com/1200x700.png?text=thynkBuilder+10'
-        ],
-        testimonials: [
-          '“Produto com muito potencial para acelerar entregas.” — Parceiro de produto',
-          '“A ideia de builder ajuda bastante na produtividade.” — Desenvolvedor parceiro',
-          '“Boa proposta para padronizar fluxos e páginas.” — Stakeholder'
-        ],
-        about: 'Produto em evolução para facilitar construção de páginas e fluxos digitais com mais velocidade, consistência visual e reaproveitamento de estruturas.',
-        updates: [
-          { title: 'Editor Inicial', date: '12/03/2026', description: 'Primeiros blocos e lógica de edição para construção de páginas.' },
-          { title: 'Componentes Base', date: '08/03/2026', description: 'Criação de biblioteca inicial de componentes reutilizáveis.' },
-          { title: 'Estrutura de Builder', date: '02/03/2026', description: 'Definição da arquitetura principal do produto.' },
-          { title: 'Ajustes de UX', date: '24/02/2026', description: 'Melhorias de navegação para tornar o uso mais intuitivo.' },
-          { title: 'Prova de Conceito', date: '17/02/2026', description: 'Versão inicial para validar a proposta do produto.' }
-        ],
-        commits: [0,1,3,4,6,2,0,5,3,1,0,4,6,2,3,1,0,5,2,4,6,1,0,3,5,2,1,4],
-        link: 'https://thynkbuilder.com'
-      },
       thynkbarber: {
         name: 'thynkBarber',
         images: [
@@ -3707,66 +3725,6 @@
         ],
         commits: [0,2,4,6,1,0,3,5,0,2,7,1,0,4,3,6,0,1,2,5,0,7,4,2,1,0,3,6],
         link: 'https://thynkbarber.com'
-      },
-      thynkworking: {
-        name: 'thynkWorking',
-        images: [
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+01',
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+02',
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+03',
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+04',
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+05',
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+06',
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+07',
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+08',
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+09',
-          'https://via.placeholder.com/1200x700.png?text=thynkWorking+10'
-        ],
-        testimonials: [
-          '“Encontramos vagas mais relevantes em menos tempo.” — Dev júnior',
-          '“A triagem ficou muito mais assertiva para o RH.” — Recrutadora parceira',
-          '“A proposta de IA trouxe ganho real na curadoria de perfis.” — Mentor técnico'
-        ],
-        about: 'Plataforma focada em conectar profissionais de tecnologia a oportunidades relevantes, com recursos de IA para melhorar busca, priorização e matching entre vaga e perfil. Evolução contínua com visão de produto e empregabilidade.',
-        updates: [
-          { title: 'Filtro Inteligente de Vagas', date: '10/03/2026', description: 'Aprimoramento do ranking de vagas com critérios por senioridade e stack.' },
-          { title: 'Base de Currículos RH', date: '05/03/2026', description: 'Primeira versão do módulo para RHs consultarem perfis qualificados.' },
-          { title: 'Painel de Tendências', date: '28/02/2026', description: 'Inclusão de dados sobre tecnologias mais pedidas por região e vaga.' },
-          { title: 'Notificações Personalizadas', date: '23/02/2026', description: 'Entrega de alertas com base no interesse e histórico do candidato.' },
-          { title: 'Melhoria no Parser de Vagas', date: '16/02/2026', description: 'Ajustes na coleta e normalização de vagas públicas em diferentes fontes.' }
-        ],
-        commits: [1,0,3,4,6,2,0,5,2,1,0,4,6,3,1,2,0,5,6,2,1,0,3,4,7,1,2,0],
-        link: 'https://thynkworking.com'
-      },
-      'expocrm-social': {
-        name: 'ExpoCRM Social',
-        images: [
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+01',
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+02',
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+03',
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+04',
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+05',
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+06',
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+07',
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+08',
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+09',
-          'https://via.placeholder.com/1200x700.png?text=ExpoCRM+10'
-        ],
-        testimonials: [
-          '“Conseguimos acompanhar atendimentos com mais clareza.” — Coordenação ONG',
-          '“As informações ficaram centralizadas e acessíveis.” — Time administrativo',
-          '“O CRM simplificou nossa rotina de organização.” — Operação interna'
-        ],
-        about: 'Projeto CRM para ONG com objetivo de organizar fluxo de atendimento, histórico de interações e dados essenciais para tomada de decisão social. Estrutura pensada para equipes enxutas e processos de alto volume.',
-        updates: [
-          { title: 'Módulo de Histórico', date: '11/03/2026', description: 'Criação da linha do tempo para registrar eventos e interação por caso.' },
-          { title: 'Permissões por Perfil', date: '06/03/2026', description: 'Definição de níveis de acesso para proteger dados sensíveis da operação.' },
-          { title: 'Painel de Indicadores', date: '01/03/2026', description: 'Visão consolidada de atendimentos concluídos, pendentes e urgentes.' },
-          { title: 'Exportação de Relatórios', date: '24/02/2026', description: 'Entrega de exportação simplificada para acompanhamento institucional.' },
-          { title: 'Refatoração de Fluxo', date: '18/02/2026', description: 'Ajustes no fluxo interno para reduzir cliques e acelerar atendimento.' }
-        ],
-        commits: [0,1,2,4,5,0,3,2,1,6,0,4,3,2,1,0,5,6,2,1,3,0,4,2,1,0,6,5],
-        link: '#'
       }
     };
 
