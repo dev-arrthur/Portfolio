@@ -1294,6 +1294,16 @@
       gap: 10px;
     }
 
+    .project-about-image {
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.08);
+      margin: 8px 0 10px;
+      background: #f3f3ef;
+    }
+
     .testimonial-card {
       border: 1px solid rgba(0,0,0,0.08);
       background: #fafaf8;
@@ -2307,11 +2317,6 @@
           <li class="menu-item"><a href="#experiencia"><i class="bi bi-briefcase"></i><span>Experiência</span></a></li>
           <li class="menu-item"><a href="#contato"><i class="bi bi-envelope-heart"></i><span>Contato</span></a></li>
 
-          <div class="divider-fancy"></div>
-
-          <div class="menu-subtitle">Utilidades</div>
-          <li class="menu-item"><a href="https://seu-portal-de-vagas.com" target="_blank"><i class="bi bi-box-arrow-up-right"></i><span>Portal de Vagas</span></a></li>
-          <li class="menu-item"><a href="https://thynkbarber.com" target="_blank"><i class="bi bi-scissors"></i><span>thynkBarber</span></a></li>
         </ul>
       </div>
     </aside>
@@ -2693,6 +2698,27 @@
             </div>
           </article>
 
+          <article class="project-card" data-status="evolucao" data-tipo="saas" data-tech="nodejs react ia" data-keywords="thynkxp pequenas empresas sistemas sites trafego pago marketing digital">
+            <div class="project-eye-wrap">
+              <button class="view-detail-btn" type="button" data-project-id="thynkxp" aria-label="Ver detalhes do projeto"><i class="bi bi-eye"></i></button>
+            </div>
+            <div class="project-thumb project-thumb-preview" aria-label="Preview moderno do projeto thynkXP">
+              <span class="preview-badge">Landing Preview</span>
+              <div class="preview-nav"></div>
+              <div class="preview-hero"></div>
+              <div class="preview-cards"><span></span><span></span><span></span></div>
+            </div>
+            <div class="project-body">
+              <div class="about-divider"></div>
+              <h4 class="project-title">thynkXP</h4>
+              <p class="project-desc">Projeto individual para apoiar pequenas empresas com soluções digitais personalizadas, sites profissionais, sistemas e estratégias de tráfego pago.</p>
+              <div class="project-actions">
+                <a class="project-btn" href="#" target="_blank" rel="noopener noreferrer">Visualizar Página</a>
+                <button class="project-btn" type="button" data-project-id="thynkxp" data-open-tab="testimonials">Depoimentos</button>
+              </div>
+            </div>
+          </article>
+
         </div>
 
         <div class="formacoes-empty" id="projectsEmpty">Nenhum projeto encontrado para os filtros aplicados.</div>
@@ -2834,6 +2860,7 @@
         <div class="about-divider"></div>
         <div>
           <h4>Sobre o Projeto</h4>
+          <img id="projectAboutImage" class="project-about-image" src="" alt="Imagem da página do projeto">
           <p id="projectAboutDescription"></p>
         </div>
 
@@ -3421,8 +3448,8 @@
         date: '04/2026 - Atualmente',
         company: 'Maximum Assessoria Contábil',
         locationWork: 'Juiz de Fora • Presencial',
-        shortDescription: 'Promoção interna de Auxiliar para Assistente de Programação, com foco em automações, integrações e suporte aos setores.',
-        fullDescription: 'Após atuar como Auxiliar de Programação, fui promovido para Assistente de Programação na Maximum Assessoria Contábil em abril de 2026. Atualmente contribuo com automações, integrações com APIs (Questor, Acessorias, GOB e Sieg), suporte interno e melhoria contínua de processos corporativos.',
+        shortDescription: 'Promoção interna para Assistente de Programação, liderando automações, integrações e melhorias de fluxo para diferentes setores.',
+        fullDescription: 'Como Assistente de Programação na Maximum Assessoria Contábil, assumi uma atuação mais estratégica no desenvolvimento de soluções internas. Tenho foco na otimização da rotina dos colaboradores com automações, redução de processos manuais e organização de fluxos de trabalho. Entre as entregas, estão sistemas de envio automático de e-mails, apoio ao suporte interno, acompanhamento de demandas e integrações com APIs como Questor, Acessorias, GOB e Sieg.',
         projects: [],
         promotionLabel: 'Promoção de Auxiliar para Assistente'
       },
@@ -3432,8 +3459,8 @@
         date: '01/2026 - 04/2026',
         company: 'Maximum Assesoria Contábil',
         locationWork: 'Juiz de Fora • Presencial',
-        shortDescription: 'Início na Maximum com foco em organização de rotinas internas e preparação para evolução ao cargo de Assistente.',
-        fullDescription: 'Atuação inicial na Maximum Assesoria Contábil como Auxiliar de Programação, contribuindo com tarefas internas, suporte técnico e estruturação das primeiras automações que sustentaram a promoção para Assistente de Programação.',
+        shortDescription: 'Entrada na Maximum com atuação operacional em suporte e estruturação das primeiras automações internas.',
+        fullDescription: 'No início da minha trajetória na Maximum Assesoria Contábil, atuei como Auxiliar de Programação apoiando o time com suporte interno, organização de demandas e construção das primeiras soluções de automação. Esse período foi essencial para mapear necessidades reais da empresa e preparar a base técnica que resultou na minha promoção para Assistente de Programação.',
         projects: []
       },
       {
@@ -3442,8 +3469,8 @@
         date: '06/2024 - 12/2025',
         company: 'UsePress',
         locationWork: 'Juiz de Fora • Híbrido',
-        shortDescription: 'Primeira experiência profissional com desenvolvimento de sistemas, suporte e participação em projetos para clientes da UsePress.',
-        fullDescription: 'Experiência na UsePress com atuação em desenvolvimento, suporte e evolução de páginas/sistemas para clientes. Os principais projetos desse período foram Natura, RedeMG Farma, Recrie e Envia Bem.',
+        shortDescription: 'Primeira experiência profissional com desenvolvimento de sistemas, suporte ao cliente e projetos reais na UsePress.',
+        fullDescription: 'Na UsePress, tive contato direto com a rotina de mercado e com demandas reais de clientes, atuando em desenvolvimento de sites e sistemas, versionamento de código, organização de backups, suporte ao cliente e acompanhamento de servidores AWS. Também participei de projetos relevantes como Natura, RedeMG Farma, Recrie e Envia Bem, que fortaleceram minha visão de responsabilidade, organização e impacto técnico.',
         projects: ['natura', 'redemg-farma', 'recrie', 'envia-bem']
       }
     ];
@@ -3725,6 +3752,31 @@
         ],
         commits: [0,2,4,6,1,0,3,5,0,2,7,1,0,4,3,6,0,1,2,5,0,7,4,2,1,0,3,6],
         link: 'https://thynkbarber.com'
+      },
+      thynkxp: {
+        name: 'thynkXP',
+        images: [
+          'https://via.placeholder.com/1200x700.png?text=thynkXP+01',
+          'https://via.placeholder.com/1200x700.png?text=thynkXP+02',
+          'https://via.placeholder.com/1200x700.png?text=thynkXP+03',
+          'https://via.placeholder.com/1200x700.png?text=thynkXP+04',
+          'https://via.placeholder.com/1200x700.png?text=thynkXP+05'
+        ],
+        testimonials: [
+          '“A proposta é excelente para pequenas empresas que precisam acelerar presença digital.” — Parceiro de negócio',
+          '“Projeto com visão prática, acessível e foco em resultado real.” — Cliente potencial',
+          '“Une tecnologia e estratégia de forma clara para quem está crescendo.” — Consultor digital'
+        ],
+        about: 'A thynkXP é um projeto individual idealizado com o propósito de apoiar pequenas empresas em seu crescimento e fortalecimento no mercado digital. A iniciativa foi criada com foco no desenvolvimento de soluções personalizadas, como sistemas, sites profissionais e ferramentas voltadas ao tráfego pago, buscando atender às necessidades de negócios que desejam ampliar sua presença online e melhorar seus resultados. O principal objetivo da thynkXP é oferecer suporte estratégico e tecnológico para pequenas empresas, ajudando-as a conquistar maior visibilidade, fortalecer sua identidade digital e alcançar novos clientes por meio de soluções modernas, funcionais e acessíveis. Mais do que apenas criar sites ou sistemas, o projeto busca contribuir diretamente para a evolução dos negócios, entregando recursos que facilitem processos, melhorem a apresentação da empresa no ambiente digital e potencializem suas oportunidades de crescimento.',
+        updates: [
+          { title: 'Estrutura Inicial', date: '18/04/2026', description: 'Definição do posicionamento do projeto e dos serviços iniciais para pequenas empresas.' },
+          { title: 'Modelo de Entrega', date: '12/04/2026', description: 'Organização dos pacotes de sites, sistemas e suporte de tráfego pago.' },
+          { title: 'Landing Institucional', date: '06/04/2026', description: 'Criação da base visual para apresentação digital da proposta da thynkXP.' },
+          { title: 'Pipeline Comercial', date: '01/04/2026', description: 'Estruturação inicial para captação e acompanhamento de novos clientes.' },
+          { title: 'Refino de Oferta', date: '27/03/2026', description: 'Ajustes na comunicação de valor com foco em negócios locais e pequenas empresas.' }
+        ],
+        commits: [0,1,3,2,0,4,5,2,1,0,3,4,2,1,0,5,3,2,1,0,4,6,2,1,0,3,2,4],
+        link: '#'
       }
     };
 
@@ -3737,6 +3789,7 @@
     const projectPrevImage = document.getElementById('projectPrevImage');
     const projectNextImage = document.getElementById('projectNextImage');
     const projectTestimonials = document.getElementById('projectTestimonials');
+    const projectAboutImage = document.getElementById('projectAboutImage');
     const projectAboutDescription = document.getElementById('projectAboutDescription');
     const projectUpdatesList = document.getElementById('projectUpdatesList');
     const projectCommitGrid = document.getElementById('projectCommitGrid');
@@ -3775,6 +3828,8 @@
       if (!project) return;
       projectCarouselImage.src = project.images[currentProjectImageIndex];
       projectCarouselImage.alt = `Preview ${project.name} ${currentProjectImageIndex + 1}`;
+      projectAboutImage.src = project.images[currentProjectImageIndex];
+      projectAboutImage.alt = `Imagem da página ${project.name} ${currentProjectImageIndex + 1}`;
     }
 
     function openProjectDetails(projectId) {
@@ -3808,6 +3863,8 @@
         projectTestimonials.appendChild(card);
       });
 
+      projectAboutImage.src = project.images[0];
+      projectAboutImage.alt = `Imagem da página ${project.name}`;
       projectAboutDescription.textContent = project.about;
 
       projectUpdatesList.innerHTML = '';
