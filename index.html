@@ -3,48 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f7f7f4">
-  <meta name="description" content="Portfólio de Arthur Ferreira, desenvolvedor Full Stack com experiência em automações, integrações, aplicações web e produtos SaaS.">
-  <meta name="keywords" content="Arthur Ferreira, desenvolvedor full stack, backend, Node.js, React, Java, AWS, MongoDB, APIs, automações">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="Portfólio de Arthur Ferreira, desenvolvedor de sistemas com foco em Back-end, automações RPA, integrações e produtos SaaS.">
+  <meta name="keywords" content="Arthur Ferreira, desenvolvedor backend, automação RPA, SaaS, Node.js, APIs, integrações, AWS, sistemas">
   <meta name="author" content="Arthur Ferreira">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Arthur Ferreira | Desenvolvedor Full Stack">
-  <meta property="og:description" content="Soluções digitais, automações, integrações e produtos web com foco em impacto real.">
+  <meta property="og:title" content="Arthur Ferreira | Back-end, RPA e SaaS">
+  <meta property="og:description" content="Sistemas, automações e produtos SaaS pensados para aumentar a produtividade e melhorar operações.">
   <meta property="og:image" content="profile.png">
   <meta property="og:locale" content="pt_BR">
-  <title>Arthur Ferreira | Desenvolvedor Full Stack</title>
+  <title>Arthur Ferreira | Back-end, RPA e SaaS</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f7f7f4;
-      --surface: #ffffff;
-      --surface-soft: #efefeb;
-      --surface-warm: #f2f1ec;
+      --bg: #f6f5f0;
+      --surface: rgba(255, 255, 255, .78);
+      --surface-solid: #fff;
+      --surface-soft: #ecebe5;
       --text: #0a0a0a;
-      --muted: #686863;
-      --line: #ddddda;
-      --line-strong: #bdbdb7;
+      --muted: #66655f;
+      --line: rgba(10, 10, 10, .12);
+      --line-strong: rgba(10, 10, 10, .28);
       --black: #0b0b0b;
-      --black-soft: #1b1b1b;
-      --white: #ffffff;
-      --max-width: 1180px;
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
-      --shadow-soft: 0 12px 34px rgba(0, 0, 0, 0.055);
+      --white: #fff;
+      --accent: #a6ff45;
+      --accent-soft: rgba(166, 255, 69, .2);
+      --max-width: 1200px;
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 15px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .09);
+      --shadow-soft: 0 14px 42px rgba(0, 0, 0, .065);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html {
       scroll-behavior: smooth;
@@ -56,8 +53,9 @@
       overflow-x: hidden;
       color: var(--text);
       background:
-        radial-gradient(circle at 9% 3%, rgba(0, 0, 0, 0.035), transparent 24rem),
-        linear-gradient(180deg, #fbfbf9 0%, var(--bg) 46%, #f4f4f1 100%);
+        radial-gradient(circle at 12% 2%, rgba(0, 0, 0, .05), transparent 27rem),
+        radial-gradient(circle at 88% 12%, rgba(166, 255, 69, .08), transparent 25rem),
+        linear-gradient(180deg, #fbfaf7 0%, var(--bg) 45%, #efeee8 100%);
       font-family: "DM Sans", sans-serif;
       line-height: 1.65;
     }
@@ -66,38 +64,37 @@
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: -2;
       pointer-events: none;
-      opacity: 0.55;
+      opacity: .7;
       background-image:
-        linear-gradient(rgba(0,0,0,.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,.018) 1px, transparent 1px);
+        linear-gradient(rgba(0, 0, 0, .018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, .018) 1px, transparent 1px);
       background-size: 76px 76px;
-      mask-image: linear-gradient(to bottom, black, transparent 76%);
+      mask-image: linear-gradient(to bottom, #000, transparent 82%);
     }
 
-    img {
-      display: block;
-      max-width: 100%;
+    body::after {
+      content: "";
+      position: fixed;
+      width: 440px;
+      height: 440px;
+      right: -250px;
+      bottom: 5%;
+      z-index: -1;
+      border: 1px solid rgba(0, 0, 0, .07);
+      border-radius: 50%;
+      box-shadow: 0 0 0 54px rgba(0, 0, 0, .018), 0 0 0 108px rgba(0, 0, 0, .012);
+      pointer-events: none;
     }
 
-    a {
-      color: inherit;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
     :focus-visible {
-      outline: 3px solid rgba(0, 0, 0, 0.7);
+      outline: 3px solid rgba(10, 10, 10, .75);
       outline-offset: 4px;
     }
 
@@ -115,9 +112,7 @@
       transition: top .2s ease;
     }
 
-    .skip-link:focus {
-      top: 16px;
-    }
+    .skip-link:focus { top: 16px; }
 
     .container {
       width: min(calc(100% - 40px), var(--max-width));
@@ -128,8 +123,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 14px 0;
-      background: rgba(247, 247, 244, 0.78);
+      padding: 12px 0;
+      background: rgba(246, 245, 240, .76);
       border-bottom: 1px solid transparent;
       backdrop-filter: blur(18px);
       transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
@@ -137,59 +132,88 @@
 
     .site-header.scrolled {
       border-color: var(--line);
-      background: rgba(251, 251, 249, 0.94);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.035);
+      background: rgba(251, 250, 247, .94);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .04);
     }
 
     .nav-shell {
-      min-height: 58px;
+      min-height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
     }
 
-    .brand {
+    .signature-brand {
+      position: relative;
+      min-width: 166px;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
       color: var(--text);
       text-decoration: none;
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.04em;
     }
 
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: var(--black);
-      color: var(--white);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.15);
+    .signature-text {
+      position: relative;
+      display: inline-block;
+      padding: 0 11px 2px 2px;
+      overflow: hidden;
+      font-family: "Allura", cursive;
+      font-size: 2.45rem;
+      line-height: 1;
+      white-space: nowrap;
+      letter-spacing: .01em;
     }
 
-    .brand-mark span {
-      font-size: .92rem;
-      letter-spacing: -.04em;
+    .signature-text::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 100%;
+      background: linear-gradient(90deg, rgba(246, 245, 240, 0), #f6f5f0 9%);
+      animation: signatureReveal 2.3s .2s cubic-bezier(.76, 0, .24, 1) both;
+    }
+
+    .signature-pen {
+      position: absolute;
+      right: -3px;
+      top: 7px;
+      z-index: 2;
+      font-size: 1.05rem;
+      transform: rotate(-38deg);
+      animation: penWrite 2.3s .2s cubic-bezier(.76, 0, .24, 1) both, penFloat 2.8s 2.7s ease-in-out infinite;
+    }
+
+    @keyframes signatureReveal {
+      from { width: 100%; }
+      to { width: 0; }
+    }
+
+    @keyframes penWrite {
+      from { right: 150px; opacity: 0; }
+      8% { opacity: 1; }
+      to { right: -3px; opacity: 1; }
+    }
+
+    @keyframes penFloat {
+      0%, 100% { transform: rotate(-38deg) translateY(0); }
+      50% { transform: rotate(-38deg) translateY(-2px); }
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       list-style: none;
     }
 
     .nav-links a {
       display: inline-flex;
       align-items: center;
-      padding: 10px 13px;
+      padding: 10px 12px;
       border-radius: 11px;
       color: var(--muted);
-      font-size: .92rem;
+      font-size: .9rem;
       font-weight: 700;
       text-decoration: none;
       transition: .2s ease;
@@ -198,54 +222,75 @@
     .nav-links a:hover,
     .nav-links a.active {
       color: var(--text);
-      background: rgba(0,0,0,.055);
+      background: rgba(0, 0, 0, .055);
     }
 
-    .nav-cta {
+    .nav-cta,
+    .btn {
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 11px 16px;
-      border: 1px solid var(--black);
-      border-radius: 12px;
-      background: var(--black);
-      color: var(--white);
-      font-size: .9rem;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 17px;
+      border: 1px solid var(--line-strong);
+      border-radius: 13px;
       font-weight: 800;
       text-decoration: none;
-      transition: .2s ease;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
     }
 
-    .nav-cta:hover {
+    .nav-cta,
+    .btn-primary {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, .13);
+    }
+
+    .nav-cta:hover,
+    .btn-primary:hover {
       transform: translateY(-2px);
       background: #242424;
-      box-shadow: 0 10px 28px rgba(0,0,0,.14);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, .16);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .68);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: var(--black);
+      background: var(--surface-solid);
     }
 
     .menu-toggle {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       display: none;
       place-items: center;
       border: 1px solid var(--line);
       border-radius: 12px;
-      background: var(--surface);
+      background: var(--surface-solid);
       color: var(--text);
       cursor: pointer;
     }
 
-    main {
-      overflow: clip;
-    }
+    main { overflow: clip; }
 
     .hero {
-      padding: 78px 0 42px;
+      min-height: calc(100vh - 86px);
+      display: grid;
+      align-items: center;
+      padding: 58px 0 44px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.32fr) minmax(300px, .68fr);
-      gap: 44px;
+      grid-template-columns: minmax(0, 1.18fr) minmax(360px, .82fr);
+      gap: clamp(34px, 6vw, 84px);
       align-items: center;
     }
 
@@ -253,7 +298,7 @@
     .section-kicker {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
       color: var(--text);
       font-size: .76rem;
       font-weight: 800;
@@ -264,91 +309,49 @@
     .eyebrow::before,
     .section-kicker::before {
       content: "";
-      width: 28px;
+      width: 30px;
       height: 1px;
       background: currentColor;
     }
 
     .hero h1 {
-      max-width: 850px;
-      margin-top: 24px;
+      max-width: 820px;
+      margin-top: 22px;
       font-family: "Manrope", sans-serif;
-      font-size: clamp(3.3rem, 7.7vw, 7rem);
-      line-height: .96;
-      letter-spacing: -.075em;
+      font-size: clamp(3.5rem, 7.35vw, 6.9rem);
+      line-height: .94;
+      letter-spacing: -.078em;
     }
 
     .hero h1 span {
       display: block;
-      color: #8b8b85;
+      color: #8a8983;
     }
 
     .hero-lead {
-      max-width: 720px;
-      margin-top: 28px;
+      max-width: 745px;
+      margin-top: 27px;
       color: var(--muted);
-      font-size: clamp(1.05rem, 2vw, 1.27rem);
+      font-size: clamp(1.05rem, 1.85vw, 1.26rem);
       line-height: 1.75;
     }
 
-    .hero-lead strong {
-      color: var(--text);
-    }
+    .hero-lead strong { color: var(--text); }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 34px;
-    }
-
-    .btn {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 19px;
-      border: 1px solid var(--line-strong);
-      border-radius: 14px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      border-color: var(--black);
-      background: var(--black);
-      color: var(--white);
-      box-shadow: 0 14px 30px rgba(0,0,0,.13);
-    }
-
-    .btn-primary:hover {
-      background: #242424;
-      box-shadow: 0 18px 38px rgba(0,0,0,.16);
-    }
-
-    .btn-secondary {
-      background: var(--surface);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--black);
-      background: var(--surface-soft);
+      margin-top: 32px;
     }
 
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 9px 18px;
-      margin-top: 28px;
+      margin-top: 27px;
       color: var(--muted);
-      font-size: .92rem;
+      font-size: .91rem;
       font-weight: 700;
     }
 
@@ -358,109 +361,153 @@
       gap: 8px;
     }
 
-    .hero-meta i {
-      color: var(--black);
-    }
-
-    .profile-card {
+    .portrait-stage {
       position: relative;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background: var(--surface);
-      box-shadow: var(--shadow);
+      min-height: 590px;
+      display: grid;
+      place-items: end center;
+      isolation: isolate;
     }
 
-    .profile-card::before {
+    .portrait-stage::before {
       content: "";
       position: absolute;
-      inset: 8px;
-      z-index: -1;
-      border: 1px solid rgba(0,0,0,.025);
-      border-radius: 24px;
-      pointer-events: none;
+      width: min(88%, 430px);
+      aspect-ratio: 1;
+      left: 50%;
+      bottom: 6%;
+      z-index: -2;
+      border: 1px solid rgba(0, 0, 0, .09);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow:
+        0 0 0 34px rgba(0, 0, 0, .018),
+        0 0 0 68px rgba(0, 0, 0, .011);
     }
 
-    .profile-image {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4 / 5;
-      border-radius: 22px;
-      background: var(--surface-soft);
-      filter: grayscale(8%);
-    }
-
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .availability {
+    .portrait-stage::after {
+      content: "";
       position: absolute;
-      left: 14px;
-      right: 14px;
-      bottom: 14px;
+      width: 72%;
+      height: 34%;
+      left: 50%;
+      bottom: 2%;
+      z-index: -1;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(0, 0, 0, .17), transparent 66%);
+      filter: blur(16px);
+      transform: translateX(-50%);
+      opacity: .45;
+    }
+
+    .portrait {
+      width: min(100%, 510px);
+      max-height: 650px;
+      object-fit: contain;
+      object-position: bottom center;
+      filter: grayscale(7%) contrast(1.02);
+      mix-blend-mode: multiply;
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 86%, transparent 100%);
+      transform-origin: bottom center;
+      animation: portraitEntrance .9s .12s ease both;
+    }
+
+    @keyframes portraitEntrance {
+      from { opacity: 0; transform: translateY(24px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .float-card {
+      position: absolute;
+      z-index: 3;
+      min-width: 148px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 11px 13px;
-      border: 1px solid rgba(255,255,255,.28);
-      border-radius: 13px;
-      background: rgba(11,11,11,.88);
-      color: var(--white);
+      gap: 11px;
+      padding: 12px 14px;
+      border: 1px solid rgba(10, 10, 10, .12);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .82);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .09);
       backdrop-filter: blur(14px);
-      font-size: .85rem;
-      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      animation: cardFloat 4.5s ease-in-out infinite;
     }
 
-    .availability span {
+    .float-card:hover {
+      z-index: 5;
+      transform: translateY(-6px) scale(1.02);
+      border-color: var(--black);
+      box-shadow: 0 22px 52px rgba(0, 0, 0, .14);
+    }
+
+    .float-card i {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 10px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .float-card strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: .87rem;
+      line-height: 1.15;
+    }
+
+    .float-card small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+    .float-card.github { left: -1%; top: 16%; animation-delay: -.8s; }
+    .float-card.linkedin { right: -7%; top: 30%; animation-delay: -2.1s; }
+    .float-card.whatsapp { left: -5%; bottom: 19%; animation-delay: -3.3s; }
+    .float-card.curriculo { right: -2%; bottom: 8%; animation-delay: -1.4s; }
+
+    @keyframes cardFloat {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -7px; }
+    }
+
+    .availability-chip {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      z-index: 4;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--black);
+      color: var(--white);
+      font-size: .82rem;
+      font-weight: 800;
+      transform: translateX(-50%);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, .18);
     }
 
     .status-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 0 5px rgba(255,255,255,.16);
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(166, 255, 69, .16);
     }
 
-    .profile-links {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 9px;
-      margin-top: 11px;
-    }
-
-    .profile-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 11px 8px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      color: var(--muted);
-      font-size: .84rem;
-      font-weight: 800;
-      text-decoration: none;
-      transition: .2s ease;
-    }
-
-    .profile-links a:hover {
-      color: var(--white);
-      border-color: var(--black);
-      background: var(--black);
-    }
-
-    .proof-strip {
-      padding: 22px 0 76px;
-    }
+    .proof-strip { padding: 20px 0 74px; }
 
     .proof-grid {
       display: grid;
@@ -468,98 +515,87 @@
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      background: rgba(255,255,255,.72);
+      background: rgba(255, 255, 255, .7);
       box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
     }
 
     .proof-item {
-      padding: 25px 24px;
+      min-height: 132px;
+      display: grid;
+      align-content: center;
+      padding: 24px;
       border-right: 1px solid var(--line);
     }
 
-    .proof-item:last-child {
-      border-right: 0;
-    }
+    .proof-item:last-child { border-right: 0; }
 
     .proof-value {
       font-family: "Manrope", sans-serif;
-      font-size: 1.78rem;
+      font-size: clamp(1.45rem, 2.4vw, 1.92rem);
       font-weight: 800;
-      letter-spacing: -.04em;
+      letter-spacing: -.045em;
+      line-height: 1.1;
     }
 
     .proof-label {
-      margin-top: 5px;
+      margin-top: 7px;
       color: var(--muted);
-      font-size: .9rem;
+      font-size: .89rem;
+      line-height: 1.45;
     }
 
-    .section {
-      padding: 84px 0;
-    }
+    .section { padding: 88px 0; }
 
     .section-heading {
       display: grid;
-      grid-template-columns: minmax(0, .8fr) minmax(300px, .55fr);
-      gap: 40px;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 38px;
       align-items: end;
-      margin-bottom: 38px;
+      margin-bottom: 34px;
     }
 
     .section-title {
+      max-width: 820px;
       margin-top: 15px;
       font-family: "Manrope", sans-serif;
-      font-size: clamp(2.2rem, 4.7vw, 4.25rem);
-      line-height: 1.05;
-      letter-spacing: -.06em;
+      font-size: clamp(2.35rem, 5.5vw, 5.2rem);
+      line-height: 1.02;
+      letter-spacing: -.07em;
     }
 
     .section-intro {
+      max-width: 530px;
+      justify-self: end;
       color: var(--muted);
-      font-size: 1.03rem;
+      font-size: 1.02rem;
     }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
 
     .project-card {
       position: relative;
-      min-height: 425px;
       overflow: hidden;
+      min-height: 370px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 28px;
       border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background: var(--surface);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, .76);
       box-shadow: var(--shadow-soft);
       transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      border-color: var(--black);
-      box-shadow: 0 22px 55px rgba(0,0,0,.09);
-    }
-
-    .project-card.featured {
-      grid-column: span 7;
-      background:
-        linear-gradient(145deg, rgba(0,0,0,.035), transparent 62%),
-        var(--surface);
-    }
-
-    .project-card.side {
-      grid-column: span 5;
-    }
-
-    .project-card.half {
-      grid-column: span 6;
-      min-height: 370px;
+      border-color: var(--line-strong);
+      box-shadow: var(--shadow);
     }
 
     .project-card::after {
@@ -569,136 +605,193 @@
       height: 210px;
       right: -115px;
       bottom: -115px;
-      border: 1px solid rgba(0,0,0,.07);
+      border: 1px solid rgba(0, 0, 0, .06);
       border-radius: 50%;
-      box-shadow: 0 0 0 28px rgba(0,0,0,.018), 0 0 0 58px rgba(0,0,0,.012);
+      box-shadow: 0 0 0 28px rgba(0, 0, 0, .014), 0 0 0 56px rgba(0, 0, 0, .009);
       pointer-events: none;
     }
 
-    .project-top,
-    .project-bottom {
-      position: relative;
-      z-index: 1;
-    }
-
-    .project-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text);
-      font-size: .76rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .project-label::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
+    .project-card.featured {
+      grid-column: span 7;
+      min-height: 455px;
       background: var(--black);
-      box-shadow: 0 0 0 5px rgba(0,0,0,.07);
+      color: var(--white);
     }
 
-    .project-card h3 {
-      max-width: 540px;
-      margin-top: 18px;
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(1.75rem, 3vw, 2.72rem);
-      line-height: 1.08;
-      letter-spacing: -.05em;
-    }
-
-    .project-card p {
-      max-width: 640px;
-      margin-top: 16px;
-      color: var(--muted);
-    }
-
-    .project-role {
-      margin-top: 18px;
-      color: var(--text);
-      font-size: .9rem;
-      font-weight: 800;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
-    }
-
-    .tag {
-      padding: 7px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--surface-soft);
-      color: #4d4d49;
-      font-size: .78rem;
-      font-weight: 700;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: 30px;
-      color: var(--text);
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .project-link i {
-      transition: transform .2s ease;
-    }
-
-    .project-link:hover i {
-      transform: translate(4px, -4px);
-    }
+    .project-card.side { grid-column: span 5; }
+    .project-card.third { grid-column: span 4; }
 
     .project-number {
       position: absolute;
-      right: 26px;
-      top: 18px;
-      color: rgba(0,0,0,.055);
+      right: 22px;
+      top: 12px;
+      color: rgba(0, 0, 0, .07);
       font-family: "Manrope", sans-serif;
       font-size: 5rem;
       font-weight: 800;
       letter-spacing: -.08em;
+      line-height: 1;
+    }
+
+    .featured .project-number { color: rgba(255, 255, 255, .09); }
+
+    .project-label,
+    .project-status {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .featured .project-label {
+      border-color: rgba(255, 255, 255, .18);
+      color: #d0d0d0;
+    }
+
+    .project-card h3 {
+      max-width: 82%;
+      margin-top: 20px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(1.75rem, 3vw, 2.65rem);
+      line-height: 1.08;
+      letter-spacing: -.055em;
+    }
+
+    .project-card p {
+      max-width: 620px;
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .featured p { color: #bdbdbd; }
+
+    .project-role {
+      margin-top: 17px;
+      color: #3f3f3b;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .featured .project-role { color: #e7e7e7; }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 7px 9px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: rgba(0, 0, 0, .025);
+      color: #4f4f4a;
+      font-size: .74rem;
+      font-weight: 800;
+    }
+
+    .featured .tag {
+      border-color: rgba(255, 255, 255, .15);
+      background: rgba(255, 255, 255, .055);
+      color: #ececec;
+    }
+
+    .project-bottom {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .project-link,
+    .project-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      font-size: .88rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .project-link {
+      border-bottom: 1px solid currentColor;
+    }
+
+    .featured .project-link,
+    .featured .project-note { color: var(--white); }
+
+    .project-note {
+      color: var(--muted);
+      border: 0;
+    }
+
+    .integrations-band {
+      margin-top: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, .68);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .integrations-band strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .integration-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 15px;
+    }
+
+    .integration-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 11px;
+      border-radius: 11px;
+      background: var(--surface-soft);
+      color: #343430;
+      font-size: .81rem;
+      font-weight: 800;
     }
 
     .experience-layout {
       display: grid;
       grid-template-columns: .72fr 1.28fr;
-      gap: 34px;
+      gap: 36px;
       align-items: start;
     }
 
     .experience-aside {
       position: sticky;
-      top: 110px;
+      top: 112px;
       padding: 28px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      background: var(--surface);
+      background: rgba(255, 255, 255, .7);
       box-shadow: var(--shadow-soft);
-    }
-
-    .experience-aside::before {
-      content: "";
-      display: block;
-      width: 52px;
-      height: 5px;
-      margin-bottom: 22px;
-      border-radius: 999px;
-      background: var(--black);
     }
 
     .experience-aside h3 {
       font-family: "Manrope", sans-serif;
-      font-size: 1.75rem;
+      font-size: 1.55rem;
       letter-spacing: -.04em;
     }
 
@@ -707,10 +800,7 @@
       color: var(--muted);
     }
 
-    .experience-aside .btn {
-      width: 100%;
-      margin-top: 22px;
-    }
+    .experience-aside .btn { margin-top: 22px; }
 
     .timeline {
       position: relative;
@@ -721,195 +811,182 @@
     .timeline::before {
       content: "";
       position: absolute;
-      left: 17px;
-      top: 18px;
-      bottom: 18px;
+      left: 15px;
+      top: 28px;
+      bottom: 28px;
       width: 1px;
-      background: linear-gradient(var(--black), var(--line));
+      background: var(--line-strong);
     }
 
     .timeline-item {
       position: relative;
-      margin-left: 52px;
+      margin-left: 54px;
       padding: 26px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      background: rgba(255,255,255,.76);
+      background: rgba(255, 255, 255, .76);
       box-shadow: var(--shadow-soft);
     }
 
     .timeline-item::before {
       content: "";
       position: absolute;
-      left: -43px;
+      width: 13px;
+      height: 13px;
+      left: -46px;
       top: 31px;
-      width: 17px;
-      height: 17px;
       border: 4px solid var(--bg);
       border-radius: 50%;
       background: var(--black);
-      box-shadow: 0 0 0 1px rgba(0,0,0,.22);
+      box-shadow: 0 0 0 1px var(--line-strong);
     }
 
     .timeline-date {
-      color: var(--text);
+      color: var(--muted);
       font-size: .76rem;
       font-weight: 800;
-      letter-spacing: .1em;
+      letter-spacing: .09em;
       text-transform: uppercase;
     }
 
     .timeline-item h3 {
       margin-top: 9px;
       font-family: "Manrope", sans-serif;
-      font-size: 1.45rem;
-      letter-spacing: -.035em;
+      font-size: 1.48rem;
+      line-height: 1.2;
+      letter-spacing: -.04em;
     }
 
     .timeline-company {
-      margin-top: 3px;
-      color: #3c3c39;
-      font-weight: 700;
+      margin-top: 5px;
+      color: #3d3d39;
+      font-weight: 800;
     }
 
     .timeline-item p {
-      margin-top: 14px;
+      margin-top: 13px;
       color: var(--muted);
+      font-size: .94rem;
     }
 
     .promotion {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       margin-top: 16px;
       padding: 7px 10px;
-      border: 1px solid var(--black);
       border-radius: 999px;
-      background: var(--black);
-      color: var(--white);
-      font-size: .78rem;
+      background: var(--accent-soft);
+      font-size: .76rem;
       font-weight: 800;
     }
 
     .skills-layout {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 15px;
     }
 
     .skill-card {
-      padding: 26px;
+      padding: 25px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      background: var(--surface);
+      background: rgba(255, 255, 255, .72);
       box-shadow: var(--shadow-soft);
-      transition: transform .2s ease, border-color .2s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--black);
     }
 
     .skill-icon {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       display: grid;
       place-items: center;
-      border-radius: 14px;
+      border-radius: 13px;
       background: var(--black);
       color: var(--white);
-      font-size: 1.2rem;
+      font-size: 1.08rem;
     }
 
     .skill-card h3 {
       margin-top: 18px;
       font-family: "Manrope", sans-serif;
-      font-size: 1.25rem;
-      letter-spacing: -.03em;
+      font-size: 1.23rem;
+      letter-spacing: -.035em;
     }
 
     .skill-card p {
-      margin-top: 10px;
+      margin-top: 9px;
       color: var(--muted);
-      font-size: .94rem;
+      font-size: .91rem;
     }
 
     .stack-cloud {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 26px;
-      padding: 26px;
+      gap: 9px;
+      margin-top: 18px;
+      padding: 22px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      background: var(--surface-warm);
+      background: rgba(255, 255, 255, .66);
     }
 
     .stack-item {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 13px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--surface);
-      color: #3d3d3a;
-      font-size: .87rem;
+      padding: 9px 11px;
+      border-radius: 11px;
+      background: var(--surface-soft);
+      color: #343430;
+      font-size: .82rem;
       font-weight: 800;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: .82fr 1.18fr;
-      gap: 20px;
-    }
-
-    .about-photo,
-    .about-copy {
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background: var(--surface);
-      box-shadow: var(--shadow-soft);
+      grid-template-columns: .86fr 1.14fr;
+      gap: clamp(30px, 6vw, 74px);
+      align-items: center;
     }
 
     .about-photo {
-      min-height: 470px;
-      overflow: hidden;
       position: relative;
+      min-height: 590px;
+      display: grid;
+      place-items: end center;
+    }
+
+    .about-photo::before {
+      content: "";
+      position: absolute;
+      width: 82%;
+      aspect-ratio: 1;
+      left: 50%;
+      bottom: 5%;
+      z-index: -1;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 0 34px rgba(0, 0, 0, .015);
     }
 
     .about-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(8%);
-    }
-
-    .about-photo::after {
-      content: "Construindo soluções desde os 16 anos";
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      padding: 14px 16px;
-      border-radius: 14px;
-      background: rgba(11,11,11,.90);
-      color: var(--white);
-      backdrop-filter: blur(14px);
-      font-weight: 800;
-    }
-
-    .about-copy {
-      padding: clamp(28px, 5vw, 50px);
+      width: min(100%, 500px);
+      max-height: 620px;
+      object-fit: contain;
+      object-position: bottom center;
+      mix-blend-mode: multiply;
+      filter: grayscale(9%);
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
     }
 
     .about-copy h2 {
+      margin-top: 15px;
       font-family: "Manrope", sans-serif;
-      font-size: clamp(2rem, 4.4vw, 3.7rem);
-      line-height: 1.08;
-      letter-spacing: -.06em;
+      font-size: clamp(2.25rem, 4.8vw, 4.35rem);
+      line-height: 1.04;
+      letter-spacing: -.065em;
     }
 
     .about-copy p {
@@ -922,7 +999,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-top: 26px;
+      margin-top: 25px;
     }
 
     .about-point {
@@ -932,15 +1009,13 @@
       padding: 13px;
       border: 1px solid var(--line);
       border-radius: 13px;
-      background: var(--surface-soft);
+      background: rgba(255, 255, 255, .66);
       color: #3d3d39;
-      font-size: .9rem;
+      font-size: .89rem;
       font-weight: 700;
     }
 
-    .about-point i {
-      color: var(--black);
-    }
+    .about-point i { color: var(--black); }
 
     .education-grid {
       display: grid;
@@ -952,27 +1027,27 @@
       padding: 25px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      background: var(--surface);
+      background: rgba(255, 255, 255, .72);
       box-shadow: var(--shadow-soft);
     }
 
     .education-card .status {
       color: var(--text);
-      font-size: .76rem;
+      font-size: .75rem;
       font-weight: 800;
-      letter-spacing: .1em;
+      letter-spacing: .09em;
       text-transform: uppercase;
     }
 
     .education-card h3 {
       margin-top: 12px;
       font-family: "Manrope", sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.28rem;
       line-height: 1.25;
       letter-spacing: -.035em;
     }
 
-    .education-card .institution {
+    .institution {
       margin-top: 8px;
       color: #3f3f3b;
       font-weight: 700;
@@ -981,7 +1056,7 @@
     .education-card p {
       margin-top: 13px;
       color: var(--muted);
-      font-size: .92rem;
+      font-size: .91rem;
     }
 
     .education-card a {
@@ -989,25 +1064,24 @@
       align-items: center;
       gap: 8px;
       margin-top: 18px;
-      color: var(--text);
-      font-size: .88rem;
+      border-bottom: 1px solid currentColor;
+      font-size: .87rem;
       font-weight: 800;
       text-decoration: none;
-      border-bottom: 1px solid currentColor;
     }
 
     .contact-card {
       position: relative;
       overflow: hidden;
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.13fr .87fr;
       gap: 30px;
       padding: clamp(30px, 6vw, 66px);
       border: 1px solid var(--black);
       border-radius: var(--radius-xl);
       background: var(--black);
       color: var(--white);
-      box-shadow: 0 26px 72px rgba(0,0,0,.16);
+      box-shadow: 0 26px 72px rgba(0, 0, 0, .16);
     }
 
     .contact-card::after {
@@ -1017,41 +1091,36 @@
       height: 340px;
       right: -160px;
       top: -160px;
-      border: 1px solid rgba(255,255,255,.12);
+      border: 1px solid rgba(255, 255, 255, .12);
       border-radius: 50%;
-      box-shadow: 0 0 0 38px rgba(255,255,255,.025), 0 0 0 78px rgba(255,255,255,.015);
+      box-shadow: 0 0 0 38px rgba(255, 255, 255, .025), 0 0 0 78px rgba(255, 255, 255, .015);
       pointer-events: none;
     }
 
-    .contact-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .contact-card .section-kicker {
-      color: var(--white);
-    }
+    .contact-card > * { position: relative; z-index: 1; }
+    .contact-card .section-kicker { color: var(--white); }
 
     .contact-card h2 {
       max-width: 700px;
+      margin-top: 15px;
       font-family: "Manrope", sans-serif;
-      font-size: clamp(2.25rem, 5.8vw, 5.1rem);
+      font-size: clamp(2.3rem, 5.6vw, 5rem);
       line-height: 1.02;
       letter-spacing: -.07em;
     }
 
     .contact-card p {
       max-width: 620px;
-      margin-top: 20px;
+      margin-top: 19px;
       color: #bdbdbd;
-      font-size: 1.02rem;
+      font-size: 1.01rem;
     }
 
     .contact-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 27px;
     }
 
     .contact-card .btn-primary {
@@ -1060,19 +1129,17 @@
       color: var(--black);
     }
 
-    .contact-card .btn-primary:hover {
-      background: #eeeeee;
-    }
+    .contact-card .btn-primary:hover { background: #eee; }
 
     .contact-card .btn-secondary {
-      border-color: rgba(255,255,255,.3);
+      border-color: rgba(255, 255, 255, .3);
       background: transparent;
       color: var(--white);
     }
 
     .contact-card .btn-secondary:hover {
       border-color: var(--white);
-      background: rgba(255,255,255,.08);
+      background: rgba(255, 255, 255, .08);
     }
 
     .contact-list {
@@ -1087,10 +1154,10 @@
       justify-content: space-between;
       gap: 14px;
       padding: 15px 16px;
-      border: 1px solid rgba(255,255,255,.17);
+      border: 1px solid rgba(255, 255, 255, .17);
       border-radius: 14px;
-      background: rgba(255,255,255,.045);
-      color: #eeeeee;
+      background: rgba(255, 255, 255, .045);
+      color: #eee;
       font-weight: 800;
       text-decoration: none;
       transition: .2s ease;
@@ -1098,7 +1165,7 @@
 
     .contact-list a:hover {
       border-color: var(--white);
-      background: rgba(255,255,255,.09);
+      background: rgba(255, 255, 255, .09);
       transform: translateX(4px);
     }
 
@@ -1140,15 +1207,9 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 980px) {
-      .nav-links,
-      .nav-cta {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: grid;
-      }
+    @media (max-width: 1040px) {
+      .nav-links, .nav-cta { display: none; }
+      .menu-toggle { display: grid; }
 
       .nav-links.open {
         position: absolute;
@@ -1159,14 +1220,11 @@
         padding: 14px;
         border: 1px solid var(--line);
         border-radius: 16px;
-        background: rgba(255,255,255,.98);
+        background: rgba(255, 255, 255, .98);
         box-shadow: var(--shadow);
       }
 
-      .nav-links.open a {
-        width: 100%;
-        padding: 13px;
-      }
+      .nav-links.open a { width: 100%; padding: 13px; }
 
       .hero-grid,
       .section-heading,
@@ -1177,73 +1235,68 @@
       }
 
       .hero {
-        padding-top: 54px;
+        min-height: auto;
+        padding-top: 48px;
       }
 
-      .profile-card {
-        max-width: 520px;
+      .portrait-stage {
+        max-width: 630px;
+        min-height: 620px;
+        margin-inline: auto;
       }
 
-      .proof-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .section-intro { justify-self: start; }
 
-      .proof-item:nth-child(2) {
-        border-right: 0;
-      }
-
-      .proof-item:nth-child(-n+2) {
-        border-bottom: 1px solid var(--line);
-      }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
 
       .project-card.featured,
       .project-card.side,
-      .project-card.half {
-        grid-column: span 12;
+      .project-card.third {
+        grid-column: span 6;
       }
 
-      .experience-aside {
-        position: static;
-      }
+      .experience-aside { position: static; }
 
       .skills-layout,
-      .education-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .education-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .about-photo {
+        max-width: 560px;
+        min-height: 620px;
       }
 
-      .contact-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .contact-list { grid-template-columns: repeat(2, 1fr); }
     }
 
-    @media (max-width: 660px) {
-      .container {
-        width: min(calc(100% - 26px), var(--max-width));
+    @media (max-width: 700px) {
+      .container { width: min(calc(100% - 26px), var(--max-width)); }
+      .site-header { padding: 8px 0; }
+      .signature-brand { min-width: 142px; }
+      .signature-text { font-size: 2.12rem; }
+      .signature-pen { top: 5px; }
+
+      .hero { padding-top: 34px; }
+      .hero h1 { font-size: clamp(3rem, 16vw, 4.8rem); }
+
+      .hero-actions .btn { width: 100%; }
+      .hero-meta { display: grid; }
+
+      .portrait-stage {
+        min-height: 540px;
+        margin-top: 8px;
       }
 
-      .site-header {
-        padding: 9px 0;
-      }
-
-      .hero {
-        padding-top: 38px;
-      }
-
-      .hero h1 {
-        font-size: clamp(3rem, 16vw, 4.8rem);
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .hero-meta {
-        display: grid;
-      }
-
-      .profile-links {
-        grid-template-columns: 1fr;
-      }
+      .portrait { width: min(100%, 440px); }
+      .float-card { min-width: 0; padding: 10px; }
+      .float-card i { width: 32px; height: 32px; }
+      .float-card strong { font-size: .78rem; }
+      .float-card small { display: none; }
+      .float-card.github { left: 0; top: 14%; }
+      .float-card.linkedin { right: 0; top: 27%; }
+      .float-card.whatsapp { left: 0; bottom: 19%; }
+      .float-card.curriculo { right: 0; bottom: 10%; }
 
       .proof-grid,
       .skills-layout,
@@ -1254,20 +1307,21 @@
       }
 
       .proof-item {
+        min-height: 112px;
         border-right: 0;
         border-bottom: 1px solid var(--line);
       }
 
-      .proof-item:last-child {
-        border-bottom: 0;
-      }
+      .proof-item:last-child { border-bottom: 0; }
 
-      .section {
-        padding: 66px 0;
-      }
+      .section { padding: 68px 0; }
+      .section-heading { gap: 18px; }
+      .projects-grid { gap: 13px; }
 
-      .section-heading {
-        gap: 18px;
+      .project-card.featured,
+      .project-card.side,
+      .project-card.third {
+        grid-column: span 12;
       }
 
       .project-card {
@@ -1275,30 +1329,19 @@
         padding: 23px;
       }
 
-      .project-number {
-        font-size: 3.7rem;
-      }
+      .project-card.featured { min-height: 400px; }
+      .project-number { font-size: 3.8rem; }
 
       .timeline-item {
-        margin-left: 39px;
+        margin-left: 42px;
         padding: 22px;
       }
 
-      .timeline::before {
-        left: 9px;
-      }
+      .timeline::before { left: 9px; }
+      .timeline-item::before { left: -39px; }
 
-      .timeline-item::before {
-        left: -38px;
-      }
-
-      .about-photo {
-        min-height: 390px;
-      }
-
-      .contact-card {
-        padding: 28px 22px;
-      }
+      .about-photo { min-height: 500px; }
+      .contact-card { padding: 28px 22px; }
 
       .footer-shell {
         align-items: flex-start;
@@ -1307,22 +1350,15 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
       }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
+      .reveal { opacity: 1; transform: none; }
+      .signature-text::after { display: none; }
+      .signature-pen { display: none; }
     }
   </style>
 
@@ -1331,14 +1367,24 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Arthur Ferreira",
-      "jobTitle": "Desenvolvedor Full Stack",
+      "jobTitle": "Desenvolvedor de Sistemas Back-end",
       "email": "mailto:dev.arrthur@gmail.com",
       "image": "profile.png",
       "sameAs": [
         "https://github.com/dev-arrthur",
         "https://www.linkedin.com/in/arthur-ferreira-a007a9279/"
       ],
-      "knowsAbout": ["Node.js", "JavaScript", "React", "Java", "MongoDB", "AWS", "APIs", "Automações"]
+      "knowsAbout": [
+        "Back-end",
+        "Automação RPA",
+        "SaaS",
+        "Node.js",
+        "APIs REST",
+        "Integrações de sistemas",
+        "AWS",
+        "MongoDB",
+        "SQL"
+      ]
     }
   </script>
 </head>
@@ -1347,15 +1393,15 @@
 
   <header class="site-header" id="siteHeader">
     <div class="container nav-shell">
-      <a class="brand" href="#inicio" aria-label="Arthur Ferreira - início">
-        <span class="brand-mark"><span>AF</span></span>
-        <span>Arthur Ferreira</span>
+      <a class="signature-brand" href="#inicio" aria-label="Arthur Ferreira - início">
+        <span class="signature-text">Arthur F.</span>
+        <i class="bi bi-pen signature-pen" aria-hidden="true"></i>
       </a>
 
       <nav aria-label="Navegação principal">
         <ul class="nav-links" id="navLinks">
           <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#experiencia">Trajetória</a></li>
           <li><a href="#competencias">Competências</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#formacao">Formação</a></li>
@@ -1377,15 +1423,15 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Desenvolvedor Full Stack</span>
-          <h1>Transformo desafios de negócio em <span>produtos digitais.</span></h1>
+          <span class="eyebrow">Back-end · RPA · SaaS</span>
+          <h1>Sistemas que fazem operações <span>renderem mais.</span></h1>
           <p class="hero-lead">
-            Desenvolvo <strong>aplicações web, automações e integrações</strong> com visão de produto, organização técnica e foco em reduzir trabalho manual, melhorar operações e entregar experiências claras.
+            Sou desenvolvedor de sistemas com foco em <strong>Back-end, automações RPA, integrações e produtos SaaS</strong>. Transformo processos manuais e necessidades de negócio em soluções confiáveis, escaláveis e simples de operar.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projetos">
-              Ver projetos em destaque <i class="bi bi-arrow-down-right"></i>
+              Explorar projetos <i class="bi bi-arrow-down-right"></i>
             </a>
             <a class="btn btn-secondary" href="mailto:dev.arrthur@gmail.com?subject=Oportunidade%20profissional">
               Falar sobre uma oportunidade <i class="bi bi-envelope"></i>
@@ -1394,46 +1440,59 @@
 
           <div class="hero-meta" aria-label="Informações profissionais">
             <span><i class="bi bi-geo-alt"></i> Juiz de Fora, MG</span>
-            <span><i class="bi bi-briefcase"></i> Experiência profissional desde 2024</span>
-            <span><i class="bi bi-mortarboard"></i> Engenharia de Software</span>
+            <span><i class="bi bi-code-square"></i> Tecnologia desde os 16 anos</span>
+            <span><i class="bi bi-briefcase"></i> CEO da thynkXP</span>
           </div>
         </div>
 
-        <aside class="profile-card reveal" aria-label="Perfil profissional de Arthur Ferreira">
-          <div class="profile-image">
-            <img src="profile.png" alt="Foto profissional de Arthur Ferreira" width="600" height="750">
-            <div class="availability">
-              <span><i class="status-dot"></i> Vamos conversar</span>
-              <i class="bi bi-arrow-up-right"></i>
-            </div>
-          </div>
-          <div class="profile-links">
-            <a href="https://github.com/dev-arrthur" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/arthur-ferreira-a007a9279/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> LinkedIn</a>
-            <a href="https://wa.me/5532991145114?text=Olá%2C%20Arthur!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+        <aside class="portrait-stage reveal" aria-label="Perfil profissional de Arthur Ferreira">
+          <img class="portrait" src="profile.png" alt="Foto profissional de Arthur Ferreira" width="600" height="750">
+
+          <a class="float-card github" href="https://github.com/dev-arrthur" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github"></i>
+            <span><strong>GitHub</strong><small>Código e projetos</small></span>
+          </a>
+
+          <a class="float-card linkedin" href="https://www.linkedin.com/in/arthur-ferreira-a007a9279/" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-linkedin"></i>
+            <span><strong>LinkedIn</strong><small>Trajetória profissional</small></span>
+          </a>
+
+          <a class="float-card whatsapp" href="https://wa.me/5532991145114?text=Olá%2C%20Arthur!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i>
+            <span><strong>WhatsApp</strong><small>Contato direto</small></span>
+          </a>
+
+          <a class="float-card curriculo" href="download/Curriculo-ArthurFerreira-2026.pdf" download>
+            <i class="bi bi-file-earmark-person"></i>
+            <span><strong>Currículo</strong><small>Baixar PDF</small></span>
+          </a>
+
+          <div class="availability-chip">
+            <i class="status-dot"></i> Disponível para novos desafios
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="proof-strip" aria-label="Resumo profissional">
+    <section class="proof-strip" aria-label="Indicadores profissionais">
       <div class="container">
         <div class="proof-grid reveal">
           <div class="proof-item">
-            <div class="proof-value">2+ anos</div>
-            <div class="proof-label">de experiência profissional em tecnologia</div>
+            <div class="proof-value">Desde os 16</div>
+            <div class="proof-label">construindo experiência prática em tecnologia</div>
           </div>
           <div class="proof-item">
-            <div class="proof-value">7 projetos</div>
-            <div class="proof-label">apresentados com aplicações publicadas</div>
+            <div class="proof-value">9+ soluções</div>
+            <div class="proof-label">entre SaaS, apps, automações e plataformas</div>
           </div>
           <div class="proof-item">
-            <div class="proof-value">4 integrações</div>
-            <div class="proof-label">com Questor, Acessorias, GOB e Sieg</div>
+            <div class="proof-value">8+ integrações</div>
+            <div class="proof-label">financeiras, contábeis, documentais e multicanal</div>
           </div>
           <div class="proof-item">
-            <div class="proof-value">Full Stack</div>
-            <div class="proof-label">produto, front-end, back-end e cloud</div>
+            <div class="proof-value">Back-end first</div>
+            <div class="proof-label">regras de negócio, APIs, dados, RPA e operação</div>
           </div>
         </div>
       </div>
@@ -1443,28 +1502,29 @@
       <div class="container">
         <div class="section-heading reveal">
           <div>
-            <span class="section-kicker">Trabalho selecionado</span>
-            <h2 class="section-title">Projetos que mostram como eu penso e construo.</h2>
+            <span class="section-kicker">Produtos e soluções</span>
+            <h2 class="section-title">Projetos pensados para resolver operações reais.</h2>
           </div>
           <p class="section-intro">
-            Menos galeria e mais contexto: cada projeto destaca o problema, a responsabilidade e as tecnologias envolvidas.
+            SaaS, automações e plataformas desenvolvidos com foco em produtividade, controle, integração e crescimento sustentável.
           </p>
         </div>
 
         <div class="projects-grid">
           <article class="project-card featured reveal">
             <span class="project-number" aria-hidden="true">01</span>
-            <div class="project-top">
-              <span class="project-label">SaaS em produção</span>
+            <div>
+              <span class="project-label">SaaS em evolução</span>
               <h3>thynkBarber</h3>
-              <p>Plataforma para digitalizar a operação de barbearias, reunindo agendamentos, assinaturas, dashboards e controle interno em uma experiência única.</p>
-              <div class="project-role">Produto próprio · Desenvolvimento full stack</div>
+              <p>Ecossistema completo para barbearias com agenda, equipe, serviços, assinaturas, comissões, dashboards, bar e cozinha, integrações financeiras e automação de relacionamento.</p>
+              <div class="project-role">Produto próprio · Arquitetura, Back-end e evolução do SaaS</div>
               <div class="tag-list" aria-label="Tecnologias do thynkBarber">
                 <span class="tag">Node.js</span>
                 <span class="tag">React</span>
                 <span class="tag">MongoDB</span>
                 <span class="tag">AWS</span>
-                <span class="tag">SaaS</span>
+                <span class="tag">ASAAS</span>
+                <span class="tag">WhatsApp</span>
               </div>
             </div>
             <div class="project-bottom">
@@ -1476,11 +1536,89 @@
 
           <article class="project-card side reveal">
             <span class="project-number" aria-hidden="true">02</span>
-            <div class="project-top">
-              <span class="project-label">Plataforma de gestão</span>
+            <div>
+              <span class="project-label">SaaS de gestão</span>
+              <h3>Gestão para oficinas</h3>
+              <p>Plataforma para organizar clientes, veículos, ordens de serviço, estoque, histórico de manutenção, indicadores e rotina operacional de oficinas.</p>
+              <div class="project-role">Produto aplicado · Processos e desenvolvimento full stack</div>
+              <div class="tag-list">
+                <span class="tag">Back-end</span>
+                <span class="tag">Ordens de serviço</span>
+                <span class="tag">Estoque</span>
+                <span class="tag">Dashboards</span>
+              </div>
+            </div>
+            <div class="project-bottom">
+              <a class="project-link" href="https://heyarrthur.github.io/thynkrp/" target="_blank" rel="noopener noreferrer">
+                Ver aplicação <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card third reveal">
+            <span class="project-number" aria-hidden="true">03</span>
+            <div>
+              <span class="project-label">SaaS multicanal</span>
+              <h3>WhatsApp MultiChannel</h3>
+              <p>Centralização de atendimentos, filas, múltiplos usuários, histórico, automações e distribuição de conversas para operações comerciais e de suporte.</p>
+              <div class="project-role">Produto próprio · Arquitetura de mensageria e automações</div>
+              <div class="tag-list">
+                <span class="tag">WhatsApp Web</span>
+                <span class="tag">Filas</span>
+                <span class="tag">WebSocket</span>
+                <span class="tag">Automação</span>
+              </div>
+            </div>
+            <div class="project-bottom">
+              <span class="project-note"><i class="bi bi-shield-lock"></i> Case sob apresentação</span>
+            </div>
+          </article>
+
+          <article class="project-card third reveal">
+            <span class="project-number" aria-hidden="true">04</span>
+            <div>
+              <span class="project-label">Performance</span>
+              <h3>App de Metas e Métricas</h3>
+              <p>Aplicação para acompanhamento de metas, indicadores, evolução de equipes e leitura rápida de resultados para apoiar decisões.</p>
+              <div class="project-role">Solução de produtividade · Dados e regras de negócio</div>
+              <div class="tag-list">
+                <span class="tag">KPIs</span>
+                <span class="tag">Metas</span>
+                <span class="tag">Dashboards</span>
+                <span class="tag">Relatórios</span>
+              </div>
+            </div>
+            <div class="project-bottom">
+              <span class="project-note"><i class="bi bi-building-lock"></i> Projeto interno</span>
+            </div>
+          </article>
+
+          <article class="project-card third reveal">
+            <span class="project-number" aria-hidden="true">05</span>
+            <div>
+              <span class="project-label">RPA documental</span>
+              <h3>Envio e recebimento de documentos</h3>
+              <p>Automação para coletar, organizar, validar, encaminhar e acompanhar documentos, reduzindo tarefas manuais e falhas operacionais.</p>
+              <div class="project-role">Automação corporativa · RPA, integrações e rastreabilidade</div>
+              <div class="tag-list">
+                <span class="tag">RPA</span>
+                <span class="tag">E-mail</span>
+                <span class="tag">Validação</span>
+                <span class="tag">Logs</span>
+              </div>
+            </div>
+            <div class="project-bottom">
+              <span class="project-note"><i class="bi bi-building-lock"></i> Projeto interno</span>
+            </div>
+          </article>
+
+          <article class="project-card side reveal">
+            <span class="project-number" aria-hidden="true">06</span>
+            <div>
+              <span class="project-label">Plataforma corporativa</span>
               <h3>RedeMG Farma</h3>
-              <p>Gestão de franquias, produtos e promoções com catálogo centralizado, campanhas, dashboards e integração com ERP/PDV.</p>
-              <div class="project-role">Projeto profissional · UsePress</div>
+              <p>Gestão de franquias, produtos, campanhas e promoções com catálogo centralizado, dashboards e integrações com sistemas de operação.</p>
+              <div class="project-role">Projeto profissional · Desenvolvimento de Sistemas PJ na UsePress</div>
               <div class="tag-list">
                 <span class="tag">React</span>
                 <span class="tag">AWS</span>
@@ -1495,59 +1633,17 @@
             </div>
           </article>
 
-          <article class="project-card half reveal">
-            <span class="project-number" aria-hidden="true">03</span>
-            <div class="project-top">
-              <span class="project-label">Sistema operacional</span>
-              <h3>Gestão para oficina</h3>
-              <p>Aplicação web para controle de demandas, emissão de ordens de serviço e gestão de estoque em uma oficina mecânica.</p>
-              <div class="project-role">Projeto aplicado · Operação local</div>
-              <div class="tag-list">
-                <span class="tag">JavaScript</span>
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">Bootstrap</span>
-              </div>
-            </div>
-            <div class="project-bottom">
-              <a class="project-link" href="https://heyarrthur.github.io/thynkrp/" target="_blank" rel="noopener noreferrer">
-                Ver aplicação <i class="bi bi-arrow-up-right"></i>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card half reveal">
-            <span class="project-number" aria-hidden="true">04</span>
-            <div class="project-top">
-              <span class="project-label">Plataforma web</span>
-              <h3>Envia Bem</h3>
-              <p>Solução de compra remota de itens autorizados para famílias de pessoas privadas de liberdade, com jornada mais acessível e organizada.</p>
-              <div class="project-role">Projeto profissional · UsePress</div>
-              <div class="tag-list">
-                <span class="tag">Node.js</span>
-                <span class="tag">React</span>
-                <span class="tag">AWS</span>
-                <span class="tag">UX</span>
-              </div>
-            </div>
-            <div class="project-bottom">
-              <a class="project-link" href="https://enviabem.com/" target="_blank" rel="noopener noreferrer">
-                Ver projeto <i class="bi bi-arrow-up-right"></i>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card half reveal">
-            <span class="project-number" aria-hidden="true">05</span>
-            <div class="project-top">
-              <span class="project-label">Redesign e experiência</span>
+          <article class="project-card side reveal">
+            <span class="project-number" aria-hidden="true">07</span>
+            <div>
+              <span class="project-label">Experiência digital</span>
               <h3>Recrie</h3>
-              <p>Reestruturação de páginas com foco em clareza, estética, hierarquia da informação e conversão.</p>
-              <div class="project-role">Projeto profissional · UsePress</div>
+              <p>Evolução de páginas e fluxos com foco em clareza, hierarquia de informação, experiência do usuário, desempenho e conversão.</p>
+              <div class="project-role">Projeto profissional · Desenvolvimento de Sistemas PJ na UsePress</div>
               <div class="tag-list">
                 <span class="tag">React</span>
                 <span class="tag">Node.js</span>
-                <span class="tag">UI</span>
+                <span class="tag">UX</span>
                 <span class="tag">Conversão</span>
               </div>
             </div>
@@ -1558,26 +1654,78 @@
             </div>
           </article>
 
-          <article class="project-card half reveal">
-            <span class="project-number" aria-hidden="true">06</span>
-            <div class="project-top">
-              <span class="project-label">Presença digital</span>
-              <h3>thynkXP</h3>
-              <p>Iniciativa própria para apoiar pequenas empresas com sites, sistemas e soluções digitais orientadas a crescimento.</p>
-              <div class="project-role">Produto próprio · Estratégia e execução</div>
+          <article class="project-card third reveal">
+            <span class="project-number" aria-hidden="true">08</span>
+            <div>
+              <span class="project-label">Benefícios</span>
+              <h3>App de Vantagens e Benefícios</h3>
+              <p>Aplicativo para campanhas, parceiros, vantagens, cupons e relacionamento, com gestão centralizada e experiência simples para o usuário.</p>
+              <div class="project-role">Produto digital · Regras de negócio e integrações</div>
               <div class="tag-list">
-                <span class="tag">Node.js</span>
-                <span class="tag">React</span>
-                <span class="tag">IA</span>
+                <span class="tag">Benefícios</span>
+                <span class="tag">Cupons</span>
+                <span class="tag">Parceiros</span>
+                <span class="tag">Analytics</span>
+              </div>
+            </div>
+            <div class="project-bottom">
+              <span class="project-note"><i class="bi bi-shield-lock"></i> Case sob apresentação</span>
+            </div>
+          </article>
+
+          <article class="project-card third reveal">
+            <span class="project-number" aria-hidden="true">09</span>
+            <div>
+              <span class="project-label">Operação e suporte</span>
+              <h3>Plataforma de Chamados</h3>
+              <p>Sistema para abertura, classificação, priorização e acompanhamento de chamados, com histórico, SLA e visão gerencial das demandas.</p>
+              <div class="project-role">Solução corporativa · Back-end e fluxo operacional</div>
+              <div class="tag-list">
+                <span class="tag">SLA</span>
+                <span class="tag">Workflows</span>
+                <span class="tag">Permissões</span>
+                <span class="tag">Relatórios</span>
+              </div>
+            </div>
+            <div class="project-bottom">
+              <span class="project-note"><i class="bi bi-building-lock"></i> Projeto interno</span>
+            </div>
+          </article>
+
+          <article class="project-card third reveal">
+            <span class="project-number" aria-hidden="true">10</span>
+            <div>
+              <span class="project-label">Empresa de tecnologia</span>
+              <h3>thynkXP</h3>
+              <p>Empresa criada para desenvolver sistemas, automações e produtos SaaS que melhorem a gestão, a produtividade e o crescimento de pequenos e médios negócios.</p>
+              <div class="project-role">Fundador e CEO · Estratégia, produto e execução técnica</div>
+              <div class="tag-list">
+                <span class="tag">SaaS</span>
+                <span class="tag">RPA</span>
+                <span class="tag">Back-end</span>
                 <span class="tag">Produto</span>
               </div>
             </div>
             <div class="project-bottom">
               <a class="project-link" href="https://dev-arrthur.github.io/thynkxp/" target="_blank" rel="noopener noreferrer">
-                Ver projeto <i class="bi bi-arrow-up-right"></i>
+                Conhecer a thynkXP <i class="bi bi-arrow-up-right"></i>
               </a>
             </div>
           </article>
+        </div>
+
+        <div class="integrations-band reveal">
+          <strong>Integrações e ecossistemas com os quais já trabalhei</strong>
+          <div class="integration-list" aria-label="Integrações">
+            <span><i class="bi bi-plug"></i> GOB</span>
+            <span><i class="bi bi-plug"></i> Acessorias</span>
+            <span><i class="bi bi-plug"></i> SIEG</span>
+            <span><i class="bi bi-plug"></i> Questor</span>
+            <span><i class="bi bi-credit-card"></i> ASAAS</span>
+            <span><i class="bi bi-credit-card"></i> Mercado Pago</span>
+            <span><i class="bi bi-whatsapp"></i> WhatsApp</span>
+            <span><i class="bi bi-diagram-3"></i> Integrações N:N</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1587,17 +1735,17 @@
         <div class="section-heading reveal">
           <div>
             <span class="section-kicker">Trajetória profissional</span>
-            <h2 class="section-title">Evolução rápida, responsabilidade crescente.</h2>
+            <h2 class="section-title">Experiência técnica com visão de negócio.</h2>
           </div>
           <p class="section-intro">
-            Experiência prática em desenvolvimento, suporte, cloud, integrações e automações dentro de operações reais.
+            Uma trajetória construída entre desenvolvimento, automação, atendimento a operações reais e criação de produtos próprios.
           </p>
         </div>
 
         <div class="experience-layout">
           <aside class="experience-aside reveal">
-            <h3>O que minha trajetória demonstra</h3>
-            <p>Capacidade de aprender rápido, entender processos, assumir responsabilidade e transformar necessidades internas em soluções utilizáveis.</p>
+            <h3>O que essa trajetória demonstra</h3>
+            <p>Capacidade de entender processos, estruturar regras de negócio, integrar sistemas e entregar soluções que reduzem esforço manual e aumentam a eficiência.</p>
             <a class="btn btn-secondary" href="download/Curriculo-ArthurFerreira-2026.pdf" download>
               <i class="bi bi-file-earmark-arrow-down"></i> Baixar currículo completo
             </a>
@@ -1605,30 +1753,50 @@
 
           <div class="timeline">
             <article class="timeline-item reveal">
+              <span class="timeline-date">2024 — Atual</span>
+              <h3>CEO | thynkXP</h3>
+              <div class="timeline-company">Home Office</div>
+              <p>Fundação e desenvolvimento de uma empresa de sistemas, automações e SaaS voltada a melhorar a operação, a produtividade e o crescimento de pequenos e médios empreendedores. Atuação direta em estratégia, arquitetura, produto, integrações, evolução técnica e relacionamento com clientes.</p>
+              <div class="tag-list">
+                <span class="tag">Estratégia</span>
+                <span class="tag">SaaS</span>
+                <span class="tag">Back-end</span>
+                <span class="tag">RPA</span>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal">
               <span class="timeline-date">Abr 2026 — Atual</span>
-              <h3>Assistente de Programação</h3>
+              <h3>Assistente de Programação JR 3</h3>
               <div class="timeline-company">Maximum Assessoria Contábil · Juiz de Fora</div>
-              <p>Desenvolvimento de automações e soluções internas, organização de fluxos, sistemas de envio automático de e-mails, suporte e integrações com Questor, Acessorias, GOB e Sieg.</p>
-              <span class="promotion"><i class="bi bi-arrow-up-circle"></i> Promoção interna</span>
+              <p>Desenvolvimento de automações e soluções internas, organização de fluxos, envio automatizado de e-mails e documentos, suporte técnico e integrações com sistemas contábeis e fiscais.</p>
+              <span class="promotion"><i class="bi bi-arrow-up-circle"></i> Evolução interna de carreira</span>
             </article>
 
             <article class="timeline-item reveal">
               <span class="timeline-date">Jan 2026 — Abr 2026</span>
-              <h3>Auxiliar de Programação</h3>
+              <h3>Auxiliar de Programação N1S1</h3>
               <div class="timeline-company">Maximum Assessoria Contábil · Juiz de Fora</div>
-              <p>Mapeamento de necessidades internas, suporte operacional, organização de demandas e construção das primeiras automações que prepararam a evolução para o cargo atual.</p>
+              <p>Mapeamento de necessidades, suporte operacional, organização de demandas e construção das primeiras automações que prepararam a evolução para atividades de maior responsabilidade.</p>
+            </article>
+
+            <article class="timeline-item reveal">
+              <span class="timeline-date">Atuação por projetos</span>
+              <h3>Desenvolvedor de Sistemas PJ</h3>
+              <div class="timeline-company">UsePress · Remoto</div>
+              <p>Desenvolvimento e evolução de sistemas e produtos digitais, integração entre serviços, manutenção de aplicações, versionamento, deploy e colaboração em projetos como RedeMG Farma, Recrie e Envia Bem.</p>
             </article>
 
             <article class="timeline-item reveal">
               <span class="timeline-date">Jun 2024 — Dez 2025</span>
               <h3>Estagiário de Sistemas</h3>
               <div class="timeline-company">UsePress · Modelo híbrido</div>
-              <p>Desenvolvimento de sites e sistemas, versionamento de código, organização de backups, suporte a clientes e acompanhamento de servidores AWS em projetos reais.</p>
+              <p>Início da atuação profissional com desenvolvimento de sites e sistemas, suporte a clientes, organização de backups, versionamento e acompanhamento de servidores AWS em projetos reais.</p>
               <div class="tag-list">
-                <span class="tag">Natura</span>
                 <span class="tag">RedeMG Farma</span>
                 <span class="tag">Recrie</span>
                 <span class="tag">Envia Bem</span>
+                <span class="tag">AWS</span>
               </div>
             </article>
           </div>
@@ -1641,10 +1809,10 @@
         <div class="section-heading reveal">
           <div>
             <span class="section-kicker">Como eu gero valor</span>
-            <h2 class="section-title">Competências ligadas à entrega.</h2>
+            <h2 class="section-title">Foco em sistemas que funcionam de verdade.</h2>
           </div>
           <p class="section-intro">
-            Em vez de percentuais subjetivos, competências apresentadas pelo tipo de problema que consigo resolver.
+            Competências organizadas pelo tipo de impacto entregue: confiabilidade, integração, automação, desempenho e clareza operacional.
           </p>
         </div>
 
@@ -1652,53 +1820,53 @@
           <article class="skill-card reveal">
             <div class="skill-icon"><i class="bi bi-diagram-3"></i></div>
             <h3>Back-end e APIs</h3>
-            <p>Estruturação de serviços, regras de negócio, integrações, autenticação e comunicação entre sistemas.</p>
+            <p>Regras de negócio, autenticação, serviços, integrações e APIs pensadas para manutenção e crescimento.</p>
           </article>
 
           <article class="skill-card reveal">
-            <div class="skill-icon"><i class="bi bi-window-stack"></i></div>
-            <h3>Front-end e experiência</h3>
-            <p>Interfaces responsivas, componentes claros e jornadas que ajudam o usuário a concluir tarefas com menos atrito.</p>
+            <div class="skill-icon"><i class="bi bi-robot"></i></div>
+            <h3>Automações RPA</h3>
+            <p>Mapeamento de tarefas repetitivas, robôs, filas, validações, logs e redução de erros operacionais.</p>
           </article>
 
           <article class="skill-card reveal">
-            <div class="skill-icon"><i class="bi bi-lightning-charge"></i></div>
-            <h3>Automações</h3>
-            <p>Mapeamento de processos repetitivos e construção de fluxos para reduzir trabalho manual e erros operacionais.</p>
+            <div class="skill-icon"><i class="bi bi-boxes"></i></div>
+            <h3>Arquitetura de SaaS</h3>
+            <p>Produtos multiempresa, permissões, cobrança, indicadores, escalabilidade e evolução contínua.</p>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon"><i class="bi bi-arrow-left-right"></i></div>
+            <h3>Integrações</h3>
+            <p>Conexão entre sistemas financeiros, contábeis, documentais, mensageria e serviços externos.</p>
           </article>
 
           <article class="skill-card reveal">
             <div class="skill-icon"><i class="bi bi-database"></i></div>
             <h3>Dados e persistência</h3>
-            <p>Modelagem, consultas e organização de dados pensando em manutenção, confiabilidade e evolução do produto.</p>
+            <p>Modelagem, consultas, consistência e organização de dados com foco em confiabilidade.</p>
           </article>
 
           <article class="skill-card reveal">
             <div class="skill-icon"><i class="bi bi-cloud-check"></i></div>
             <h3>Cloud e operação</h3>
-            <p>Experiência com AWS, deploy, acompanhamento de servidores, backups e cuidado com disponibilidade.</p>
-          </article>
-
-          <article class="skill-card reveal">
-            <div class="skill-icon"><i class="bi bi-people"></i></div>
-            <h3>Colaboração e produto</h3>
-            <p>Comunicação com áreas não técnicas, priorização, entendimento de contexto e decisões orientadas ao negócio.</p>
+            <p>Deploy, AWS, monitoramento, backups e cuidados para manter soluções disponíveis e seguras.</p>
           </article>
         </div>
 
         <div class="stack-cloud reveal" aria-label="Stack técnica">
-          <span class="stack-item"><i class="bi bi-filetype-js"></i> JavaScript</span>
           <span class="stack-item"><i class="bi bi-node-plus"></i> Node.js</span>
+          <span class="stack-item"><i class="bi bi-filetype-js"></i> JavaScript</span>
           <span class="stack-item"><i class="bi bi-code-slash"></i> React</span>
           <span class="stack-item"><i class="bi bi-cup-hot"></i> Java</span>
           <span class="stack-item"><i class="bi bi-database"></i> MongoDB</span>
           <span class="stack-item"><i class="bi bi-database-check"></i> SQL</span>
           <span class="stack-item"><i class="bi bi-cloud"></i> AWS</span>
+          <span class="stack-item"><i class="bi bi-box"></i> Docker</span>
           <span class="stack-item"><i class="bi bi-git"></i> Git & GitHub</span>
           <span class="stack-item"><i class="bi bi-braces"></i> REST APIs</span>
-          <span class="stack-item"><i class="bi bi-box"></i> Docker</span>
-          <span class="stack-item"><i class="bi bi-filetype-html"></i> HTML & CSS</span>
-          <span class="stack-item"><i class="bi bi-robot"></i> IA generativa</span>
+          <span class="stack-item"><i class="bi bi-robot"></i> RPA</span>
+          <span class="stack-item"><i class="bi bi-whatsapp"></i> Mensageria</span>
         </div>
       </div>
     </section>
@@ -1707,20 +1875,21 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-photo reveal">
-            <img src="profile.png" alt="Arthur Ferreira, desenvolvedor Full Stack" loading="lazy" width="600" height="750">
+            <img src="profile.png" alt="Arthur Ferreira, desenvolvedor de sistemas" loading="lazy" width="600" height="750">
           </div>
 
           <div class="about-copy reveal">
             <span class="section-kicker">Sobre mim</span>
-            <h2>Tecnologia com curiosidade, disciplina e visão prática.</h2>
-            <p>Comecei a estudar tecnologia aos 16 anos e entrei profissionalmente na área aos 17. Desde então, venho unindo desenvolvimento técnico, contato com operações reais e projetos próprios para construir soluções que resolvem problemas concretos.</p>
-            <p>Hoje atuo na Maximum Assessoria Contábil, após promoção interna, criando automações e integrações. Paralelamente, desenvolvo produtos como o thynkBarber e sigo aprofundando minha formação em Engenharia de Software.</p>
+            <h2>Curiosidade técnica com foco em resultado.</h2>
+            <p>Comecei na tecnologia aos 16 anos e construí minha trajetória colocando conhecimento em prática: sistemas, automações, integrações e produtos que ajudam empresas a trabalhar melhor.</p>
+            <p>Meu foco principal está no Back-end, onde estruturo regras de negócio, APIs, dados e integrações. Também atuo com automações RPA e desenvolvimento de SaaS, sempre buscando reduzir tarefas manuais, melhorar a tomada de decisão e aumentar o rendimento das áreas.</p>
+            <p>Como CEO da thynkXP, conecto visão de produto, desenvolvimento e necessidades reais de pequenos e médios empreendedores para criar soluções sustentáveis e fáceis de operar.</p>
 
             <div class="about-points">
-              <div class="about-point"><i class="bi bi-check-circle-fill"></i> Aprendizado rápido e contínuo</div>
-              <div class="about-point"><i class="bi bi-check-circle-fill"></i> Visão de produto e negócio</div>
-              <div class="about-point"><i class="bi bi-check-circle-fill"></i> Organização e responsabilidade</div>
-              <div class="about-point"><i class="bi bi-check-circle-fill"></i> Comunicação com times e clientes</div>
+              <div class="about-point"><i class="bi bi-check-circle-fill"></i> Back-end orientado ao negócio</div>
+              <div class="about-point"><i class="bi bi-check-circle-fill"></i> Automação de processos reais</div>
+              <div class="about-point"><i class="bi bi-check-circle-fill"></i> Visão de produto SaaS</div>
+              <div class="about-point"><i class="bi bi-check-circle-fill"></i> Comunicação com áreas e clientes</div>
             </div>
           </div>
         </div>
@@ -1734,7 +1903,7 @@
             <span class="section-kicker">Formação contínua</span>
             <h2 class="section-title">Base acadêmica e especialização prática.</h2>
           </div>
-          <p class="section-intro">Formação organizada de forma direta, com acesso aos documentos disponíveis.</p>
+          <p class="section-intro">Aprendizado contínuo para sustentar decisões técnicas melhores e produtos mais confiáveis.</p>
         </div>
 
         <div class="education-grid">
@@ -1752,7 +1921,7 @@
             <span class="status">Em andamento · 2026</span>
             <h3>Desenvolvimento Full Stack Java</h3>
             <div class="institution">EBAC</div>
-            <p>Java, Spring Boot, APIs REST, banco de dados, testes, microsserviços, Docker, AWS, React e qualidade de código.</p>
+            <p>Java, Spring Boot, APIs REST, banco de dados, testes, microsserviços, Docker, AWS e React.</p>
             <a href="download/pdfJavaEBAC.pdf" target="_blank" rel="noopener noreferrer">
               Ver certificado <i class="bi bi-arrow-up-right"></i>
             </a>
@@ -1762,7 +1931,7 @@
             <span class="status">Especialização</span>
             <h3>Inteligência Artificial</h3>
             <div class="institution">EBAC</div>
-            <p>IA generativa, engenharia de prompt, automações, APIs, ética, segurança e criação visual com Midjourney.</p>
+            <p>IA generativa, engenharia de prompt, automações, APIs, ética, segurança e criação de soluções assistidas.</p>
             <a href="download/pdfIAEBAC.pdf" target="_blank" rel="noopener noreferrer">
               Ver certificado <i class="bi bi-arrow-up-right"></i>
             </a>
@@ -1776,8 +1945,8 @@
         <div class="contact-card reveal">
           <div>
             <span class="section-kicker">Próximo passo</span>
-            <h2>Vamos construir algo que gere impacto.</h2>
-            <p>Para oportunidades profissionais, projetos ou conversas sobre tecnologia, escolha o canal mais conveniente.</p>
+            <h2>Vamos transformar processos em produtos melhores.</h2>
+            <p>Para oportunidades profissionais, projetos SaaS, integrações ou automações, escolha o canal mais conveniente.</p>
             <div class="contact-actions">
               <a class="btn btn-primary" href="mailto:dev.arrthur@gmail.com?subject=Contato%20pelo%20portfólio">
                 <i class="bi bi-envelope"></i> Enviar e-mail
@@ -1813,7 +1982,7 @@
 
   <footer class="site-footer">
     <div class="container footer-shell">
-      <span>© 2026 Arthur Ferreira. Desenvolvido com foco em clareza, performance e acessibilidade.</span>
+      <span>© 2026 Arthur Ferreira. Sistemas, automações e SaaS com foco em resultado.</span>
       <a href="#inicio">Voltar ao topo <i class="bi bi-arrow-up"></i></a>
     </div>
   </footer>
