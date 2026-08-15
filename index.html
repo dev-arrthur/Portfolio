@@ -474,7 +474,7 @@
     .float-card.github { left: -1%; top: 16%; animation-delay: -.8s; }
     .float-card.linkedin { right: -7%; top: 30%; animation-delay: -2.1s; }
     .float-card.whatsapp { left: -5%; bottom: 19%; animation-delay: -3.3s; }
-    .float-card.curriculo { right: -2%; bottom: 8%; animation-delay: -1.4s; }
+    .float-card.contact { right: -2%; bottom: 8%; animation-delay: -1.4s; }
 
     @keyframes cardFloat {
       0%, 100% { translate: 0 0; }
@@ -860,6 +860,21 @@
     .timeline-company {
       margin-top: 5px;
       color: #3d3d39;
+      font-weight: 800;
+    }
+
+    .timeline-position {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 8px 11px;
+      border: 1px solid rgba(10, 10, 10, .1);
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--text);
+      font-size: .79rem;
       font-weight: 800;
     }
 
@@ -1296,7 +1311,7 @@
       .float-card.github { left: 0; top: 14%; }
       .float-card.linkedin { right: 0; top: 27%; }
       .float-card.whatsapp { left: 0; bottom: 19%; }
-      .float-card.curriculo { right: 0; bottom: 10%; }
+      .float-card.contact { right: 0; bottom: 10%; }
 
       .proof-grid,
       .skills-layout,
@@ -1367,7 +1382,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Arthur Ferreira",
-      "jobTitle": "Desenvolvedor de Sistemas Back-end",
+      "jobTitle": "Desenvolvedor de Sistemas Back-End e Automações",
       "email": "mailto:dev.arrthur@gmail.com",
       "image": "profile.png",
       "sameAs": [
@@ -1409,8 +1424,8 @@
         </ul>
       </nav>
 
-      <a class="nav-cta" href="download/Curriculo-ArthurFerreira-2026.pdf" download>
-        <i class="bi bi-download"></i> Currículo
+      <a class="nav-cta" href="#contato">
+        <i class="bi bi-chat-dots"></i> Contato
       </a>
 
       <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
@@ -1463,9 +1478,9 @@
             <span><strong>WhatsApp</strong><small>Contato direto</small></span>
           </a>
 
-          <a class="float-card curriculo" href="download/Curriculo-ArthurFerreira-2026.pdf" download>
-            <i class="bi bi-file-earmark-person"></i>
-            <span><strong>Currículo</strong><small>Baixar PDF</small></span>
+          <a class="float-card contact" href="#contato">
+            <i class="bi bi-chat-heart"></i>
+            <span><strong>Contato</strong><small>Vamos conversar</small></span>
           </a>
 
           <div class="availability-chip">
@@ -1676,25 +1691,6 @@
           <article class="project-card third reveal">
             <span class="project-number" aria-hidden="true">09</span>
             <div>
-              <span class="project-label">Operação e suporte</span>
-              <h3>Plataforma de Chamados</h3>
-              <p>Sistema para abertura, classificação, priorização e acompanhamento de chamados, com histórico, SLA e visão gerencial das demandas.</p>
-              <div class="project-role">Solução corporativa · Back-end e fluxo operacional</div>
-              <div class="tag-list">
-                <span class="tag">SLA</span>
-                <span class="tag">Workflows</span>
-                <span class="tag">Permissões</span>
-                <span class="tag">Relatórios</span>
-              </div>
-            </div>
-            <div class="project-bottom">
-              <span class="project-note"><i class="bi bi-building-lock"></i> Projeto interno</span>
-            </div>
-          </article>
-
-          <article class="project-card third reveal">
-            <span class="project-number" aria-hidden="true">10</span>
-            <div>
               <span class="project-label">Empresa de tecnologia</span>
               <h3>thynkXP</h3>
               <p>Empresa criada para desenvolver sistemas, automações e produtos SaaS que melhorem a gestão, a produtividade e o crescimento de pequenos e médios negócios.</p>
@@ -1707,7 +1703,7 @@
               </div>
             </div>
             <div class="project-bottom">
-              <a class="project-link" href="https://dev-arrthur.github.io/thynkxp/" target="_blank" rel="noopener noreferrer">
+              <a class="project-link" href="https://thynkxp.com.br" target="_blank" rel="noopener noreferrer">
                 Conhecer a thynkXP <i class="bi bi-arrow-up-right"></i>
               </a>
             </div>
@@ -1746,8 +1742,8 @@
           <aside class="experience-aside reveal">
             <h3>O que essa trajetória demonstra</h3>
             <p>Capacidade de entender processos, estruturar regras de negócio, integrar sistemas e entregar soluções que reduzem esforço manual e aumentam a eficiência.</p>
-            <a class="btn btn-secondary" href="download/Curriculo-ArthurFerreira-2026.pdf" download>
-              <i class="bi bi-file-earmark-arrow-down"></i> Baixar currículo completo
+            <a class="btn btn-secondary" href="#contato">
+              <i class="bi bi-arrow-down-right"></i> Conversar sobre um projeto
             </a>
           </aside>
 
@@ -1769,6 +1765,7 @@
               <span class="timeline-date">Abr 2026 — Atual</span>
               <h3>Desenvolvedor de Sistemas Back-End e Automações</h3>
               <div class="timeline-company">Maximum Assessoria Contábil · Juiz de Fora</div>
+              <div class="timeline-position"><i class="bi bi-briefcase-fill"></i> Assistente de Programação Pleno | Back-End e automações</div>
               <p>Desenvolvimento de automações e soluções internas, organização de fluxos, envio automatizado de e-mails e documentos, suporte técnico e integrações com sistemas contábeis e fiscais.</p>
               <span class="promotion"><i class="bi bi-arrow-up-circle"></i> Evolução interna de carreira</span>
             </article>
@@ -1951,8 +1948,8 @@
               <a class="btn btn-primary" href="mailto:dev.arrthur@gmail.com?subject=Contato%20pelo%20portfólio">
                 <i class="bi bi-envelope"></i> Enviar e-mail
               </a>
-              <a class="btn btn-secondary" href="download/Curriculo-ArthurFerreira-2026.pdf" download>
-                <i class="bi bi-download"></i> Baixar currículo
+              <a class="btn btn-secondary" href="links.html">
+                <i class="bi bi-link-45deg"></i> Abrir meus links
               </a>
             </div>
           </div>
