@@ -298,7 +298,8 @@
 .portfolio-page .pf-community-ring-two { border-color:#d3bbaa; }
 .portfolio-page .pf-community-ring-three { background:#ecdbcf;border-color:#c6a58e; }
 .portfolio-page .pf-community-node { background:#faf6f1;border-color:#c8ab96;box-shadow:0 0 0 7px #f4e9e2;border-radius:4px; }
-.portfolio-page .pf-community-code { color:#a84a30; }
+.portfolio-page .pf-community-code { color:#a84a30;display:flex;flex-direction:column;align-items:center;font-size:46px;line-height:1.05;letter-spacing:-2px;transform:none;font-weight:500; }
+.portfolio-page .pf-community-code em { font-family:Georgia,serif;font-weight:400;font-size:48px;letter-spacing:-2px; }
 .portfolio-page .pf-community-art-caption { color:#805f4d; }
 .portfolio-page .pf-community-copy>p:not(.pf-community-lead) { color:#74695e;font-size:16px;line-height:1.8; }
 .portfolio-page .pf-community-tags span { border-color:#d7c5b5;color:#765b48;background:#ffffff30; }
