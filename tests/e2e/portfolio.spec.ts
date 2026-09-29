@@ -134,6 +134,10 @@ test('consented visits and clicks reach admin; CV lifecycle tracks only public d
   expect(firstStats.totals.visitors).toBeGreaterThanOrEqual(1);
   expect(firstStats.topClicks.find(item => item.target === 'filter-internal')?.count).toBeGreaterThanOrEqual(1);
   await page.screenshot({ path: testInfo.outputPath('admin-overview.png'), fullPage: true, animations: 'disabled' });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expectNoHorizontalOverflow(page);
+  await page.screenshot({ path: testInfo.outputPath('admin-mobile.png'), fullPage: true, animations: 'disabled' });
+  await page.setViewportSize({ width: 1440, height: 1000 });
 
   const csvDownloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Exportar CSV', exact: true }).click();

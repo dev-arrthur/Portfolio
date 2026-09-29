@@ -100,7 +100,7 @@ export default function Portfolio() {
             <a className="pf-button pf-button-lime" href="#projetos" data-track="hero-projects">Conheça meu trabalho <ArrowDown size={17} /></a>
             <a className="pf-text-link" href={contact.github} target="_blank" rel="noopener noreferrer" data-track="hero-github"><Github size={19} /> GitHub</a>
           </div>
-          <div className="pf-hero-location"><Globe2 size={14} /> Juiz de Fora, MG <span /> Conectando ideias a soluções</div>
+          <div className="pf-hero-location"><Globe2 size={14} /> Juiz de Fora, MG · Conectando ideias a soluções</div>
         </div>
         <div className="pf-hero-visual">
           <div className="pf-portrait-note"><span>CRIATIVIDADE + ENGENHARIA</span><Plus size={17} /></div>
