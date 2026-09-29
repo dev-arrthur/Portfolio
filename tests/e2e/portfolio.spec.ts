@@ -35,7 +35,7 @@ function onePagePdf(): Buffer {
 
 test('desktop: all projects, filters, accessible details and contact destinations', async ({ page }, testInfo) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText(/Arthur\s*Ferreira\./);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(/Sistemas que\s*fazem operações\s*renderem mais\./);
   await page.getByRole('button', { name: 'Agora não', exact: true }).click();
   await expect(page.locator('.pf-project-card')).toHaveCount(10);
   const names = ['thynkBarber', 'Página de Carreiras', 'App de Vantagens e Benefícios', 'Cobrança de Documentos', 'Sistema de Acompanhamento', 'WhatsApp Multichannel', 'RedeMG Farma', 'Recrie', 'Sistema de Cobranças', 'thynkXP'];
@@ -73,7 +73,7 @@ test('desktop: all projects, filters, accessible details and contact destination
 test('mobile: navigation, project details and 390px layout stay usable', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText(/Arthur\s*Ferreira\./);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(/Sistemas que\s*fazem operações\s*renderem mais\./);
   await page.getByRole('button', { name: 'Agora não', exact: true }).click();
   await expectNoHorizontalOverflow(page);
   await page.screenshot({ path: testInfo.outputPath('home-390.png'), fullPage: true, animations: 'disabled' });
@@ -116,6 +116,7 @@ test('consented visits and clicks reach admin; CV lifecycle tracks only public d
 
   await page.goto('/admin');
   await expect(page.getByLabel('Sua senha', { exact: true })).toBeEnabled();
+  await page.screenshot({ path: testInfo.outputPath('admin-login.png'), fullPage: true, animations: 'disabled' });
   await page.getByLabel('Sua senha', { exact: true }).fill(adminPassword);
   await page.getByRole('button', { name: 'Acessar painel', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Seu portfólio, em números.', exact: true })).toBeVisible();
@@ -154,6 +155,7 @@ test('consented visits and clicks reach admin; CV lifecycle tracks only public d
   await expect(page.getByRole('table')).toBeVisible();
   await page.getByRole('button', { name: 'Currículo', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Currículo sempre em dia.', exact: true })).toBeVisible();
+  await page.screenshot({ path: testInfo.outputPath('admin-curriculo.png'), fullPage: true, animations: 'disabled' });
   const pdf = onePagePdf();
   const filename = 'Portfolio-Test-CV.pdf';
   let uploaded = false;

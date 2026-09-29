@@ -1,10 +1,10 @@
-# Arthur Ferreira · Portfólio 2.0
+# Arthur Ferreira · Portfólio 2.1
 
 Nova versão em **Node.js, TypeScript e Next.js**, preparada para Vercel, com painel administrativo e armazenamento persistente em MongoDB.
 
 ## O que mudou
 
-- Nova apresentação responsiva, identidade escura com verde, tipografia local e animações que respeitam a preferência de movimento reduzido.
+- Nova apresentação responsiva, tema claro artístico inspirado no portfólio original, assinatura Arthur F., ilustrações originais, tipografia local e animações que respeitam a preferência de movimento reduzido.
 - Dez projetos com descrição, status, filtros e detalhes: Página de Carreiras, App de Vantagens e Benefícios, Cobrança de Documentos, Sistema de Acompanhamento, thynkBarber, WhatsApp Multichannel, RedeMG Farma, Recrie, Sistema de Cobranças e thynkXP.
 - thynkBarber em destaque: mais de 7 barbearias, mais de 1.500 agendamentos, mais de 3 mil usuários e faturamento médio mensal de R$ 2.900. Números fornecidos pelo responsável em setembro/2026; não são uma consulta em tempo real.
 - Comunidade dev em formação, com contato pelo WhatsApp para manifestar interesse.
@@ -99,7 +99,7 @@ Visitas e cliques dependem da escolha do visitante e respeitam `Do Not Track`. D
 | `src/components/analytics-consent.tsx` | Preferência e captura de cliques. |
 | `src/lib/server/` | Autenticação, armazenamento e métricas. |
 | `src/app/api/` | Endpoints. |
-| `public/images/arthur.webp` | Avatar ilustrado do portfólio anterior, otimizado. |
+| `public/images/workspace-illustration.webp` / `creative-process.webp` | Ilustrações do portfólio original, otimizadas em WebP. |
 
 ```bash
 npm run typecheck
@@ -113,6 +113,8 @@ GitHub Actions executa essas validações em pull requests e pushes na main, inc
 
 ## Versão e progresso
 
-**2.0.0 · setembro/2026** — reconstrução da aplicação, dez projetos, destaque da comunidade, métricas, gestão do currículo, autenticação, documentação e configuração para Vercel.
+**2.1.0 · setembro/2026** — tema claro editorial, assinatura do portfólio original, ilustrações preservadas e otimizadas, navegação completa e painel administrativo claro. Mantém dez projetos, destaque da comunidade, métricas e gestão do currículo.
+
+**2.0.0 · setembro/2026** — reconstrução da aplicação em Next.js, autenticação, MongoDB, documentação e configuração para Vercel.
 
 Para ativação pública: importar na Vercel, preencher variáveis, conectar MongoDB, vincular o domínio e enviar o PDF definitivo.
