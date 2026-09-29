@@ -619,6 +619,7 @@
     }
 
     .project-card.side { grid-column: span 5; }
+    .project-card.half { grid-column: span 6; }
     .project-card.third { grid-column: span 4; }
 
     .project-number {
@@ -681,6 +682,38 @@
     }
 
     .featured .project-role { color: #e7e7e7; }
+
+    .project-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .project-metric {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 16px;
+      border: 1px solid rgba(166, 255, 69, .25);
+      border-radius: var(--radius-md);
+      background: rgba(166, 255, 69, .07);
+    }
+
+    .project-metric dt {
+      order: 1;
+      color: #d0d0d0;
+      font-size: .78rem;
+    }
+
+    .project-metric dd {
+      color: var(--accent);
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1.2;
+    }
 
     .tag-list {
       display: flex;
@@ -1253,6 +1286,7 @@
 
       .project-card.featured,
       .project-card.side,
+      .project-card.half,
       .project-card.third {
         grid-column: span 6;
       }
@@ -1320,6 +1354,7 @@
 
       .project-card.featured,
       .project-card.side,
+      .project-card.half,
       .project-card.third {
         grid-column: span 12;
       }
@@ -1514,9 +1549,19 @@
           <article class="project-card featured reveal">
             <span class="project-number" aria-hidden="true">01</span>
             <div>
-              <span class="project-label">SaaS em evolução</span>
+              <span class="project-label">SaaS de agendamento</span>
               <h3>thynkBarber</h3>
-              <p>Ecossistema completo para barbearias com agenda, equipe, serviços, assinaturas, comissões, dashboards, bar e cozinha, integrações financeiras e automação de relacionamento.</p>
+              <p>SaaS de agendamento e gestão para barbearias com agenda, equipe, serviços, assinaturas, comissões, dashboards, bar e cozinha, integrações financeiras e automação de relacionamento.</p>
+              <dl class="project-metrics" aria-label="Resultados do thynkBarber">
+                <div class="project-metric">
+                  <dt>Barbearias em Juiz de Fora</dt>
+                  <dd>7</dd>
+                </div>
+                <div class="project-metric">
+                  <dt>Faturamento mensal do SaaS</dt>
+                  <dd>R$&nbsp;2.500,00</dd>
+                </div>
+              </dl>
               <div class="project-role">Produto próprio · Arquitetura, Back-end e evolução do SaaS</div>
               <div class="tag-list" aria-label="Tecnologias do thynkBarber">
                 <span class="tag">Node.js</span>
@@ -1561,7 +1606,7 @@
               <span class="project-label">SaaS multicanal</span>
               <h3>WhatsApp MultiChannel</h3>
               <p>Centralização de atendimentos, filas, múltiplos usuários, histórico, automações e distribuição de conversas para operações comerciais e de suporte.</p>
-              <div class="project-role">Produto próprio · Arquitetura de mensageria e automações</div>
+              <div class="project-role">Projeto para cliente · Mensageria e automações</div>
               <div class="tag-list">
                 <span class="tag">WhatsApp Web</span>
                 <span class="tag">Filas</span>
@@ -1570,26 +1615,28 @@
               </div>
             </div>
             <div class="project-bottom">
-              <span class="project-note"><i class="bi bi-shield-lock"></i> Case sob apresentação</span>
+              <span class="project-note"><i class="bi bi-shield-lock" aria-hidden="true"></i> Projeto privado de cliente</span>
             </div>
           </article>
 
           <article class="project-card third reveal">
             <span class="project-number" aria-hidden="true">04</span>
             <div>
-              <span class="project-label">Performance</span>
-              <h3>App de Metas e Métricas</h3>
-              <p>Aplicação para acompanhamento de metas, indicadores, evolução de equipes e leitura rápida de resultados para apoiar decisões.</p>
-              <div class="project-role">Solução de produtividade · Dados e regras de negócio</div>
+              <span class="project-label">Carreiras e talentos</span>
+              <h3>Maximum Carreiras</h3>
+              <p>Página de carreiras da Maximum Assessoria Contábil com apresentação da cultura, benefícios e áreas de atuação, além de candidatura preparada para envio pelo WhatsApp.</p>
+              <div class="project-role">Projeto para cliente · Experiência digital e recrutamento</div>
               <div class="tag-list">
-                <span class="tag">KPIs</span>
-                <span class="tag">Metas</span>
-                <span class="tag">Dashboards</span>
-                <span class="tag">Relatórios</span>
+                <span class="tag">Carreiras</span>
+                <span class="tag">UX</span>
+                <span class="tag">Candidaturas</span>
+                <span class="tag">WhatsApp</span>
               </div>
             </div>
             <div class="project-bottom">
-              <span class="project-note"><i class="bi bi-building-lock"></i> Projeto interno</span>
+              <a class="project-link" href="https://maximumcontabil.com.br/maximum-carreiras/" target="_blank" rel="noopener noreferrer">
+                Conhecer o Maximum Carreiras <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
             </div>
           </article>
 
@@ -1597,22 +1644,22 @@
             <span class="project-number" aria-hidden="true">05</span>
             <div>
               <span class="project-label">RPA documental</span>
-              <h3>Envio e recebimento de documentos</h3>
-              <p>Automação para coletar, organizar, validar, encaminhar e acompanhar documentos, reduzindo tarefas manuais e falhas operacionais.</p>
-              <div class="project-role">Automação corporativa · RPA, integrações e rastreabilidade</div>
+              <h3>Cobrança de Documentos</h3>
+              <p>Automação que envia solicitações de documentos aos clientes e ajuda a organizar as cobranças e pendências, facilitando o acompanhamento do que ainda precisa ser recebido.</p>
+              <div class="project-role">Projeto para cliente · Automação documental e organização</div>
               <div class="tag-list">
                 <span class="tag">RPA</span>
-                <span class="tag">E-mail</span>
-                <span class="tag">Validação</span>
-                <span class="tag">Logs</span>
+                <span class="tag">Documentos</span>
+                <span class="tag">Pendências</span>
+                <span class="tag">Cobranças</span>
               </div>
             </div>
             <div class="project-bottom">
-              <span class="project-note"><i class="bi bi-building-lock"></i> Projeto interno</span>
+              <span class="project-note"><i class="bi bi-shield-lock" aria-hidden="true"></i> Projeto privado de cliente</span>
             </div>
           </article>
 
-          <article class="project-card side reveal">
+          <article class="project-card half reveal">
             <span class="project-number" aria-hidden="true">06</span>
             <div>
               <span class="project-label">Plataforma corporativa</span>
@@ -1633,7 +1680,7 @@
             </div>
           </article>
 
-          <article class="project-card side reveal">
+          <article class="project-card half reveal">
             <span class="project-number" aria-hidden="true">07</span>
             <div>
               <span class="project-label">Experiência digital</span>
@@ -1658,9 +1705,9 @@
             <span class="project-number" aria-hidden="true">08</span>
             <div>
               <span class="project-label">Benefícios</span>
-              <h3>App de Vantagens e Benefícios</h3>
-              <p>Aplicativo para campanhas, parceiros, vantagens, cupons e relacionamento, com gestão centralizada e experiência simples para o usuário.</p>
-              <div class="project-role">Produto digital · Regras de negócio e integrações</div>
+              <h3>Clube de Vantagens</h3>
+              <p>Plataforma para campanhas, parceiros, vantagens, cupons e relacionamento, com gestão centralizada e experiência simples para o usuário.</p>
+              <div class="project-role">Projeto para cliente · Regras de negócio e integrações</div>
               <div class="tag-list">
                 <span class="tag">Benefícios</span>
                 <span class="tag">Cupons</span>
@@ -1669,12 +1716,31 @@
               </div>
             </div>
             <div class="project-bottom">
-              <span class="project-note"><i class="bi bi-shield-lock"></i> Case sob apresentação</span>
+              <span class="project-note"><i class="bi bi-shield-lock" aria-hidden="true"></i> Projeto privado de cliente</span>
             </div>
           </article>
 
           <article class="project-card third reveal">
             <span class="project-number" aria-hidden="true">09</span>
+            <div>
+              <span class="project-label">Automação via WhatsApp</span>
+              <h3>Automação de Cobrança</h3>
+              <p>Automação de cobranças aos clientes via WhatsApp, com envio de mensagens para facilitar a rotina de cobrança e reduzir o trabalho manual.</p>
+              <div class="project-role">Projeto para cliente · Automação de cobranças e mensageria</div>
+              <div class="tag-list">
+                <span class="tag">WhatsApp</span>
+                <span class="tag">Cobranças</span>
+                <span class="tag">Automação</span>
+                <span class="tag">Clientes</span>
+              </div>
+            </div>
+            <div class="project-bottom">
+              <span class="project-note"><i class="bi bi-shield-lock" aria-hidden="true"></i> Projeto privado de cliente</span>
+            </div>
+          </article>
+
+          <article class="project-card third reveal">
+            <span class="project-number" aria-hidden="true">10</span>
             <div>
               <span class="project-label">Empresa de tecnologia</span>
               <h3>thynkXP</h3>
