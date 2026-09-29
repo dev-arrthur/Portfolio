@@ -37,6 +37,8 @@ function labelTarget(target: string) {
     instagram: "Instagram", whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub", email: "E-mail",
     "cv-download": "Currículo", "cv_download": "Currículo", "download-cv": "Currículo", community: "Comunidade Dev", contact: "Contato",
     "hero-projects": "Projetos · apresentação", "hero-contact": "Contato · apresentação", "community-whatsapp": "Comunidade Dev · WhatsApp",
+    "hero-opportunity": "E-mail · oportunidade", "hero-linkedin": "LinkedIn · apresentação", "hero-whatsapp": "WhatsApp · apresentação",
+    "nav-experiencia": "Navegação · trajetória", "nav-competencias": "Navegação · competências", "nav-formacao": "Navegação · formação",
     home: "Página inicial", "nav-home": "Navegação · início", "nav-projetos": "Navegação · projetos", "nav-sobre": "Navegação · sobre", "nav-comunidade": "Navegação · comunidade", "nav-contato": "Navegação · contato",
     "filter-all": "Filtro · Todos os projetos", "filter-online": "Filtro · Projetos online", "filter-internal": "Filtro · Projetos internos", "filter-development": "Filtro · Em desenvolvimento",
     "hero-github": "GitHub · apresentação", "header-whatsapp": "WhatsApp · cabeçalho", "about-linkedin": "LinkedIn · trajetória", "community-interest": "Comunidade Dev · interesse", "contact-whatsapp-circle": "WhatsApp · contato", "contact-email": "E-mail · contato", "admin-access": "Área administrativa",
