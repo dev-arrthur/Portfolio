@@ -106,7 +106,7 @@ export default function Portfolio() {
           <div className="pf-portrait-note"><span>CRIATIVIDADE + ENGENHARIA</span><Plus size={17} /></div>
           <div className="pf-portrait-frame">
             {/* Local illustration from the original portfolio, never presented as a photograph. */}
-            <Image className="pf-portrait" src="/images/arthur.webp" alt="Ilustração de Arthur Ferreira trabalhando em um notebook" width={800} height={1000} sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 1100px) 42vw, 470px" loading="eager" fetchPriority="high" />
+            <Image className="pf-portrait" src="/images/arthur.webp" alt="Ilustração de Arthur Ferreira trabalhando em um notebook" width={800} height={1000} sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 1100px) 42vw, 470px" unoptimized loading="eager" fetchPriority="high" />
             <div className="pf-portrait-label"><span className="pf-status-dot" /> BACK-END FIRST</div>
           </div>
           <div className="pf-portrait-bottom"><span>IDEIAS → CÓDIGO → IMPACTO</span><span>01 / AF</span></div>

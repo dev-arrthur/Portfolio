@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
+import { projects } from "@/lib/content";
 import { Activity, ArrowDownToLine, ArrowLeft, ArrowUpRight, BarChart3, Check, ChevronRight, CircleAlert, Clock3, Download, ExternalLink, FileText, Globe2, LayoutDashboard, LoaderCircle, LockKeyhole, LogOut, MapPin, Monitor, MousePointer2, RefreshCw, ShieldCheck, Trash2, Upload, Users, X, type LucideIcon } from "lucide-react";
 
 type Section = "overview" | "interactions" | "cv";
@@ -36,8 +37,20 @@ function labelTarget(target: string) {
     instagram: "Instagram", whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub", email: "E-mail",
     "cv-download": "Currículo", "cv_download": "Currículo", "download-cv": "Currículo", community: "Comunidade Dev", contact: "Contato",
     "hero-projects": "Projetos · apresentação", "hero-contact": "Contato · apresentação", "community-whatsapp": "Comunidade Dev · WhatsApp",
+    home: "Página inicial", "nav-home": "Navegação · início", "nav-projetos": "Navegação · projetos", "nav-sobre": "Navegação · sobre", "nav-comunidade": "Navegação · comunidade", "nav-contato": "Navegação · contato",
+    "filter-all": "Filtro · Todos os projetos", "filter-online": "Filtro · Projetos online", "filter-internal": "Filtro · Projetos internos", "filter-development": "Filtro · Em desenvolvimento",
+    "hero-github": "GitHub · apresentação", "header-whatsapp": "WhatsApp · cabeçalho", "about-linkedin": "LinkedIn · trajetória", "community-interest": "Comunidade Dev · interesse", "contact-whatsapp-circle": "WhatsApp · contato", "contact-email": "E-mail · contato", "admin-access": "Área administrativa",
+    "cv:footer": "Currículo · rodapé", "cv:floating": "Currículo · botão flutuante", "cv-footer": "Currículo · rodapé", "cv-floating": "Currículo · botão flutuante",
   };
-  return labels[target] ?? target.replace(/^(project|projeto)[:\-]/, "Projeto · ").replace(/^social[:\-]/, "Rede · ");
+  if (labels[target]) return labels[target];
+  const project = target.match(/^(?:project|dialog|featured)-(.+)-(cover|title|details|visit|contact)$/);
+  if (project) {
+    const name = projects.find(item => item.id === project[1])?.name || project[1];
+    const action = project[2] === 'visit' ? 'visita ao site' : project[2] === 'contact' ? 'contato' : 'detalhes';
+    return `${name} · ${action}`;
+  }
+  const social = target.match(/^social-(.+)$/);
+  return social ? `Rede · ${labels[social[1]] || social[1]}` : target.replace(/[:_-]+/g, ' ');
 }
 
 async function readBody(response: Response): Promise<ApiBody> {
@@ -60,6 +73,7 @@ function MetricCard({ icon: Icon, label, value, detail, accent }: { icon: Lucide
 function ActivityChart({ daily }: { daily: Stats["daily"] }) {
   const [metric, setMetric] = useState<ChartMetric>("pageviews");
   const max = Math.max(1, ...daily.map((day) => day[metric]));
+  const ticks = [...new Set([0, Math.ceil(max / 2), max])];
   const total = daily.reduce((sum, day) => sum + day[metric], 0);
   const width = 720;
   const height = 184;
@@ -71,7 +85,7 @@ function ActivityChart({ daily }: { daily: Stats["daily"] }) {
     {total === 0 ? <EmptyState icon={BarChart3} title="Os primeiros números vêm com as visitas.">Nenhum registro de {metricNames[metric].toLowerCase()} neste período. Os dados reais aparecerão aqui conforme o site for utilizado.</EmptyState> : <>
       <div className="admin-chart-summary"><strong>{formatNumber(total)}</strong><span>{metricNames[metric].toLowerCase()} no período selecionado · Dias em UTC</span></div>
       <div className="admin-chart-wrap"><svg viewBox={`0 0 ${width} ${height + 30}`} role="img" aria-labelledby="admin-chart-title admin-chart-desc"><title id="admin-chart-title">{metricNames[metric]} por dia</title><desc id="admin-chart-desc">{daily.map(day => `${formatDate(day.date)}: ${day[metric]}`).join("; ")}</desc>
-        {[0, 0.5, 1].map((ratio) => <g key={ratio}><line x1="32" y1={height - ratio * (height - 12)} x2={width} y2={height - ratio * (height - 12)} className="admin-chart-grid" /><text x="24" y={height - ratio * (height - 12) + 4} textAnchor="end" className="admin-chart-axis">{formatNumber(Math.round(max * ratio))}</text></g>)}
+        {ticks.map((value) => <g key={value}><line x1="32" y1={height - value / max * (height - 12)} x2={width} y2={height - value / max * (height - 12)} className="admin-chart-grid" /><text x="24" y={height - value / max * (height - 12) + 4} textAnchor="end" className="admin-chart-axis">{formatNumber(value)}</text></g>)}
         {daily.map((day, index) => { const barHeight = (day[metric] / max) * (height - 12); return <rect key={day.date} x={36 + index * step + gap / 2} y={height - barHeight} width={Math.max(1, step - gap)} height={barHeight} rx={Math.min(4, step / 5)} className="admin-chart-bar"><title>{formatDate(day.date)}: {formatNumber(day[metric])} {metricNames[metric].toLowerCase()}</title></rect>; })}
         {daily.length > 0 && <><text x="36" y={height + 24} className="admin-chart-axis">{formatDate(daily[0].date)}</text><text x={width} y={height + 24} textAnchor="end" className="admin-chart-axis">{formatDate(daily[daily.length - 1].date)}</text></>}
       </svg></div>
