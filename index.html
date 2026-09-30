@@ -1050,57 +1050,217 @@
 
     .about-point i { color: var(--black); }
 
+    #formacao {
+      --education-accent: #bd5919;
+      --education-soft: rgba(255, 155, 69, .12);
+    }
+
+    .education-tabs {
+      display: inline-grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+      max-width: 100%;
+      padding: 6px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface-soft);
+    }
+
+    .education-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 0;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 800;
+      line-height: 1.35;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+    }
+
+    .education-tab:hover { color: var(--text); }
+
+    .education-tab[aria-selected="true"] {
+      background: var(--black);
+      color: var(--white);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+    }
+
+    .education-tab:focus-visible {
+      outline: 2px solid var(--education-accent);
+      outline-offset: 3px;
+    }
+
+    .education-tab-count {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      min-width: 25px;
+      min-height: 25px;
+      padding: 2px 6px;
+      border-radius: 7px;
+      background: rgba(0, 0, 0, .06);
+      font-size: .72rem;
+    }
+
+    .education-tab[aria-selected="true"] .education-tab-count {
+      background: rgba(255, 155, 69, .16);
+      color: #ffb173;
+    }
+
+    .education-panel { margin-top: 26px; }
+    .education-panel[hidden] { display: none; }
+
+    .education-panel-intro {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .education-panel-intro i { color: var(--education-accent); }
+
     .education-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .education-card {
-      padding: 25px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(23px, 3vw, 32px);
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, .72);
+      background: rgba(255, 255, 255, .8);
       box-shadow: var(--shadow-soft);
+      transition: border-color .2s ease, box-shadow .2s ease;
     }
 
-    .education-card .status {
-      color: var(--text);
-      font-size: .75rem;
+    .education-card:hover {
+      border-color: rgba(189, 89, 25, .4);
+      box-shadow: var(--shadow);
+    }
+
+    .education-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .education-icon {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(189, 89, 25, .14);
+      border-radius: 14px;
+      background: var(--education-soft);
+      color: var(--education-accent);
+      font-size: 1.35rem;
+    }
+
+    .education-category {
+      color: var(--muted);
+      font-size: .68rem;
       font-weight: 800;
-      letter-spacing: .09em;
+      letter-spacing: .1em;
       text-transform: uppercase;
     }
 
-    .education-card h3 {
-      margin-top: 12px;
-      font-family: "Manrope", sans-serif;
-      font-size: 1.28rem;
-      line-height: 1.25;
-      letter-spacing: -.035em;
+    .education-card .institution {
+      margin-top: 3px;
+      color: var(--text);
+      font-size: .92rem;
+      font-weight: 800;
     }
 
-    .institution {
-      margin-top: 8px;
-      color: #3f3f3b;
-      font-weight: 700;
+    .education-card h3 {
+      margin-top: 23px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(1.35rem, 2.3vw, 1.75rem);
+      line-height: 1.2;
+      letter-spacing: -.04em;
     }
 
     .education-card p {
       margin-top: 13px;
       color: var(--muted);
-      font-size: .91rem;
+      font-size: .94rem;
     }
 
-    .education-card a {
+    .education-card .tag-list { margin-bottom: 24px; }
+
+    .education-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .education-status {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 18px;
-      border-bottom: 1px solid currentColor;
-      font-size: .87rem;
+      gap: 7px;
+      font-weight: 700;
+    }
+
+    .education-status i { color: var(--education-accent); }
+
+    .education-period {
+      color: var(--text);
       font-weight: 800;
-      text-decoration: none;
+    }
+
+    .education-card--degree {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .education-card--degree .education-icon {
+      border-color: rgba(255, 155, 69, .26);
+      background: rgba(255, 155, 69, .1);
+      color: #ffb173;
+    }
+
+    .education-card--degree .education-category,
+    .education-card--degree p,
+    .education-card--degree .education-meta { color: #bdbdbd; }
+
+    .education-card--degree .institution,
+    .education-card--degree .education-period { color: var(--white); }
+
+    .education-card--degree .education-status i { color: #ffb173; }
+
+    .education-card--degree .education-meta,
+    .education-card--degree .tag { border-color: rgba(255, 255, 255, .15); }
+
+    .education-card--degree .tag {
+      background: rgba(255, 255, 255, .055);
+      color: #ececec;
+    }
+
+    .education-card--radar {
+      border-top: 3px solid #e7955a;
+      background: linear-gradient(145deg, #fffaf5, var(--surface-solid));
     }
 
     .contact-card {
@@ -1374,6 +1534,11 @@
 
       .timeline::before { left: 9px; }
       .timeline-item::before { left: -39px; }
+
+      .education-tabs { width: 100%; }
+      .education-tab { gap: 7px; padding: 12px 10px; font-size: .8rem; }
+      .education-grid { gap: 14px; }
+      .education-card .tag-list { gap: 6px; }
 
       .about-photo { min-height: 500px; }
       .contact-card { padding: 28px 22px; }
@@ -1948,41 +2113,154 @@
         <div class="section-heading reveal">
           <div>
             <span class="section-kicker">Formação contínua</span>
-            <h2 class="section-title">Base acadêmica e especialização prática.</h2>
+            <h2 class="section-title">Conhecimento que evolui com a prática.</h2>
           </div>
-          <p class="section-intro">Aprendizado contínuo para sustentar decisões técnicas melhores e produtos mais confiáveis.</p>
+          <p class="section-intro">Engenharia de Software, Java, inteligência artificial e segurança: uma trilha de aprendizado conectada aos sistemas e produtos que desenvolvo.</p>
         </div>
 
-        <div class="education-grid">
-          <article class="education-card reveal">
-            <span class="status">Em andamento · 2025–2029</span>
-            <h3>Engenharia de Software</h3>
-            <div class="institution">Estácio de Sá</div>
-            <p>Fundamentos de engenharia, arquitetura de sistemas, requisitos, qualidade e desenvolvimento orientado a produto.</p>
-            <a href="download/Historico-EstacioDeSa-EngenhariaDeSoftware.pdf" target="_blank" rel="noopener noreferrer">
-              Ver histórico <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </article>
+        <div class="education-workspace reveal">
+          <div class="education-tabs" role="tablist" aria-label="Trilhas de aprendizado">
+            <button class="education-tab" id="education-tab-current" type="button" role="tab" aria-selected="true" aria-controls="education-current" data-education-tab>
+              <span>Formações</span><span class="education-tab-count" aria-hidden="true">04</span>
+            </button>
+            <button class="education-tab" id="education-tab-radar" type="button" role="tab" aria-selected="false" aria-controls="education-radar" tabindex="-1" data-education-tab>
+              <span>No radar de cursos</span><span class="education-tab-count" aria-hidden="true">03</span>
+            </button>
+          </div>
 
-          <article class="education-card reveal">
-            <span class="status">Em andamento · 2026</span>
-            <h3>Desenvolvimento Full Stack Java</h3>
-            <div class="institution">EBAC</div>
-            <p>Java, Spring Boot, APIs REST, banco de dados, testes, microsserviços, Docker, AWS e React.</p>
-            <a href="download/pdfJavaEBAC.pdf" target="_blank" rel="noopener noreferrer">
-              Ver certificado <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </article>
+          <div class="education-panel" id="education-current" role="tabpanel" aria-labelledby="education-tab-current" tabindex="0">
+            <p class="education-panel-intro"><i class="bi bi-mortarboard" aria-hidden="true"></i> Formação acadêmica e cursos que compõem minha base técnica.</p>
+            <div class="education-grid">
+              <article class="education-card education-card--degree">
+                <div class="education-card-header">
+                  <span class="education-icon"><i class="bi bi-mortarboard" aria-hidden="true"></i></span>
+                  <div>
+                    <span class="education-category">Graduação</span>
+                    <div class="institution">Estácio de Sá</div>
+                  </div>
+                </div>
+                <h3>Engenharia de Software</h3>
+                <p>Fundamentos de engenharia, arquitetura de sistemas, requisitos e qualidade para construir aplicações organizadas e preparadas para evoluir.</p>
+                <div class="tag-list" aria-label="Temas de Engenharia de Software">
+                  <span class="tag">Arquitetura</span>
+                  <span class="tag">Qualidade</span>
+                  <span class="tag">Requisitos</span>
+                </div>
+                <div class="education-meta">
+                  <span class="education-status"><i class="bi bi-clock-history" aria-hidden="true"></i> Em andamento</span>
+                  <span class="education-period">2025–2029</span>
+                </div>
+              </article>
 
-          <article class="education-card reveal">
-            <span class="status">Especialização</span>
-            <h3>Inteligência Artificial</h3>
-            <div class="institution">EBAC</div>
-            <p>IA generativa, engenharia de prompt, automações, APIs, ética, segurança e criação de soluções assistidas.</p>
-            <a href="download/pdfIAEBAC.pdf" target="_blank" rel="noopener noreferrer">
-              Ver certificado <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </article>
+              <article class="education-card">
+                <div class="education-card-header">
+                  <span class="education-icon"><i class="bi bi-code-slash" aria-hidden="true"></i></span>
+                  <div>
+                    <span class="education-category">Desenvolvimento</span>
+                    <div class="institution">EBAC</div>
+                  </div>
+                </div>
+                <h3>Desenvolvimento Full Stack Java</h3>
+                <p>Java, Spring Boot, APIs REST e bancos de dados, com estudos em testes, microsserviços, Docker, AWS e React.</p>
+                <div class="tag-list" aria-label="Temas de Full Stack Java">
+                  <span class="tag">Java</span>
+                  <span class="tag">Spring Boot</span>
+                  <span class="tag">APIs REST</span>
+                  <span class="tag">Microsserviços</span>
+                </div>
+                <div class="education-meta">
+                  <span class="education-status"><i class="bi bi-clock-history" aria-hidden="true"></i> Em andamento</span>
+                  <span class="education-period">2026</span>
+                </div>
+              </article>
+
+              <article class="education-card">
+                <div class="education-card-header">
+                  <span class="education-icon"><i class="bi bi-cpu" aria-hidden="true"></i></span>
+                  <div>
+                    <span class="education-category">Inteligência aplicada</span>
+                    <div class="institution">EBAC</div>
+                  </div>
+                </div>
+                <h3>Inteligência Artificial</h3>
+                <p>IA generativa, engenharia de prompt e integração com APIs para criar soluções assistidas, com atenção à ética e à segurança.</p>
+                <div class="tag-list" aria-label="Temas de Inteligência Artificial">
+                  <span class="tag">IA generativa</span>
+                  <span class="tag">Prompts</span>
+                  <span class="tag">Automações</span>
+                </div>
+                <div class="education-meta">
+                  <span class="education-status"><i class="bi bi-book" aria-hidden="true"></i> Especialização</span>
+                </div>
+              </article>
+
+              <article class="education-card">
+                <div class="education-card-header">
+                  <span class="education-icon"><i class="bi bi-shield-lock" aria-hidden="true"></i></span>
+                  <div>
+                    <span class="education-category">Cibersegurança</span>
+                    <div class="institution">EBAC</div>
+                  </div>
+                </div>
+                <h3>CyberSecurity</h3>
+                <p>Fundamentos de segurança da informação, identificação de vulnerabilidades e proteção de dados, sistemas e ambientes digitais.</p>
+                <div class="tag-list" aria-label="Temas de CyberSecurity">
+                  <span class="tag">Segurança da informação</span>
+                  <span class="tag">Vulnerabilidades</span>
+                  <span class="tag">Proteção de dados</span>
+                </div>
+                <div class="education-meta">
+                  <span class="education-status"><i class="bi bi-shield-check" aria-hidden="true"></i> Formação complementar</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="education-panel" id="education-radar" role="tabpanel" aria-labelledby="education-tab-radar" tabindex="0">
+            <p class="education-panel-intro"><i class="bi bi-compass" aria-hidden="true"></i> Próximos estudos em planejamento para ampliar e aprofundar minha formação.</p>
+            <div class="education-grid">
+              <article class="education-card education-card--radar">
+                <div class="education-card-header">
+                  <span class="education-icon"><i class="bi bi-compass" aria-hidden="true"></i></span>
+                  <div>
+                    <span class="education-category">Novos aprendizados</span>
+                    <div class="institution">FIAP</div>
+                  </div>
+                </div>
+                <h3>2 cursos gratuitos</h3>
+                <p>Duas formações gratuitas da FIAP no radar dos próximos estudos, para complementar minha evolução em tecnologia.</p>
+                <div class="tag-list">
+                  <span class="tag">Cursos gratuitos</span>
+                  <span class="tag">Aprendizado contínuo</span>
+                </div>
+                <div class="education-meta">
+                  <span class="education-status"><i class="bi bi-bookmark" aria-hidden="true"></i> No radar</span>
+                  <span class="education-period">2 cursos</span>
+                </div>
+              </article>
+
+              <article class="education-card education-card--radar">
+                <div class="education-card-header">
+                  <span class="education-icon"><i class="bi bi-cup-hot" aria-hidden="true"></i></span>
+                  <div>
+                    <span class="education-category">Aprofundamento técnico</span>
+                    <div class="institution">EBAC</div>
+                  </div>
+                </div>
+                <h3>Especialista Java</h3>
+                <p>Próximo aprofundamento em Java, com foco em Back-end, APIs e construção de aplicações mais robustas.</p>
+                <div class="tag-list">
+                  <span class="tag">Java</span>
+                  <span class="tag">Back-end</span>
+                  <span class="tag">APIs</span>
+                </div>
+                <div class="education-meta">
+                  <span class="education-status"><i class="bi bi-bookmark" aria-hidden="true"></i> No radar</span>
+                  <span class="education-period">1 curso</span>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2069,6 +2347,37 @@
         link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
       });
     }, { passive: true });
+
+    const educationTabs = [...document.querySelectorAll('[data-education-tab]')];
+
+    function activateEducationTab(selectedTab, moveFocus = false) {
+      educationTabs.forEach(tab => {
+        const isSelected = tab === selectedTab;
+        tab.setAttribute('aria-selected', String(isSelected));
+        tab.tabIndex = isSelected ? 0 : -1;
+        document.getElementById(tab.getAttribute('aria-controls')).hidden = !isSelected;
+      });
+
+      if (moveFocus) selectedTab.focus();
+    }
+
+    educationTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateEducationTab(tab));
+      tab.addEventListener('keydown', event => {
+        let nextIndex;
+
+        if (event.key === 'ArrowRight') nextIndex = (index + 1) % educationTabs.length;
+        else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + educationTabs.length) % educationTabs.length;
+        else if (event.key === 'Home') nextIndex = 0;
+        else if (event.key === 'End') nextIndex = educationTabs.length - 1;
+        else return;
+
+        event.preventDefault();
+        activateEducationTab(educationTabs[nextIndex], true);
+      });
+    });
+
+    if (educationTabs.length) activateEducationTab(educationTabs[0]);
 
     const revealItems = document.querySelectorAll('.reveal');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
